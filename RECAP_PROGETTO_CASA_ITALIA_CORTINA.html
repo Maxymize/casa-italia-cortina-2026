@@ -1,0 +1,3286 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Italia Cortina 2026 - Recap Progetto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066B3;
+            --primary-dark: #004d86;
+            --secondary: #E31837;
+            --accent: #009246;
+            --gold: #D4AF37;
+            --dark: #1a1a2e;
+            --dark-light: #2d2d44;
+            --gray: #6c757d;
+            --gray-light: #f8f9fa;
+            --white: #ffffff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--dark) 100%);
+            color: var(--white);
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-badge .rings {
+            font-size: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--gold), #f4d03f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-size: 14px;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 16px;
+            border-radius: 8px;
+        }
+
+        .hero-meta-item strong {
+            color: var(--gold);
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 16px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray);
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .nav-tab:hover {
+            color: var(--primary);
+            background: var(--gray-light);
+        }
+
+        .nav-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 24px 28px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-header-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .card-header-icon.blue { background: #e3f2fd; }
+        .card-header-icon.green { background: #e8f5e9; }
+        .card-header-icon.red { background: #ffebee; }
+        .card-header-icon.orange { background: #fff3e0; }
+        .card-header-icon.purple { background: #f3e5f5; }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .card-subtitle {
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .card-body {
+            padding: 28px;
+        }
+
+        /* Grid Layout */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* LED Cards */
+        .led-card {
+            background: linear-gradient(145deg, #fafbfc, #ffffff);
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .led-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            border-color: var(--primary);
+        }
+
+        .led-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .led-card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .led-card-code {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--primary);
+            color: white;
+        }
+
+        .led-card-location {
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        .led-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px dashed #e9ecef;
+        }
+
+        .led-spec {
+            font-size: 13px;
+        }
+
+        .led-spec-label {
+            color: var(--gray);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .led-spec-value {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--gray-light);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray);
+        }
+
+        tr:hover {
+            background: #fafbfc;
+        }
+
+        /* Status Badges */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-critical {
+            background: #ffebee;
+            color: var(--danger);
+        }
+
+        .status-warning {
+            background: #fff8e1;
+            color: #f57c00;
+        }
+
+        .status-success {
+            background: #e8f5e9;
+            color: var(--success);
+        }
+
+        .status-info {
+            background: #e3f2fd;
+            color: var(--primary);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 28px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -32px;
+            top: 4px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .timeline-dot.highlight {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .timeline-dot.milestone {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: white;
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* Issues/Criticita */
+        .issue-card {
+            border-left: 4px solid var(--danger);
+            background: #fffbfb;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 16px;
+        }
+
+        .issue-card.warning {
+            border-left-color: var(--warning);
+            background: #fffdf5;
+        }
+
+        .issue-title {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .issue-desc {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .issue-solution {
+            font-size: 13px;
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px dashed #ddd;
+        }
+
+        .issue-solution strong {
+            color: var(--accent);
+        }
+
+        /* Contact Cards */
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--gray-light);
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .contact-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .contact-info h4 {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 2px;
+        }
+
+        .contact-role {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 6px;
+        }
+
+        .contact-details {
+            font-size: 13px;
+            color: var(--primary);
+        }
+
+        /* Checklist */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-box {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: transparent;
+        }
+
+        .checklist-item.done .checklist-box {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .checklist-item.done .checklist-text {
+            text-decoration: line-through;
+            color: var(--gray);
+        }
+
+        .checklist-priority {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .priority-high {
+            background: #ffebee;
+            color: var(--danger);
+        }
+
+        .priority-medium {
+            background: #fff8e1;
+            color: #f57c00;
+        }
+
+        /* Schema Regia */
+        .schema-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .schema-box .comment {
+            color: #6a9955;
+        }
+
+        .schema-box .highlight {
+            color: var(--gold);
+        }
+
+        .schema-box .vmix {
+            color: #4fc3f7;
+        }
+
+        .schema-box .led {
+            color: #81c784;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .footer-meta {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-tabs-inner {
+                gap: 0;
+            }
+
+            .nav-tab {
+                padding: 14px 16px;
+                font-size: 13px;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-tabs {
+                display: none;
+            }
+
+            .hero {
+                background: var(--primary);
+                -webkit-print-color-adjust: exact;
+            }
+
+            .card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="rings">&#9975;</span>
+                Olimpiadi Invernali Milano-Cortina 2026
+            </div>
+            <h1>Casa Italia <span>Cortina</span></h1>
+            <p class="hero-subtitle">
+                Documento di recap generale per le installazioni audio-video, LED wall e regia video presso la Galleria Farsetti.
+            </p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span>&#128197;</span>
+                    <span>Aggiornato: <strong>9 Gennaio 2026</strong></span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>&#128100;</span>
+                    <span>PM: <strong>Maximilian Giurastante</strong></span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>&#128205;</span>
+                    <span>Location: <strong>Galleria Farsetti, Cortina</strong></span>
+                </div>
+            </div>
+        </div>
+        <!-- Decorazione montagne stilizzate -->
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; overflow: hidden; opacity: 0.15;">
+            <svg viewBox="0 0 1200 80" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+                <path d="M0 80 L150 30 L250 50 L400 10 L500 40 L650 5 L800 35 L900 15 L1050 45 L1200 20 L1200 80 Z" fill="white"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-tabs">
+        <div class="nav-tabs-inner">
+            <a href="#overview" class="nav-tab active">Overview</a>
+            <a href="#led" class="nav-tab">Installazioni LED</a>
+            <a href="#regia" class="nav-tab">Schema Regia</a>
+            <a href="#materiali" class="nav-tab">Lista Materiali</a>
+            <a href="#criticita" class="nav-tab">Criticita'</a>
+            <a href="#timeline" class="nav-tab">Timeline</a>
+            <a href="#team" class="nav-tab">Team & Contatti</a>
+            <a href="#actions" class="nav-tab">Action Items</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Overview Section -->
+        <section id="overview">
+            <div class="section-header">
+                <h2>Overview Progetto</h2>
+                <p>Casa Italia sara' distribuita su 3 location durante le Olimpiadi Invernali 2026</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-body" style="text-align: center; padding: 32px;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">&#127963;</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Milano</h3>
+                        <p style="font-size: 14px; color: var(--gray);">Triennale<br>Coordinamento generale</p>
+                    </div>
+                </div>
+                <div class="card" style="border: 2px solid var(--primary);">
+                    <div class="card-body" style="text-align: center; padding: 32px;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">&#127956;</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; color: var(--primary);">Cortina</h3>
+                        <p style="font-size: 14px; color: var(--gray);">Galleria Farsetti<br>Piazza Roma 10</p>
+                        <span class="status status-info" style="margin-top: 12px;">Questo documento</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" style="text-align: center; padding: 32px;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">&#9968;</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Livigno</h3>
+                        <p style="font-size: 14px; color: var(--gray);">Centro Sportivo<br>Acquagranda</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon blue">&#127909;</div>
+                    <div>
+                        <div class="card-title">Scope Informa Sistemi - Cortina</div>
+                        <div class="card-subtitle">Attivita' in carico al nostro team</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-2">
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--gray-light); border-radius: 8px;">
+                            <span style="font-size: 24px;">&#128250;</span>
+                            <div>
+                                <strong>4 LED Wall (3 interni + 1 esterno)</strong>
+                                <div style="font-size: 13px; color: var(--gray);">Celebration, Lounge, Ristorante + Piazzale</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--gray-light); border-radius: 8px;">
+                            <span style="font-size: 24px;">&#128266;</span>
+                            <div>
+                                <strong>Impianti Audio</strong>
+                                <div style="font-size: 13px; color: var(--gray);">MAUI, Fonestar, Mixer Behringer</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--gray-light); border-radius: 8px;">
+                            <span style="font-size: 24px;">&#128187;</span>
+                            <div>
+                                <strong>Regia Video Centralizzata</strong>
+                                <div style="font-size: 13px; color: var(--gray);">3x VMIX, 4x MiniPC, Encoder</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--gray-light); border-radius: 8px;">
+                            <span style="font-size: 24px;">&#128225;</span>
+                            <div>
+                                <strong>Cablaggio & Rete</strong>
+                                <div style="font-size: 13px; color: var(--gray);">Passaggio cavi, switch, connettivita'</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Planimetria -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon purple">&#128506;</div>
+                    <div>
+                        <div class="card-title">Struttura Galleria Farsetti</div>
+                        <div class="card-subtitle">Due piani + tensostruttura esterna</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 16px; color: var(--primary);">&#128316; Piano 0 (Terra)</h4>
+                            <ul style="list-style: none; font-size: 14px;">
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#128313; Galleria Lounge (LED a C)</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#128313; Spazio Regia (C.PT.17)</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#128313; Spazio Interviste (C.PT.14)</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#128313; Padiglione / Celebration (Tensostruttura)</li>
+                                <li style="padding: 8px 0;">&#128313; LED Esterno (Piazzale)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 16px; color: var(--primary);">&#128317; Piano -1 (Interrato)</h4>
+                            <ul style="list-style: none; font-size: 14px;">
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#128312; Ristorante - Ex Esselunga (LED 6x2.5m)</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#128312; Casa Giornalisti / Sala Stampa</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">&#128312; Deposito</li>
+                                <li style="padding: 8px 0;">&#128312; Locale Preparazione</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Piantine e Schemi -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon blue">&#128444;</div>
+                    <div>
+                        <div class="card-title">Piantine e Schemi Tecnici</div>
+                        <div class="card-subtitle">Documentazione grafica del progetto</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-2" style="gap: 32px;">
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 16px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                                <span>&#128316;</span> Piantina Piano 0 (Terra)
+                            </h4>
+                            <div style="border: 2px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #fafafa;">
+                                <img src="Piantina Cortina piano 0.png" alt="Piantina Piano 0" style="width: 100%; height: auto; display: block;">
+                            </div>
+                            <p style="font-size: 12px; color: var(--gray); margin-top: 8px; text-align: center;">
+                                Galleria Lounge, Spazio Regia, Spazio Interviste, Padiglione
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 16px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                                <span>&#128317;</span> Piantina Piano -1 (Interrato)
+                            </h4>
+                            <div style="border: 2px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #fafafa;">
+                                <img src="Piantina Cortina piano -1.png" alt="Piantina Piano -1" style="width: 100%; height: auto; display: block;">
+                            </div>
+                            <p style="font-size: 12px; color: var(--gray); margin-top: 8px; text-align: center;">
+                                Ristorante, Casa Giornalisti, Deposito, Locale Preparazione
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Schema Regia PDF -->
+                    <div style="margin-top: 32px;">
+                        <h4 style="font-weight: 700; margin-bottom: 16px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                            <span>&#127909;</span> Schema Regia Video (CORTINA 1.2)
+                        </h4>
+                        <div style="border: 2px solid var(--primary); border-radius: 12px; overflow: hidden; background: linear-gradient(135deg, #f5f7fa, #e4e8ec);">
+                            <object data="Schema dettagliato regia cortina-drawio.pdf" type="application/pdf" width="100%" height="500px" style="display: block;">
+                                <div style="padding: 40px; text-align: center;">
+                                    <p style="font-size: 14px; color: var(--gray); margin-bottom: 16px;">
+                                        Il browser non supporta la visualizzazione PDF inline.
+                                    </p>
+                                    <a href="Schema dettagliato regia cortina-drawio.pdf" target="_blank"
+                                       style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                                        <span>&#128196;</span> Apri Schema Regia PDF
+                                    </a>
+                                </div>
+                            </object>
+                        </div>
+                        <p style="font-size: 12px; color: var(--gray); margin-top: 8px; text-align: center;">
+                            Architettura completa: VMIX 1/2/3, Controller, Mixer Audio, Encoder
+                        </p>
+                    </div>
+
+                    <!-- Abaco Dispositivi -->
+                    <div style="margin-top: 32px;">
+                        <h4 style="font-weight: 700; margin-bottom: 16px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                            <span>&#128203;</span> Abaco Dispositivi
+                        </h4>
+                        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                            <a href="Cortina ABACO DISPOSITIVI.pdf" target="_blank"
+                               style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--gray-light); border-radius: 12px; text-decoration: none; color: var(--dark); border: 1px solid #e0e0e0; transition: all 0.2s;">
+                                <span style="font-size: 32px;">&#128196;</span>
+                                <div>
+                                    <div style="font-weight: 600;">Abaco Dispositivi PDF</div>
+                                    <div style="font-size: 12px; color: var(--gray);">Legenda completa LED e finiture</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LED Section -->
+        <section id="led" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Installazioni LED</h2>
+                <p>Dettaglio tecnico di tutti i LED wall previsti per Cortina</p>
+            </div>
+
+            <div class="grid-2">
+                <!-- LED Celebration -->
+                <div class="led-card">
+                    <div class="led-card-header">
+                        <div>
+                            <div class="led-card-title">LED Celebration</div>
+                            <div class="led-card-location">Tensostruttura esterna - Padiglione</div>
+                        </div>
+                        <span class="led-card-code">LED03</span>
+                    </div>
+                    <div class="led-specs">
+                        <div class="led-spec">
+                            <div class="led-spec-label">Dimensioni</div>
+                            <div class="led-spec-value">6 x 2.36m</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Risoluzione</div>
+                            <div class="led-spec-value">3840 x 1536 px</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Tipologia</div>
+                            <div class="led-spec-value">COB 1.5 indoor</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Controller</div>
+                            <div class="led-spec-value">MCTRL4K</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Software</div>
+                            <div class="led-spec-value">VMIX 1</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Alimentazione</div>
+                            <div class="led-spec-value">32A pentapolare</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #e8f5e9; border-radius: 8px; font-size: 13px;">
+                        <strong style="color: var(--accent);">&#9989; Nuovo ordine</strong> - Lotto 420, 10 colonne x 7 moduli
+                    </div>
+                    <div style="margin-top: 8px; padding: 12px; background: #fff3e0; border-radius: 8px; font-size: 13px;">
+                        <strong style="color: #f57c00;">&#127957; Tensostruttura</strong> - Struttura esterna coperta
+                    </div>
+                </div>
+
+                <!-- LED Lounge -->
+                <div class="led-card">
+                    <div class="led-card-header">
+                        <div>
+                            <div class="led-card-title">LED Lounge (Config. a C)</div>
+                            <div class="led-card-location">Galleria Piano 0</div>
+                        </div>
+                        <span class="led-card-code">LED02/04</span>
+                    </div>
+                    <div class="led-specs">
+                        <div class="led-spec">
+                            <div class="led-spec-label">Dimensioni</div>
+                            <div class="led-spec-value">2.4x2.7 + 1.8x2.7m</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Risoluzione</div>
+                            <div class="led-spec-value">1152/1536 x 1728 px</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Tipologia</div>
+                            <div class="led-spec-value">COB 1.5 + angolari 45°</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Controller</div>
+                            <div class="led-spec-value">MCTRL4K</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Software</div>
+                            <div class="led-spec-value">VMIX 3</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Alimentazione</div>
+                            <div class="led-spec-value">3 x 16A</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #fff8e1; border-radius: 8px; font-size: 13px;">
+                        <strong style="color: #f57c00;">&#9888; In arrivo</strong> - Moduli angolari settimana prossima
+                    </div>
+                </div>
+
+                <!-- LED Ristorante -->
+                <div class="led-card">
+                    <div class="led-card-header">
+                        <div>
+                            <div class="led-card-title">LED Ristorante</div>
+                            <div class="led-card-location">Piano -1 (Ex Esselunga)</div>
+                        </div>
+                        <span class="led-card-code">LED01</span>
+                    </div>
+                    <div class="led-specs">
+                        <div class="led-spec">
+                            <div class="led-spec-label">Dimensioni</div>
+                            <div class="led-spec-value">6 x 2.5m</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Risoluzione</div>
+                            <div class="led-spec-value">2304 x 960 px</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Tipologia</div>
+                            <div class="led-spec-value">Passo 2.6 indoor</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Controller</div>
+                            <div class="led-spec-value">MCTRL4K</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Software</div>
+                            <div class="led-spec-value">VMIX 2</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Alimentazione</div>
+                            <div class="led-spec-value">5x16A (~11kW)</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #e3f2fd; border-radius: 8px; font-size: 13px;">
+                        <strong style="color: var(--primary);">&#128230; Noleggio</strong> - LED SEGNA da Sedico
+                    </div>
+                </div>
+
+                <!-- LED Esterno -->
+                <div class="led-card">
+                    <div class="led-card-header">
+                        <div>
+                            <div class="led-card-title">LED Esterno</div>
+                            <div class="led-card-location">Piazzale</div>
+                        </div>
+                        <span class="led-card-code">LED06</span>
+                    </div>
+                    <div class="led-specs">
+                        <div class="led-spec">
+                            <div class="led-spec-label">Dimensioni</div>
+                            <div class="led-spec-value">3 x 2m</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Risoluzione</div>
+                            <div class="led-spec-value">768 x 512 px</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Tipologia</div>
+                            <div class="led-spec-value">AMIL BLUE 3.9 outdoor</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Controller</div>
+                            <div class="led-spec-value">MTCRL300</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Montaggio</div>
+                            <div class="led-spec-value">Truss/Layher</div>
+                        </div>
+                        <div class="led-spec">
+                            <div class="led-spec-label">Alimentazione</div>
+                            <div class="led-spec-value">2 x 16A (~4kW)</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #ffebee; border-radius: 8px; font-size: 13px;">
+                        <strong style="color: var(--danger);">&#10052; Attenzione</strong> - Sostituzione BLADE, rischio neve
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sala Stampa -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon green">&#128250;</div>
+                    <div>
+                        <div class="card-title">Sala Stampa - Casa Giornalisti</div>
+                        <div class="card-subtitle">Piano -1 - Monitor TV</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px; padding: 20px; background: var(--gray-light); border-radius: 12px; text-align: center;">
+                            <div style="font-size: 36px; margin-bottom: 8px;">&#128250;</div>
+                            <strong>2x Monitor 55"</strong>
+                            <div style="font-size: 13px; color: var(--gray); margin-top: 4px;">Su stand da tavolo</div>
+                        </div>
+                        <div style="flex: 1; min-width: 200px; padding: 20px; background: var(--gray-light); border-radius: 12px; text-align: center;">
+                            <div style="font-size: 36px; margin-bottom: 8px;">&#128225;</div>
+                            <strong>RAI Sport + RAI 2</strong>
+                            <div style="font-size: 13px; color: var(--gray); margin-top: 4px;">Contenuti fissi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schema Regia Section -->
+        <section id="regia" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Schema Regia Video</h2>
+                <p>Configurazione hardware della regia centralizzata (Piano 0 - Spazio Regia C.PT.17)</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-icon blue">&#127909;</div>
+                    <div>
+                        <div class="card-title">Architettura Sistema - CORTINA 1.2</div>
+                        <div class="card-subtitle">Postazioni VMIX e flusso segnali</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="schema-box">
+<pre>
+<span class="comment">/* SCHEMA REGIA CORTINA 1.2 */</span>
+
+<span class="highlight">REGIA (Piano 0)</span>
+├── <span class="vmix">VMIX 1</span> + MON1 27" ──────► <span class="led">LED03 Celebration</span> (3840x1536px)
+│   └── MCTRL4K ──► 2x MAUI
+│
+├── <span class="vmix">VMIX 2</span> + MON2 27" ──────► <span class="led">LED01 Ristorante</span> (2304x960px)
+│   └── MCTRL4K ──► 2x MAUI
+│
+├── <span class="vmix">VMIX 3</span> + MON3 ──────────► <span class="led">LED02/04 Galleria</span> (Config. a C)
+│   └── MCTRL4K ──► Speaker SSSNAKE
+│
+├── <span class="highlight">LED06 Esterno</span> (768x512px)
+│   └── MTCRL300 ──► EDV ──► Monacor Amp ──► 2x Fonestar
+│
+└── <span class="highlight">MIXER BEHRINGER</span>
+    ├── LR ────► MAUI CELEB
+    ├── AUX 1 ─► GALLERIA
+    └── AUX 2 ─► MAUI LOUNGE
+
+<span class="comment">/* ENCODER STREAMING */</span>
+MiniPC WIN1 ──► ENCODER 1
+MiniPC WIN2 ──► ENCODER 2
+MiniPC WIN3 ──► ENCODER 3
+MiniPC WIN4 ──► ENCODER 4
+
+<span class="comment">/* PTZ CAMERAS (collegamenti inter-house) */</span>
+CAM PTZ ──► BNC 1 ──┐
+CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
+</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3" style="margin-top: 24px;">
+                <div class="card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 12px;">&#128421;</div>
+                        <h4 style="font-weight: 700; margin-bottom: 8px;">4x MiniPC</h4>
+                        <p style="font-size: 13px; color: var(--gray);">Windows con Encoder dedicati per streaming</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 12px;">&#128249;</div>
+                        <h4 style="font-weight: 700; margin-bottom: 8px;">3x PTZ 4K</h4>
+                        <p style="font-size: 13px; color: var(--gray);">Telecamere per comunicazione inter-house</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 12px;">&#127899;</div>
+                        <h4 style="font-weight: 700; margin-bottom: 8px;">Mixer Behringer</h4>
+                        <p style="font-size: 13px; color: var(--gray);">Controllo audio centralizzato LR + 2 AUX</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista Materiali Section -->
+        <section id="materiali" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Lista Materiali per Ambiente</h2>
+                <p>Dettaglio completo di dispositivi, cavi e collegamenti necessari per ogni area</p>
+            </div>
+
+            <!-- REGIA -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark));">
+                    <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#127909;</div>
+                    <div>
+                        <div class="card-title" style="color: white;">REGIA - Piano 0 (C.PT.17)</div>
+                        <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">Centro di controllo audio-video</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- PC VMIX -->
+                    <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                        <span>&#128421;</span> PC VMIX (Regia Video)
+                    </h4>
+                    <p style="font-size: 13px; color: var(--gray); margin-bottom: 12px;">PC con software VMIX per regia video, gestione contenuti e acquisizione telecamere PTZ</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background: var(--gray-light);">
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Materiale</th>
+                                <th style="padding: 10px; text-align: center; border-bottom: 2px solid #ddd;">Qta</th>
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Funzione</th>
+                                <th style="padding: 10px; text-align: center; border-bottom: 2px solid #ddd;">Stato</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;">PC VMIX 1</td><td style="padding: 8px; text-align: center;">1</td><td style="padding: 8px;">Regia LED03 Celebration - CORT12</td><td style="padding: 8px; text-align: center;"><span style="color: var(--accent);">&#9989;</span></td></tr>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;">PC VMIX 2</td><td style="padding: 8px; text-align: center;">1</td><td style="padding: 8px;">Regia LED01 Ristorante - CORT12</td><td style="padding: 8px; text-align: center;"><span style="color: var(--accent);">&#9989;</span></td></tr>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;">PC VMIX 3</td><td style="padding: 8px; text-align: center;">1</td><td style="padding: 8px;">Regia LED02+LED04 Lounge</td><td style="padding: 8px; text-align: center;"><span style="color: var(--accent);">&#9989;</span></td></tr>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;">Schede acquisizione (BNC/HDMI)</td><td style="padding: 8px; text-align: center;">3</td><td style="padding: 8px;">Ingressi telecamere PTZ</td><td style="padding: 8px; text-align: center;"><span style="color: var(--accent);">&#9989;</span></td></tr>
+                            <tr><td style="padding: 8px;">Monitor 27"</td><td style="padding: 8px; text-align: center;">3</td><td style="padding: 8px;">Preview/Program MON1, MON2, MON3</td><td style="padding: 8px; text-align: center;"><span style="color: var(--accent);">&#9989;</span></td></tr>
+                        </tbody>
+                    </table>
+
+                    <!-- MiniPC e Encoder -->
+                    <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                        <span>&#128250;</span> MiniPC + Encoder Kiloview (Streaming Gare)
+                    </h4>
+                    <p style="font-size: 13px; color: var(--gray); margin-bottom: 12px;">Streaming canali Discovery/RAI - Encoder per codifica HDMI/SDI->IP (NDI, SRT, RTMP, H.265 4K)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background: var(--gray-light);">
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Materiale</th>
+                                <th style="padding: 10px; text-align: center; border-bottom: 2px solid #ddd;">Qta</th>
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Note</th>
+                                <th style="padding: 10px; text-align: center; border-bottom: 2px solid #ddd;">Stato</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;">MiniPC Windows (WIN1-WIN4)</td><td style="padding: 8px; text-align: center;">4</td><td style="padding: 8px;">CORT12 - Streaming canali gare</td><td style="padding: 8px; text-align: center;"><span style="color: var(--accent);">&#9989;</span></td></tr>
+                            <tr><td style="padding: 8px;">Encoder Kiloview</td><td style="padding: 8px; text-align: center;">4</td><td style="padding: 8px;">CORT12 - Codifica video IP</td><td style="padding: 8px; text-align: center;"><span style="color: var(--accent);">&#9989;</span></td></tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Sending Card -->
+                    <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                        <span>&#128268;</span> Sending Card (Controller LED)
+                    </h4>
+                    <p style="font-size: 13px; color: var(--gray); margin-bottom: 12px;">Convertono segnale HDMI in uscita LAN Cat.5 per moduli LED. Backup per continuita' segnale.</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background: var(--gray-light);">
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Controller</th>
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">LED Gestito</th>
+                                <th style="padding: 10px; text-align: center; border-bottom: 2px solid #ddd;">LAN Main</th>
+                                <th style="padding: 10px; text-align: center; border-bottom: 2px solid #ddd;">LAN Backup</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #e3f2fd;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #1</strong></td><td style="padding: 8px;">LED03 Celebration (3840x1536px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">10</td><td style="padding: 8px; text-align: center; color: #ff9800;">10</td></tr>
+                            <tr style="background: #fff3e0;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #2</strong></td><td style="padding: 8px;">LED01 Ristorante (2304x960px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">5</td><td style="padding: 8px; text-align: center; color: #ff9800;">5</td></tr>
+                            <tr style="background: #f3e5f5;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #3</strong></td><td style="padding: 8px;">LED02+04 Lounge (2688x1728px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">12</td><td style="padding: 8px; text-align: center; color: #ff9800;">12</td></tr>
+                            <tr style="background: #e8f5e9;"><td style="padding: 8px;"><strong>MTCRL300</strong></td><td style="padding: 8px;">LED06 Esterno (768x512px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">1</td><td style="padding: 8px; text-align: center; color: #ff9800;">1</td></tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Audio Regia -->
+                    <div class="grid-2" style="margin-top: 20px;">
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                                <span>&#127897;</span> Hardware Audio
+                            </h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; Mixer Behringer (LR + AUX1 + AUX2)</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 3x Schede Audio USB (per VMIX)</li>
+                                <li style="padding: 6px 0;">&#9989; Ricevitore Microfoni JTS wireless</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                                <span>&#128268;</span> Rete e PTZ
+                            </h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; Switch 24 porte (hub intranet)</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 3x PTZ 4K (inter-house)</li>
+                                <li style="padding: 6px 0;">&#9989; 2x Mensole rack + prese 220V</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cavi Regia -->
+                    <div style="margin-top: 20px; padding: 16px; background: #fff8e1; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <h4 style="font-weight: 700; margin-bottom: 8px; color: #f57c00;">&#9888; Cavi da Verificare/Quantificare - REGIA</h4>
+                        <div class="grid-2" style="gap: 12px;">
+                            <ul style="list-style: none; font-size: 12px; margin: 0;">
+                                <li style="padding: 4px 0;">&#10067; Cavi HDMI corti VMIX->Sending</li>
+                                <li style="padding: 4px 0;">&#10067; Cavi HDMI VMIX->Monitor 27"</li>
+                                <li style="padding: 4px 0;">&#10067; 3x Cavi BNC ~20m per PTZ</li>
+                            </ul>
+                            <ul style="list-style: none; font-size: 12px; margin: 0;">
+                                <li style="padding: 4px 0;">&#10067; Cavi XLR schede audio->mixer</li>
+                                <li style="padding: 4px 0;">&#10067; ~10 Cavi LAN MiniPC->Switch</li>
+                                <li style="padding: 4px 0;">&#10067; Extender HDMI/LAN (se necessari)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CELEBRATION -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header" style="background: linear-gradient(135deg, #ff9800, #f57c00);">
+                    <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#127957;</div>
+                    <div>
+                        <div class="card-title" style="color: white;">TENSOSTRUTTURA CELEBRATION - LED03</div>
+                        <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">6x2.36m - 3840x1536px - COB 1.5</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128250; LED Wall</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 70 Moduli COB 1.5 (600x337.5mm) - Lotto 420</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 320+spare Tail A (cavi alimentazione)</li>
+                                <li style="padding: 6px 0;">&#9989; 10 Partenze corrente</li>
+                            </ul>
+                            <h4 style="font-weight: 700; margin: 16px 0 12px; color: var(--primary);">&#128266; Audio</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 2x MAUI 28G (casse attive XLR) - CORT11</li>
+                                <li style="padding: 6px 0;">&#10067; Casse incasso opzionali (10-15cm disp.)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128268; Segnale Video (da Regia)</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 10x Cavi LAN Cat.5 Main ~20m</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 10x Cavi LAN Cat.5 Backup ~20m</li>
+                                <li style="padding: 6px 0;">&#9989; Treccia Nitto 12/14 cavi 20m</li>
+                            </ul>
+                            <h4 style="font-weight: 700; margin: 16px 0 12px; color: var(--primary);">&#9889; Alimentazione</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0;">&#10067; Quadro 32A pentapolare (~7kW)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #fff8e1; border-radius: 8px; font-size: 12px;">
+                        <strong style="color: #f57c00;">&#9888; Da verificare:</strong> 2x Cavi XLR ~20m per MAUI | Viti/tasselli montaggio | Zoccolo 15cm rialzo | Canaline passacavi
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOUNGE -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">
+                    <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#127912;</div>
+                    <div>
+                        <div class="card-title" style="color: white;">GALLERIA LOUNGE - LED02 + LED04 (Config. a C)</div>
+                        <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">2688x1728px totali - COB 1.5 con angolari 45deg</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128250; LED Wall</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 48 Moduli dritti (12 col x 4)</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;"><span style="color: #ff9800;">&#9203;</span> 16 Moduli 45deg SX <em>(in arrivo)</em></li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;"><span style="color: #ff9800;">&#9203;</span> 16 Moduli 45deg DX <em>(in arrivo)</em></li>
+                                <li style="padding: 6px 0;">&#9989; 320+spare Tail A + 10 partenze</li>
+                            </ul>
+                            <h4 style="font-weight: 700; margin: 16px 0 12px; color: var(--primary);">&#128266; Audio</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 2x MAUI 28G Lounge (XLR da AUX2)</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; Speaker SSSNAKE (XLR da AUX1)</li>
+                                <li style="padding: 6px 0;">&#10067; 8x Sonos opzionali (~1KW)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128268; Segnale Video</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 12x Cavi LAN Cat.5 Main ~15m</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 12x Cavi LAN Cat.5 Backup ~15m</li>
+                                <li style="padding: 6px 0;">&#9989; MCTRL4K + PC Sending in vano locale</li>
+                            </ul>
+                            <h4 style="font-weight: 700; margin: 16px 0 12px; color: var(--primary);">&#128449; Vano Tecnico</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; Vano ispezionabile/mensola (2U)</li>
+                                <li style="padding: 6px 0;">&#10067; Alternativa: ripiano bancone bar</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #fff8e1; border-radius: 8px; font-size: 12px;">
+                        <strong style="color: #f57c00;">&#9888; Da verificare:</strong> Arrivo moduli 45deg | Vano tecnica con Greta | 3x Cavi XLR ~15m | Cavo HDMI PC->MCTRL4K
+                    </div>
+                </div>
+            </div>
+
+            <!-- RISTORANTE -1 -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header" style="background: linear-gradient(135deg, #e53935, #c62828);">
+                    <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#127869;</div>
+                    <div>
+                        <div class="card-title" style="color: white;">RISTORANTE PIANO -1 - LED01 (Ex Esselunga)</div>
+                        <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">6x2.5m - 2304x960px - SEGNA 2.6 NOLEGGIO SEDICO</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="padding: 12px; background: #ffebee; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid #e53935;">
+                        <strong style="color: #c62828;">&#9888; PERCORSO CRITICO:</strong> Porta vetro tra piani potrebbe essere murata. Verificare passaggio via cappa/aerazione cucina.
+                    </div>
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128250; LED Wall (Noleggio)</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 24x LED SEGNA 2.6 (500x1000mm)</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 12x LED SEGNA 2.6 (500x500mm)</li>
+                                <li style="padding: 6px 0;">&#128230; CORT01-CORT05 - Noleggio Sedico</li>
+                            </ul>
+                            <h4 style="font-weight: 700; margin: 16px 0 12px; color: var(--primary);">&#128266; Audio</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 2x MAUI 28G</li>
+                                <li style="padding: 6px 0;">&#10067; Casse incasso (se parete 7x2.5m)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128268; Segnale Video (da Regia P.0)</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 5x Cavi LAN Main ~30m</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 5x Cavi LAN Backup ~30m</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10071; Extender HDMI/LAN consigliato</li>
+                                <li style="padding: 6px 0;">&#10067; Fibra ottica HDMI (alternativa)</li>
+                            </ul>
+                            <h4 style="font-weight: 700; margin: 16px 0 12px; color: var(--primary);">&#9889; Alimentazione</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0;">&#10067; Quadro 32A pentapolare (~11kW)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #fff8e1; border-radius: 8px; font-size: 12px;">
+                        <strong style="color: #f57c00;">&#9888; Da verificare:</strong> Percorso cavi P.0->P.-1 | Conferma noleggio Sedico | Truss vs staffe C | Pannello ispezionabile
+                    </div>
+                </div>
+            </div>
+
+            <!-- LED ESTERNO -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header" style="background: linear-gradient(135deg, #2196f3, #1976d2);">
+                    <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#127783;</div>
+                    <div>
+                        <div class="card-title" style="color: white;">LED ESTERNO PIAZZALE - LED06</div>
+                        <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">3x2m - 768x512px - AMIL BLUE 3.9 outdoor</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="padding: 12px; background: #e3f2fd; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid #2196f3;">
+                        <strong style="color: #1565c0;">&#9888; ATTENZIONE:</strong> Manca nel cronoprogramma Henoto. Rischio neve - schedulare weather-dependent.
+                    </div>
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128250; LED Wall + Controller</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; 12x AMIL BLUE 3.9 - Testare 3 case</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#128230; CORT14, CORT15, CORT16 (fucsia)</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; MTCRL300 in case leggero</li>
+                                <li style="padding: 6px 0;">&#9989; EDV + Scheda Audio + 220V</li>
+                            </ul>
+                            <h4 style="font-weight: 700; margin: 16px 0 12px; color: var(--primary);">&#128266; Audio (Passivi)</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 2x Fonestar (speaker passivi)</li>
+                                <li style="padding: 6px 0;">&#9989; Amplificatore Monacor</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128297; Struttura Montaggio</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 4x Pali 2m + 3x Pali 3m + 6x Pali 1m</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 10 Aliscaf singoli + 16 doppi</li>
+                                <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; Truss/Layher (con Pascucci)</li>
+                                <li style="padding: 6px 0;">&#9989; 10x Canaline carrabili - CORT17</li>
+                            </ul>
+                            <h4 style="font-weight: 700; margin: 16px 0 12px; color: var(--primary);">&#9889; Alimentazione</h4>
+                            <ul style="list-style: none; font-size: 13px;">
+                                <li style="padding: 6px 0;">&#9989; 2x Prese 16A (~4kW)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #fff8e1; border-radius: 8px; font-size: 12px;">
+                        <strong style="color: #f57c00;">&#9888; Da verificare:</strong> Test case fucsia | Coordinamento Pascucci | Cavo regia->esterno ~25m | Protezione meteo case
+                    </div>
+                </div>
+            </div>
+
+            <!-- SALA STAMPA + INTERVISTE -->
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header" style="background: linear-gradient(135deg, #607d8b, #455a64);">
+                        <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#128240;</div>
+                        <div>
+                            <div class="card-title" style="color: white;">SALA STAMPA (Piano -1)</div>
+                            <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">Casa Giornalisti - LED05</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul style="list-style: none; font-size: 13px;">
+                            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 2x Monitor TV 55" + stand tavolo</li>
+                            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; Segnale RAI Sport / RAI 2</li>
+                            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; Presa Internet (da verificare)</li>
+                            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; Antenna TV/SAT (da verificare)</li>
+                            <li style="padding: 6px 0;">&#10067; Decoder TV se necessario</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="background: linear-gradient(135deg, #607d8b, #455a64);">
+                        <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#127908;</div>
+                        <div>
+                            <div class="card-title" style="color: white;">SPAZIO INTERVISTE (Piano 0)</div>
+                            <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">C.PT.14 - LED05</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul style="list-style: none; font-size: 13px;">
+                            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#9989; 2x Monitor TV 55" + stand terra</li>
+                            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; Segnale video (da regia?)</li>
+                            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">&#10067; Cavi HDMI</li>
+                            <li style="padding: 6px 0;">&#10067; Alimentazione/ciabatte</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIEPILOGO FLIGHT CASE -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon blue">&#128230;</div>
+                    <div>
+                        <div class="card-title">Riepilogo Flight Case Cortina</div>
+                        <div class="card-subtitle">Tutti i contenitori e destinazioni</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                        <thead>
+                            <tr style="background: var(--gray-light);">
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Codice</th>
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Contenuto</th>
+                                <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Destinazione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>CORT01-05</strong></td><td style="padding: 8px;">LED noleggio Sedico (5 case)</td><td style="padding: 8px;">Ristorante -1</td></tr>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>CORT11</strong></td><td style="padding: 8px;">Coppia casse MAUI 28G</td><td style="padding: 8px;">Celebration</td></tr>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>CORT12</strong></td><td style="padding: 8px;">VMIX1, VMIX2, JTS, MiniPC, Encoder</td><td style="padding: 8px;">Regia</td></tr>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>CORT14-16</strong></td><td style="padding: 8px;">AMIL BLUE fucsia (3 case + spare)</td><td style="padding: 8px;">LED Esterno</td></tr>
+                            <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>CORT17</strong></td><td style="padding: 8px;">10x Canaline carrabili</td><td style="padding: 8px;">LED Esterno</td></tr>
+                            <tr><td style="padding: 8px;"><strong>Bancale COB1.5</strong></td><td style="padding: 8px;">80 moduli dritti/sx/dx</td><td style="padding: 8px;">Celebration + Lounge</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- RIEPILOGO CRITICITA MATERIALI -->
+            <div class="card" style="margin-top: 24px; border: 2px solid #e53935;">
+                <div class="card-header" style="background: linear-gradient(135deg, #e53935, #c62828);">
+                    <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#9888;</div>
+                    <div>
+                        <div class="card-title" style="color: white;">Riepilogo Criticita' Materiali</div>
+                        <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">Da risolvere urgentemente</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-3">
+                        <div style="padding: 16px; background: #ffebee; border-radius: 8px;">
+                            <h4 style="font-weight: 700; color: #c62828; margin-bottom: 12px;">&#128308; URGENTE</h4>
+                            <ul style="list-style: none; font-size: 12px;">
+                                <li style="padding: 4px 0;">Percorso cavi Regia->P.-1</li>
+                                <li style="padding: 4px 0;">Moduli COB 45deg in arrivo</li>
+                                <li style="padding: 4px 0;">Noleggio LED Sedico</li>
+                                <li style="padding: 4px 0;">Test AMIL BLUE fucsia</li>
+                            </ul>
+                        </div>
+                        <div style="padding: 16px; background: #fff3e0; border-radius: 8px;">
+                            <h4 style="font-weight: 700; color: #f57c00; margin-bottom: 12px;">&#128992; DA DEFINIRE</h4>
+                            <ul style="list-style: none; font-size: 12px;">
+                                <li style="padding: 4px 0;">Quadri elettrici 16A vs 32A</li>
+                                <li style="padding: 4px 0;">Vano tecnico LED Lounge</li>
+                                <li style="padding: 4px 0;">Tipo casse (incasso vs standing)</li>
+                                <li style="padding: 4px 0;">Struttura LED esterno</li>
+                            </ul>
+                        </div>
+                        <div style="padding: 16px; background: #e3f2fd; border-radius: 8px;">
+                            <h4 style="font-weight: 700; color: #1565c0; margin-bottom: 12px;">&#128309; DA QUANTIFICARE</h4>
+                            <ul style="list-style: none; font-size: 12px;">
+                                <li style="padding: 4px 0;">Lunghezze cavi LAN per LED</li>
+                                <li style="padding: 4px 0;">Cavi BNC per PTZ</li>
+                                <li style="padding: 4px 0;">Cavi XLR audio</li>
+                                <li style="padding: 4px 0;">Prolunghe elettriche</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Criticita Section -->
+        <section id="criticita" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Criticita' Identificate</h2>
+                <p>Problematiche da risolvere urgentemente prima dell'inizio lavori</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-icon red">&#9888;</div>
+                    <div>
+                        <div class="card-title">Passaggi Cavi - URGENTE</div>
+                        <div class="card-subtitle">Da definire con Henoto (Greta Gobbo)</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="issue-card">
+                        <div class="issue-title">
+                            <span style="color: var(--danger);">&#10060;</span>
+                            Regia → Piano -1 (Ristorante)
+                        </div>
+                        <div class="issue-desc">
+                            Porta a vetro potrebbe essere murata. Come portare i segnali al LED del ristorante?
+                        </div>
+                        <div class="issue-solution">
+                            <strong>Soluzione proposta:</strong> Verificare con impianti aria/aerazione. Valutare passaggio finestra o aperture cucina/cappa.
+                        </div>
+                    </div>
+
+                    <div class="issue-card warning">
+                        <div class="issue-title">
+                            <span style="color: #f57c00;">&#9888;</span>
+                            Regia → LED Celebration
+                        </div>
+                        <div class="issue-desc">
+                            Struttura esterna, necessario definire percorso cavi.
+                        </div>
+                        <div class="issue-solution">
+                            <strong>Soluzione proposta:</strong> Treccia Nitto 12/14 cavi (20m) per passaggio singolo cavo.
+                        </div>
+                    </div>
+
+                    <div class="issue-card warning">
+                        <div class="issue-title">
+                            <span style="color: #f57c00;">&#9888;</span>
+                            Sotto Moquette
+                        </div>
+                        <div class="issue-desc">
+                            Posa moquette prevista per 2 Febbraio - cavi devono passare PRIMA.
+                        </div>
+                        <div class="issue-solution">
+                            <strong>Soluzione proposta:</strong> Coordinare con Henoto per passaggio cavi entro 1 Febbraio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 24px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon orange">&#128337;</div>
+                        <div>
+                            <div class="card-title">Tempistiche Critiche</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="padding: 16px; background: #ffebee; border-radius: 12px; margin-bottom: 16px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-size: 12px; color: var(--danger); font-weight: 600;">PREVISTO HENOTO</div>
+                                    <div style="font-size: 1.5rem; font-weight: 800;">29 Gennaio</div>
+                                </div>
+                                <span style="font-size: 32px;">&#10060;</span>
+                            </div>
+                            <div style="font-size: 13px; color: var(--gray); margin-top: 8px;">Troppo tardi per completare installazioni</div>
+                        </div>
+                        <div style="padding: 16px; background: #e8f5e9; border-radius: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-size: 12px; color: var(--success); font-weight: 600;">RICHIESTO IS</div>
+                                    <div style="font-size: 1.5rem; font-weight: 800;">25-26 Gennaio</div>
+                                </div>
+                                <span style="font-size: 32px;">&#9989;</span>
+                            </div>
+                            <div style="font-size: 13px; color: var(--gray); margin-top: 8px;">Tempo stimato: 1.5-2 giorni per LED</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon purple">&#128225;</div>
+                        <div>
+                            <div class="card-title">Connettivita' di Rete</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="padding: 16px; background: #ffebee; border-radius: 12px; margin-bottom: 16px;">
+                            <div style="font-size: 13px; color: var(--gray);">Rete attuale Galleria Farsetti</div>
+                            <div style="font-size: 1.5rem; font-weight: 800; color: var(--danger);">~100 Mbps</div>
+                            <div style="font-size: 12px; color: var(--danger);">INSUFFICIENTE</div>
+                        </div>
+                        <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Opzioni Backup:</div>
+                        <ul style="font-size: 13px; color: var(--gray); padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Eolo: ~500€/mese per 200 Mbps</li>
+                            <li style="margin-bottom: 8px;">Starlink residenziale: 40€/mese</li>
+                            <li>Starlink aziendale: 300-400€/mese</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista criticita' da smarcare -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon red">&#128203;</div>
+                    <div>
+                        <div class="card-title">Checklist da Smarcare con Henoto</div>
+                        <div class="card-subtitle">Punti da discutere nella prossima call con Greta Gobbo</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="checklist-item">
+                        <div class="checklist-box">&#10003;</div>
+                        <div class="checklist-text">Passaggio cavi tra regia e piano -1 (ex esselunga)</div>
+                        <span class="checklist-priority priority-high">ALTA</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-box">&#10003;</div>
+                        <div class="checklist-text">Passaggio cavi tra regia e LED a C piano 0</div>
+                        <span class="checklist-priority priority-high">ALTA</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-box">&#10003;</div>
+                        <div class="checklist-text">Verifica presa internet/antenna TV in sala giornalisti</div>
+                        <span class="checklist-priority priority-medium">MEDIA</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-box">&#10003;</div>
+                        <div class="checklist-text">Passaggio cavi tra regia e LED celebration (treccia Nitto)</div>
+                        <span class="checklist-priority priority-high">ALTA</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-box">&#10003;</div>
+                        <div class="checklist-text">Posizionamento quadri elettrici (16A singole vs 32A pentapolare)</div>
+                        <span class="checklist-priority priority-medium">MEDIA</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-box">&#10003;</div>
+                        <div class="checklist-text">Mensola/vano per tecnica LED a C (bancone bar o vano dedicato)</div>
+                        <span class="checklist-priority priority-medium">MEDIA</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-box">&#10003;</div>
+                        <div class="checklist-text">Decisione casse: tipo Ara Pacis o incasso (10-15cm disponibili)</div>
+                        <span class="checklist-priority priority-medium">MEDIA</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-box">&#10003;</div>
+                        <div class="checklist-text">Verifica cronoprogramma e consegna strutture</div>
+                        <span class="checklist-priority priority-high">ALTA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Cronoprogramma Installazione</h2>
+                <p>Piano dettagliato delle attivita' Informa Sistemi - 20 Gennaio / 6 Febbraio 2026</p>
+            </div>
+
+            <!-- Vincoli e Risorse -->
+            <div class="grid-2" style="margin-bottom: 24px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon" style="background: linear-gradient(135deg, #ef5350, #c62828);">&#128680;</div>
+                        <div>
+                            <div class="card-title">Vincoli Critici</div>
+                            <div class="card-subtitle">Date non negoziabili</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #fff3e0; border-radius: 8px; border-left: 4px solid #ff9800;">
+                                <span style="font-size: 24px;">&#127942;</span>
+                                <div>
+                                    <strong>6 Febbraio 2026</strong><br>
+                                    <span style="font-size: 13px; color: var(--gray);">Inaugurazione Casa Italia</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #ffebee; border-radius: 8px; border-left: 4px solid #f44336;">
+                                <span style="font-size: 24px;">&#128205;</span>
+                                <div>
+                                    <strong>2 Febbraio - Posa Moquette</strong><br>
+                                    <span style="font-size: 13px; color: var(--gray);">Cavi SOTTO moquette prima!</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4caf50;">
+                                <span style="font-size: 24px;">&#128666;</span>
+                                <div>
+                                    <strong>25-26 Gennaio</strong><br>
+                                    <span style="font-size: 13px; color: var(--gray);">Ingresso IS in cantiere (richiesto)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon blue">&#128101;</div>
+                        <div>
+                            <div class="card-title">Team Informa Sistemi - 5 Persone</div>
+                            <div class="card-subtitle">Composizione squadre operative</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Team Members Table -->
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 13px;">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #1e3a5f 0%, #0d47a1 100%); color: white;">
+                                    <th style="padding: 10px; text-align: left; border-radius: 8px 0 0 0;">Ruolo</th>
+                                    <th style="padding: 10px; text-align: left;">Nome</th>
+                                    <th style="padding: 10px; text-align: left; border-radius: 0 8px 0 0;">Competenze</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #e3f2fd;">
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>PM + Tecnico Regia</strong></td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Maximilian Giurastante</strong></td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">Project Management, VMIX, Regia live</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">Tecnico Regia</td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Flavia Falanga</strong></td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">VMIX, Audio, Coordination</td>
+                                </tr>
+                                <tr style="background: #fff3e0;">
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Installatore Principale</strong></td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Igor Matiuzzi</strong></td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">LED, Cablaggio, Sistemi</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">Installatore Supporto 1</td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><em>Da definire</em></td>
+                                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">LED, Cablaggio</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px;">Installatore Supporto 2</td>
+                                    <td style="padding: 8px;"><em>Da definire</em></td>
+                                    <td style="padding: 8px;">LED, Cablaggio</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Squadre Summary -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+                            <div style="padding: 12px; background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); border-radius: 8px; color: white;">
+                                <div style="font-weight: 700; margin-bottom: 4px;">&#128736; Squadra LED</div>
+                                <div style="font-size: 12px;">Igor Matiuzzi (capo) + 2 supporto</div>
+                            </div>
+                            <div style="padding: 12px; background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); border-radius: 8px; color: white;">
+                                <div style="font-weight: 700; margin-bottom: 4px;">&#127909; Squadra Regia</div>
+                                <div style="font-size: 12px;">Max Giurastante + Flavia Falanga</div>
+                            </div>
+                        </div>
+                        <!-- Stats -->
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                            <div style="text-align: center; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+                                <div style="font-size: 28px; font-weight: 800; color: var(--primary);">5</div>
+                                <div style="font-size: 12px;">Persone Totali</div>
+                            </div>
+                            <div style="text-align: center; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+                                <div style="font-size: 28px; font-weight: 800; color: #ff9800;">3</div>
+                                <div style="font-size: 12px;">Installatori LED</div>
+                            </div>
+                            <div style="text-align: center; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+                                <div style="font-size: 28px; font-weight: 800; color: #2196f3;">2</div>
+                                <div style="font-size: 12px;">Tecnici Regia</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 16px; padding: 12px; background: #fff8e1; border-radius: 8px; font-size: 13px;">
+                            <strong>&#9201; Tempistiche LED:</strong> ~2 giorni (semplice) / ~2.5 giorni (angoli 45°) | <strong>Totale:</strong> ~50 gg/uomo
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gantt Semplificato -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon green">&#128202;</div>
+                    <div>
+                        <div class="card-title">Gantt Semplificato</div>
+                        <div class="card-subtitle">Visione d'insieme 20 Gennaio - 6 Febbraio 2026</div>
+                    </div>
+                </div>
+                <div class="card-body" style="overflow-x: auto;">
+                    <div style="min-width: 900px; font-family: monospace; font-size: 12px; line-height: 1.8;">
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0;">
+                            <div style="font-weight: 700;">ATTIVITA'</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr); text-align: center; font-weight: 700; font-size: 10px;">
+                                <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span style="background:#e3f2fd;">25</span><span style="background:#e3f2fd;">26</span><span style="background:#e3f2fd;">27</span><span style="background:#fff3e0;">28</span><span style="background:#fff3e0;">29</span><span style="background:#f3e5f5;">30</span><span style="background:#f3e5f5;">31</span><span style="background:#ffebee;">1</span><span style="background:#ffebee;">2</span><span style="background:#e8f5e9;">3</span><span style="background:#e8f5e9;">4</span><span style="background:#fff9c4;">5</span><span style="background:#ffd54f;">6</span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 4px;">
+                            <div style="font-size: 11px;">Pre-Cantiere</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr);">
+                                <span style="background: #9e9e9e; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #9e9e9e; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #9e9e9e; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #9e9e9e; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #9e9e9e; height: 20px; border-radius: 3px;"></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 4px;">
+                            <div style="font-size: 11px;">Cablaggio</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr);">
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span style="background: #2196f3; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #2196f3; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #2196f3; height: 20px; border-radius: 3px;"></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 4px;">
+                            <div style="font-size: 11px;">LED Celebration</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr);">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span style="background: #ff9800; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #ff9800; height: 20px; border-radius: 3px;"></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 4px;">
+                            <div style="font-size: 11px;">LED Lounge</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr);">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span style="background: #9c27b0; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #9c27b0; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #9c27b0; height: 20px; border-radius: 3px; opacity: 0.5;"></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 4px;">
+                            <div style="font-size: 11px;">LED Ristorante</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr);">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span style="background: #f44336; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #f44336; height: 20px; border-radius: 3px;"></span>
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 4px;">
+                            <div style="font-size: 11px;">Regia</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr);">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span style="background: #3f51b5; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #3f51b5; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #3f51b5; height: 20px; border-radius: 3px;"></span>
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 4px;">
+                            <div style="font-size: 11px;">LED Esterno</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr);">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span style="background: #00bcd4; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #00bcd4; height: 20px; border-radius: 3px;"></span>
+                                <span></span><span></span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 4px;">
+                            <div style="font-size: 11px;">Collaudo</div>
+                            <div style="display: grid; grid-template-columns: repeat(18, 1fr);">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                <span style="background: #4caf50; height: 20px; border-radius: 3px;"></span>
+                                <span style="background: #ffd54f; height: 20px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px;">&#127942;</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px;">
+                            <span><span style="display: inline-block; width: 12px; height: 12px; background: #9e9e9e; border-radius: 2px;"></span> Pre-Cantiere</span>
+                            <span><span style="display: inline-block; width: 12px; height: 12px; background: #2196f3; border-radius: 2px;"></span> Cablaggio</span>
+                            <span><span style="display: inline-block; width: 12px; height: 12px; background: #ff9800; border-radius: 2px;"></span> Celebration</span>
+                            <span><span style="display: inline-block; width: 12px; height: 12px; background: #9c27b0; border-radius: 2px;"></span> Lounge</span>
+                            <span><span style="display: inline-block; width: 12px; height: 12px; background: #f44336; border-radius: 2px;"></span> Ristorante</span>
+                            <span><span style="display: inline-block; width: 12px; height: 12px; background: #3f51b5; border-radius: 2px;"></span> Regia</span>
+                            <span><span style="display: inline-block; width: 12px; height: 12px; background: #00bcd4; border-radius: 2px;"></span> Esterno</span>
+                            <span><span style="display: inline-block; width: 12px; height: 12px; background: #4caf50; border-radius: 2px;"></span> Collaudo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 0: Pre-Cantiere -->
+            <div class="card" style="margin-bottom: 24px; border-left: 4px solid #9e9e9e;">
+                <div class="card-header">
+                    <div class="card-header-icon" style="background: linear-gradient(135deg, #9e9e9e, #616161);">0</div>
+                    <div>
+                        <div class="card-title">FASE 0: Pre-Cantiere</div>
+                        <div class="card-subtitle">20-24 Gennaio - Preparazione in sede</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Attivita'</th>
+                                    <th>Responsabile</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>20-21 Gen</td>
+                                    <td>Test 3 case AMIL BLUE (bollino fucsia)</td>
+                                    <td>Magazzino IS</td>
+                                    <td><span class="status status-critical">Prima di caricare</span></td>
+                                </tr>
+                                <tr>
+                                    <td>20-21 Gen</td>
+                                    <td>Premontaggio colonne LED Celebration (10x4 + 10x3)</td>
+                                    <td>Magazzino IS</td>
+                                    <td>70 moduli totali</td>
+                                </tr>
+                                <tr>
+                                    <td>20-21 Gen</td>
+                                    <td>Premontaggio colonne LED Lounge (12x4 + 4x4 SX + 4x4 DX)</td>
+                                    <td>Magazzino IS</td>
+                                    <td><span class="status status-warning">Attesa moduli 45°</span></td>
+                                </tr>
+                                <tr>
+                                    <td>22 Gen</td>
+                                    <td>Verifica arrivo moduli COB 45°</td>
+                                    <td>Acquisti IS</td>
+                                    <td><span class="status status-critical">CRITICO</span></td>
+                                </tr>
+                                <tr>
+                                    <td>22-23 Gen</td>
+                                    <td>Preparazione flight case CORT01-17</td>
+                                    <td>Magazzino IS</td>
+                                    <td>Lista completa verificata</td>
+                                </tr>
+                                <tr>
+                                    <td>23 Gen</td>
+                                    <td>Carico mezzi (furgone + bilico LED)</td>
+                                    <td>Logistica IS</td>
+                                    <td>Partenza h.18:00</td>
+                                </tr>
+                                <tr>
+                                    <td>24 Gen</td>
+                                    <td>Viaggio + Arrivo Cortina</td>
+                                    <td>Logistica IS</td>
+                                    <td>~6h viaggio</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 1: Cablaggio -->
+            <div class="card" style="margin-bottom: 24px; border-left: 4px solid #2196f3;">
+                <div class="card-header">
+                    <div class="card-header-icon blue">1</div>
+                    <div>
+                        <div class="card-title">FASE 1: Cablaggio Principale</div>
+                        <div class="card-subtitle">25-27 Gennaio - PRIORITA' MASSIMA (prima della moquette)</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="background: #ffebee; padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 24px;">&#9888;</span>
+                        <div>
+                            <strong>CHECKPOINT 27 Gen sera:</strong> Tutti i cavi sotto moquette devono essere posati!
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Giorno</th>
+                                    <th>Attivita'</th>
+                                    <th>Team</th>
+                                    <th>Ore</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>25 Gen</strong></td>
+                                    <td>Sab</td>
+                                    <td>Scarico materiali + Sopralluogo percorsi</td>
+                                    <td>2 tecnici</td>
+                                    <td>8h</td>
+                                    <td><span class="status status-critical">Verifica P.0->P.-1</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>25 Gen</strong></td>
+                                    <td>Sab</td>
+                                    <td>Posa treccia Nitto 20m (Regia->Celebration)</td>
+                                    <td>2 tecnici</td>
+                                    <td>4h</td>
+                                    <td>Sotto battiscopa</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>26 Gen</strong></td>
+                                    <td>Dom</td>
+                                    <td>Cablaggio LAN Regia->Lounge (~15m x 24 cavi)</td>
+                                    <td>2 tecnici</td>
+                                    <td>8h</td>
+                                    <td>Main + Backup</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>26 Gen</strong></td>
+                                    <td>Dom</td>
+                                    <td>Cablaggio LAN Regia->Celebration (~20m x 20 cavi)</td>
+                                    <td>2 tecnici</td>
+                                    <td>6h</td>
+                                    <td>Via treccia Nitto</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>27 Gen</strong></td>
+                                    <td>Lun</td>
+                                    <td>Cablaggio LAN Regia->Ristorante P.-1 (~30m x 10 cavi)</td>
+                                    <td>2 tecnici</td>
+                                    <td>8h</td>
+                                    <td><span class="status status-critical">PERCORSO CRITICO</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>27 Gen</strong></td>
+                                    <td>Lun</td>
+                                    <td>Cablaggio audio XLR (tutte le tratte)</td>
+                                    <td>1 tecnico</td>
+                                    <td>6h</td>
+                                    <td>Mixer->MAUI/Speaker</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>27 Gen</strong></td>
+                                    <td>Lun</td>
+                                    <td>Cablaggio BNC telecamere PTZ</td>
+                                    <td>1 tecnico</td>
+                                    <td>4h</td>
+                                    <td>3x PTZ->Regia</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 2: LED Celebration -->
+            <div class="card" style="margin-bottom: 24px; border-left: 4px solid #ff9800;">
+                <div class="card-header">
+                    <div class="card-header-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00);">2</div>
+                    <div>
+                        <div class="card-title">FASE 2: LED Celebration</div>
+                        <div class="card-subtitle">28-29 Gennaio - LED03 Tensostruttura (6x2.36m) - 2 giorni</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Attivita'</th>
+                                    <th>Team</th>
+                                    <th>Ore</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>28 Gen</strong></td>
+                                    <td>Montaggio struttura/supporti parete legno</td>
+                                    <td>3 installatori</td>
+                                    <td>4h</td>
+                                    <td>Viti + zoccolo 15cm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>28 Gen</strong></td>
+                                    <td>Installazione colonne LED (10 col x 7 moduli)</td>
+                                    <td>3 installatori</td>
+                                    <td>8h</td>
+                                    <td>70 moduli</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>29 Gen</strong></td>
+                                    <td>Collegamento cavi LAN (10 main + 10 backup)</td>
+                                    <td>3 installatori</td>
+                                    <td>4h</td>
+                                    <td>Da treccia Nitto</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>29 Gen</strong></td>
+                                    <td>Collegamento alimentazione + Tail A</td>
+                                    <td>3 installatori</td>
+                                    <td>3h</td>
+                                    <td>Quadro 32A</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>29 Gen</strong></td>
+                                    <td>Test e calibrazione MCTRL4K</td>
+                                    <td>1 tecnico regia</td>
+                                    <td>3h</td>
+                                    <td>Con VMIX1</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>29 Gen</strong></td>
+                                    <td>Installazione audio MAUI 28G (2x)</td>
+                                    <td>2 installatori</td>
+                                    <td>2h</td>
+                                    <td>XLR da Mixer LR</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 3: LED Lounge -->
+            <div class="card" style="margin-bottom: 24px; border-left: 4px solid #9c27b0;">
+                <div class="card-header">
+                    <div class="card-header-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">3</div>
+                    <div>
+                        <div class="card-title">FASE 3: LED Lounge (Configurazione a C)</div>
+                        <div class="card-subtitle">30-31 Gen + 1 Feb - LED02+LED04 Galleria - 2.5 giorni (angoli 45°)</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Attivita'</th>
+                                    <th>Team</th>
+                                    <th>Ore</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>30 Gen</strong></td>
+                                    <td>Preparazione vano tecnico (mensola/ripiano)</td>
+                                    <td>2 installatori</td>
+                                    <td>3h</td>
+                                    <td>Accordo con Henoto</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>30 Gen</strong></td>
+                                    <td>Montaggio supporti parete (configurazione C)</td>
+                                    <td>3 installatori</td>
+                                    <td>5h</td>
+                                    <td>Struttura angolare</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>30 Gen</strong></td>
+                                    <td>Installazione colonne dritte (12 col x 4 moduli)</td>
+                                    <td>3 installatori</td>
+                                    <td>6h</td>
+                                    <td>48 moduli</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>31 Gen</strong></td>
+                                    <td>Installazione colonne angolari SX (4 col x 4 moduli)</td>
+                                    <td>3 installatori</td>
+                                    <td>4h</td>
+                                    <td><span class="status status-warning">16 moduli 45°</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>31 Gen</strong></td>
+                                    <td>Installazione colonne angolari DX (4 col x 4 moduli)</td>
+                                    <td>3 installatori</td>
+                                    <td>4h</td>
+                                    <td><span class="status status-warning">16 moduli 45°</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>31 Gen</strong></td>
+                                    <td>Collegamento cavi LAN (12 main + 12 backup)</td>
+                                    <td>3 installatori</td>
+                                    <td>3h</td>
+                                    <td>Totale 24 cavi</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>1 Feb</strong></td>
+                                    <td>Collegamento alimentazione + Tail A</td>
+                                    <td>2 installatori</td>
+                                    <td>2h</td>
+                                    <td>3x16A</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>1 Feb</strong></td>
+                                    <td>Posizionamento PC Sending + MCTRL4K in vano</td>
+                                    <td>1 tecnico</td>
+                                    <td>2h</td>
+                                    <td>Controller 2U</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>1 Feb</strong></td>
+                                    <td>Test e calibrazione + Audio MAUI/Speaker</td>
+                                    <td>2 tecnici</td>
+                                    <td>6h</td>
+                                    <td>XLR da Mixer AUX1/2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 4: LED Ristorante -->
+            <div class="card" style="margin-bottom: 24px; border-left: 4px solid #f44336;">
+                <div class="card-header">
+                    <div class="card-header-icon" style="background: linear-gradient(135deg, #f44336, #d32f2f);">4</div>
+                    <div>
+                        <div class="card-title">FASE 4: LED Ristorante Piano -1</div>
+                        <div class="card-subtitle">1-2 Febbraio - LED01 SEGNA Ex Esselunga (6x2.5m) - 2 giorni</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="background: #fff3e0; padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 24px;">&#128205;</span>
+                        <div>
+                            <strong>ATTENZIONE:</strong> Posa moquette prevista 2 Febbraio - coordinare con Henoto!
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Attivita'</th>
+                                    <th>Team</th>
+                                    <th>Ore</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1 Feb</strong></td>
+                                    <td>Montaggio truss/staffe a C</td>
+                                    <td>3 installatori</td>
+                                    <td>5h</td>
+                                    <td>Spessore 25-30cm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>1 Feb</strong></td>
+                                    <td>Ritiro LED noleggio Sedico</td>
+                                    <td>1 autista</td>
+                                    <td>4h</td>
+                                    <td>CORT01-05</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2 Feb</strong></td>
+                                    <td>Installazione moduli LED SEGNA</td>
+                                    <td>3 installatori</td>
+                                    <td>8h</td>
+                                    <td>500x1000 + 500x500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2 Feb</strong></td>
+                                    <td>Collegamento cavi LAN (5 main + 5 backup)</td>
+                                    <td>2 installatori</td>
+                                    <td>3h</td>
+                                    <td>Percorso da P.0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2 Feb</strong></td>
+                                    <td>Collegamento alimentazione + Test MCTRL4K</td>
+                                    <td>2 tecnici</td>
+                                    <td>5h</td>
+                                    <td>Con VMIX2</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2 Feb</strong></td>
+                                    <td>Installazione audio MAUI (2x)</td>
+                                    <td>2 installatori</td>
+                                    <td>2h</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 5: Regia -->
+            <div class="card" style="margin-bottom: 24px; border-left: 4px solid #3f51b5;">
+                <div class="card-header">
+                    <div class="card-header-icon" style="background: linear-gradient(135deg, #3f51b5, #303f9f);">5</div>
+                    <div>
+                        <div class="card-title">FASE 5: Regia Video</div>
+                        <div class="card-subtitle">1-3 Febbraio - Piano 0 Spazio C.PT.17 (in parallelo ai LED)</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Attivita'</th>
+                                    <th>Team</th>
+                                    <th>Ore</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1 Feb</strong></td>
+                                    <td>Posizionamento rack/tavoli + Switch 24 porte</td>
+                                    <td>2 tecnici</td>
+                                    <td>5h</td>
+                                    <td>Hub centrale</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>1 Feb</strong></td>
+                                    <td>Setup PC VMIX 1, 2, 3 + Monitor 27"</td>
+                                    <td>2 tecnici</td>
+                                    <td>4h</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2 Feb</strong></td>
+                                    <td>Setup MiniPC WIN1-4 + Encoder Kiloview</td>
+                                    <td>2 tecnici</td>
+                                    <td>4h</td>
+                                    <td>Streaming gare</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2 Feb</strong></td>
+                                    <td>Collegamento Sending Cards MCTRL4K (3x) + MTCRL300</td>
+                                    <td>2 tecnici</td>
+                                    <td>3h</td>
+                                    <td>HDMI da VMIX</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2 Feb</strong></td>
+                                    <td>Setup Mixer Behringer + Schede Audio USB</td>
+                                    <td>1 tecnico</td>
+                                    <td>3h</td>
+                                    <td>LR/AUX1/AUX2</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3 Feb</strong></td>
+                                    <td>Installazione telecamere PTZ (3x)</td>
+                                    <td>2 tecnici</td>
+                                    <td>4h</td>
+                                    <td>BNC->Schede acquisizione</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3 Feb</strong></td>
+                                    <td>Configurazione rete intranet</td>
+                                    <td>1 tecnico</td>
+                                    <td>4h</td>
+                                    <td>Switch + routing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3 Feb</strong></td>
+                                    <td>Test collegamenti inter-house</td>
+                                    <td>2 tecnici</td>
+                                    <td>4h</td>
+                                    <td>Milano/Livigno</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 6: LED Esterno -->
+            <div class="card" style="margin-bottom: 24px; border-left: 4px solid #00bcd4;">
+                <div class="card-header">
+                    <div class="card-header-icon" style="background: linear-gradient(135deg, #00bcd4, #0097a7);">6</div>
+                    <div>
+                        <div class="card-title">FASE 6: LED Esterno</div>
+                        <div class="card-subtitle">3-4 Febbraio - LED06 AMIL BLUE Piazzale (3x2m) - Weather dependent</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="background: #e3f2fd; padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 24px;">&#127784;</span>
+                        <div>
+                            <strong>RISCHIO METEO:</strong> Prevedere giorno buffer in caso neve/maltempo
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Attivita'</th>
+                                    <th>Team</th>
+                                    <th>Ore</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>3 Feb</strong></td>
+                                    <td>Montaggio struttura pali + aliscaf</td>
+                                    <td>3 installatori</td>
+                                    <td>6h</td>
+                                    <td>Coord. Pascucci luci</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3 Feb</strong></td>
+                                    <td>Posizionamento case MTCRL300</td>
+                                    <td>1 tecnico</td>
+                                    <td>2h</td>
+                                    <td>Case leggero outdoor</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4 Feb</strong></td>
+                                    <td>Installazione moduli AMIL BLUE</td>
+                                    <td>3 installatori</td>
+                                    <td>6h</td>
+                                    <td>12 moduli outdoor</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4 Feb</strong></td>
+                                    <td>Cablaggio LAN esterno + canaline carrabili</td>
+                                    <td>2 installatori</td>
+                                    <td>2h</td>
+                                    <td>1 main + 1 backup</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4 Feb</strong></td>
+                                    <td>Collegamento audio Fonestar + Monacor + Test</td>
+                                    <td>2 tecnici</td>
+                                    <td>4h</td>
+                                    <td>Speaker passivi</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 7-8: Finiture e Collaudo -->
+            <div class="grid-2" style="margin-bottom: 24px;">
+                <div class="card" style="border-left: 4px solid #78909c;">
+                    <div class="card-header">
+                        <div class="card-header-icon" style="background: linear-gradient(135deg, #78909c, #546e7a);">7</div>
+                        <div>
+                            <div class="card-title">FASE 7: Monitor e Finiture</div>
+                            <div class="card-subtitle">4 Febbraio</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul style="margin: 0; padding-left: 20px; line-height: 2;">
+                            <li>Monitor 55" Sala Stampa (2x) - Stand tavolo</li>
+                            <li>Collegamento RAI Sport/RAI 2</li>
+                            <li>Monitor 55" Interviste (2x) - Stand terra</li>
+                            <li>Finiture cablaggio (fascette, canaline)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" style="border-left: 4px solid #4caf50;">
+                    <div class="card-header">
+                        <div class="card-header-icon green">8</div>
+                        <div>
+                            <div class="card-title">FASE 8: Collaudo Finale</div>
+                            <div class="card-subtitle">5 Febbraio</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul style="margin: 0; padding-left: 20px; line-height: 2;">
+                            <li>Test tutti i LED (contenuti, colori)</li>
+                            <li>Test audio tutte le zone</li>
+                            <li>Test streaming gare (Discovery/RAI)</li>
+                            <li>Test collegamenti PTZ inter-house</li>
+                            <li>Test generale con cliente</li>
+                            <li>Correzioni/regolazioni finali</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risorse per Giorno -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon" style="background: linear-gradient(135deg, #607d8b, #455a64);">&#128101;</div>
+                    <div>
+                        <div class="card-title">Risorse per Giorno</div>
+                        <div class="card-subtitle">Allocazione team 25 Gennaio - 5 Febbraio</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Installatori LED</th>
+                                    <th>Tecnici Regia</th>
+                                    <th>Coordinatore</th>
+                                    <th>Totale</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>25 Gen</td><td>-</td><td>2</td><td>1</td><td><strong>3</strong></td></tr>
+                                <tr><td>26 Gen</td><td>-</td><td>2</td><td>1</td><td><strong>3</strong></td></tr>
+                                <tr><td>27 Gen</td><td>-</td><td>2</td><td>1</td><td><strong>3</strong></td></tr>
+                                <tr style="background: #fff3e0;"><td>28 Gen</td><td>3</td><td>1</td><td>1</td><td><strong>5</strong></td></tr>
+                                <tr style="background: #fff3e0;"><td>29 Gen</td><td>3</td><td>1</td><td>1</td><td><strong>5</strong></td></tr>
+                                <tr style="background: #f3e5f5;"><td>30 Gen</td><td>3</td><td>1</td><td>1</td><td><strong>5</strong></td></tr>
+                                <tr style="background: #f3e5f5;"><td>31 Gen</td><td>3</td><td>1</td><td>1</td><td><strong>5</strong></td></tr>
+                                <tr style="background: #ffebee;"><td>1 Feb</td><td>3</td><td>2</td><td>1</td><td><strong>6</strong></td></tr>
+                                <tr style="background: #ffebee;"><td>2 Feb</td><td>3</td><td>2</td><td>1</td><td><strong>6</strong></td></tr>
+                                <tr style="background: #e8f5e9;"><td>3 Feb</td><td>3</td><td>2</td><td>1</td><td><strong>6</strong></td></tr>
+                                <tr style="background: #e8f5e9;"><td>4 Feb</td><td>3</td><td>2</td><td>1</td><td><strong>6</strong></td></tr>
+                                <tr style="background: #fff9c4;"><td>5 Feb</td><td>2</td><td>2</td><td>1</td><td><strong>5</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checklist Pre-Partenza -->
+            <div class="card" style="border: 2px solid var(--primary);">
+                <div class="card-header" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
+                    <div class="card-header-icon blue">&#9745;</div>
+                    <div>
+                        <div class="card-title">Checklist Pre-Partenza (24 Gennaio)</div>
+                        <div class="card-subtitle">Verifiche obbligatorie prima della partenza per Cortina</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f5f5f5; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Test completato AMIL BLUE (3 case fucsia)
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f5f5f5; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Premontaggio colonne Celebration
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f5f5f5; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Premontaggio colonne Lounge (con 45°)
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f5f5f5; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Conferma noleggio LED Sedico
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f5f5f5; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Flight case CORT01-17 preparati
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #ffebee; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Percorso cavi P.0->P.-1 definito
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f5f5f5; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Quadri elettrici confermati
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f5f5f5; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Vano tecnico Lounge confermato
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f5f5f5; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Coordinamento Pascucci (struttura esterna)
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #e3f2fd; border-radius: 6px;">
+                            <span style="font-size: 18px;">&#9744;</span> Previsioni meteo verificate
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONFRONTO CRONOPROGRAMMI -->
+            <div style="margin-top: 48px;">
+                <div class="section-header">
+                    <h2>&#9878; Confronto Cronoprogrammi: HENOTO vs INFORMA SISTEMI</h2>
+                    <p>Analisi comparativa delle tempistiche - Richiesta formale di anticipo ingresso cantiere</p>
+                </div>
+
+                <!-- Header confronto -->
+                <div class="grid-2" style="margin-bottom: 24px;">
+                    <div class="card" style="border: 3px solid #f44336; background: linear-gradient(135deg, #ffebee, #ffcdd2);">
+                        <div class="card-header" style="background: #f44336; color: white;">
+                            <div class="card-header-icon" style="background: white; color: #f44336;">&#10006;</div>
+                            <div>
+                                <div class="card-title" style="color: white;">Cronoprogramma HENOTO</div>
+                                <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">Attuale - PROBLEMATICO</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div style="text-align: center; padding: 20px;">
+                                <div style="font-size: 48px; font-weight: 800; color: #f44336;">29 GEN</div>
+                                <div style="font-size: 14px; color: var(--gray); margin-bottom: 16px;">Ingresso IS previsto</div>
+                                <div style="background: #ffcdd2; padding: 12px; border-radius: 8px; margin-bottom: 12px;">
+                                    <strong style="font-size: 24px; color: #c62828;">8 GIORNI</strong><br>
+                                    <span style="font-size: 13px;">per completare tutto</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 8px; text-align: left; font-size: 13px;">
+                                    <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #f44336;">&#10006;</span> Cavi DOPO moquette?</div>
+                                    <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #f44336;">&#10006;</span> LED Esterno NON schedulato</div>
+                                    <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #f44336;">&#10006;</span> Nessun buffer collaudo</div>
+                                    <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #f44336;">&#10006;</span> Alto rischio ritardi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="border: 3px solid #4caf50; background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
+                        <div class="card-header" style="background: #4caf50; color: white;">
+                            <div class="card-header-icon" style="background: white; color: #4caf50;">&#10004;</div>
+                            <div>
+                                <div class="card-title" style="color: white;">Cronoprogramma INFORMA SISTEMI</div>
+                                <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">Richiesto - OTTIMALE</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div style="text-align: center; padding: 20px;">
+                                <div style="font-size: 48px; font-weight: 800; color: #4caf50;">25 GEN</div>
+                                <div style="font-size: 14px; color: var(--gray); margin-bottom: 16px;">Ingresso IS richiesto</div>
+                                <div style="background: #c8e6c9; padding: 12px; border-radius: 8px; margin-bottom: 12px;">
+                                    <strong style="font-size: 24px; color: #2e7d32;">12 GIORNI</strong><br>
+                                    <span style="font-size: 13px;">per lavorare con margine</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 8px; text-align: left; font-size: 13px;">
+                                    <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #4caf50;">&#10004;</span> Cavi PRIMA della moquette</div>
+                                    <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #4caf50;">&#10004;</span> LED Esterno con buffer meteo</div>
+                                    <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #4caf50;">&#10004;</span> 1 giorno collaudo finale</div>
+                                    <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #4caf50;">&#10004;</span> Margine di sicurezza</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gantt Comparativo -->
+                <div class="card" style="margin-bottom: 24px;">
+                    <div class="card-header">
+                        <div class="card-header-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00);">&#128202;</div>
+                        <div>
+                            <div class="card-title">Gantt Comparativo Visivo</div>
+                            <div class="card-subtitle">15 Gennaio - 6 Febbraio 2026</div>
+                        </div>
+                    </div>
+                    <div class="card-body" style="overflow-x: auto;">
+                        <div style="min-width: 1000px; font-family: monospace; font-size: 11px;">
+                            <!-- Header giorni -->
+                            <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0;">
+                                <div style="font-weight: 700;">CRONOPROGRAMMA</div>
+                                <div style="display: grid; grid-template-columns: repeat(23, 1fr); text-align: center; font-weight: 700; font-size: 9px;">
+                                    <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span style="background:#e3f2fd;">25</span><span style="background:#e3f2fd;">26</span><span style="background:#e3f2fd;">27</span><span>28</span><span style="background:#ffcdd2;">29</span><span>30</span><span>31</span><span>1</span><span style="background:#fff3e0;">2</span><span>3</span><span>4</span><span style="background:#fff9c4;">5</span><span style="background:#ffd54f;">6</span>
+                                </div>
+                            </div>
+
+                            <!-- HENOTO -->
+                            <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; margin-bottom: 16px; padding: 12px; background: #ffebee; border-radius: 8px; border-left: 4px solid #f44336;">
+                                <div style="font-weight: 700; color: #c62828;">HENOTO<br><span style="font-size: 10px; font-weight: normal;">(Attuale)</span></div>
+                                <div>
+                                    <div style="display: grid; grid-template-columns: repeat(23, 1fr); margin-bottom: 4px;">
+                                        <span style="background: #9e9e9e; height: 18px; border-radius: 2px; grid-column: span 2;" title="Strutture"></span>
+                                        <span></span><span></span><span></span><span></span><span></span>
+                                        <span style="background: #78909c; height: 18px; border-radius: 2px; grid-column: span 2;" title="Montaggi"></span>
+                                        <span></span><span></span><span></span><span></span>
+                                        <span style="background: #f44336; height: 18px; border-radius: 2px; display: flex; align-items: center; justify-content: center; color: white; font-size: 8px;" title="Ingresso IS">IS</span>
+                                        <span style="background: #ef9a9a; height: 18px; border-radius: 2px; grid-column: span 4;" title="???"></span>
+                                        <span style="background: #ffcc80; height: 18px; border-radius: 2px;" title="Moquette"></span>
+                                        <span style="background: #ef9a9a; height: 18px; border-radius: 2px; grid-column: span 2;"></span>
+                                        <span></span>
+                                        <span style="background: #ffd54f; height: 18px; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 8px;">&#127942;</span>
+                                    </div>
+                                    <div style="font-size: 9px; color: #c62828; margin-top: 4px;">
+                                        &#9888; Gap 4 giorni non sfruttato (23-29 Gen) | LED Esterno non previsto | Solo 8 giorni per IS
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- INFORMA SISTEMI -->
+                            <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; padding: 12px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4caf50;">
+                                <div style="font-weight: 700; color: #2e7d32;">INFORMA SISTEMI<br><span style="font-size: 10px; font-weight: normal;">(Richiesto)</span></div>
+                                <div>
+                                    <div style="display: grid; grid-template-columns: repeat(23, 1fr); margin-bottom: 4px;">
+                                        <span style="background: #9e9e9e; height: 18px; border-radius: 2px; grid-column: span 2;" title="Strutture Henoto"></span>
+                                        <span></span><span></span><span></span>
+                                        <span style="background: #bdbdbd; height: 18px; border-radius: 2px; grid-column: span 5;" title="Pre-cantiere IS"></span>
+                                        <span style="background: #4caf50; height: 18px; border-radius: 2px; display: flex; align-items: center; justify-content: center; color: white; font-size: 8px;" title="Ingresso IS">IS</span>
+                                        <span style="background: #2196f3; height: 18px; border-radius: 2px; grid-column: span 2;" title="Cablaggio"></span>
+                                        <span style="background: #ff9800; height: 18px; border-radius: 2px; grid-column: span 2;" title="Celebration"></span>
+                                        <span style="background: #9c27b0; height: 18px; border-radius: 2px; grid-column: span 3;" title="Lounge"></span>
+                                        <span style="background: #ffcc80; height: 18px; border-radius: 2px;" title="Moquette"></span>
+                                        <span style="background: #00bcd4; height: 18px; border-radius: 2px; grid-column: span 2;" title="Esterno"></span>
+                                        <span style="background: #4caf50; height: 18px; border-radius: 2px;" title="Collaudo"></span>
+                                        <span style="background: #ffd54f; height: 18px; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 8px;">&#127942;</span>
+                                    </div>
+                                    <div style="font-size: 9px; color: #2e7d32; margin-top: 4px;">
+                                        &#10004; Cablaggio completato prima moquette | LED Esterno schedulato | 12 giorni per IS | Buffer collaudo
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Legenda -->
+                            <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; font-size: 10px; padding-top: 12px; border-top: 1px solid #e0e0e0;">
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #9e9e9e; border-radius: 2px;"></span> Strutture</span>
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #bdbdbd; border-radius: 2px;"></span> Pre-cantiere</span>
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #2196f3; border-radius: 2px;"></span> Cablaggio</span>
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #ff9800; border-radius: 2px;"></span> Celebration</span>
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #9c27b0; border-radius: 2px;"></span> Lounge</span>
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #f44336; border-radius: 2px;"></span> Ristorante</span>
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #00bcd4; border-radius: 2px;"></span> Esterno</span>
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #ffcc80; border-radius: 2px;"></span> Moquette</span>
+                                <span><span style="display: inline-block; width: 10px; height: 10px; background: #4caf50; border-radius: 2px;"></span> Collaudo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabella confronto dettagliato -->
+                <div class="card" style="margin-bottom: 24px;">
+                    <div class="card-header">
+                        <div class="card-header-icon" style="background: linear-gradient(135deg, #607d8b, #455a64);">&#128203;</div>
+                        <div>
+                            <div class="card-title">Tabella Confronto Dettagliato</div>
+                            <div class="card-subtitle">Attivita' per attivita'</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Attivita'</th>
+                                        <th style="background: #ffebee; color: #c62828;">HENOTO (Attuale)</th>
+                                        <th style="background: #e8f5e9; color: #2e7d32;">INFORMA SISTEMI (Richiesto)</th>
+                                        <th>Delta</th>
+                                        <th>Impatto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #fff3e0;">
+                                        <td><strong>Ingresso cantiere IS</strong></td>
+                                        <td style="color: #c62828;"><strong>29 Gennaio</strong></td>
+                                        <td style="color: #2e7d32;"><strong>25-26 Gennaio</strong></td>
+                                        <td><span class="status status-critical">-4 giorni</span></td>
+                                        <td><span class="status status-critical">CRITICO</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inizio cablaggio</td>
+                                        <td style="color: #9e9e9e;">Non previsto</td>
+                                        <td>25 Gennaio</td>
+                                        <td>-</td>
+                                        <td>Deve essere PRIMA moquette</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fine cablaggio sotto moquette</td>
+                                        <td style="color: #9e9e9e;">Non previsto</td>
+                                        <td>27 Gennaio sera</td>
+                                        <td>-</td>
+                                        <td><span class="status status-warning">Obbligatorio</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LED Celebration</td>
+                                        <td style="color: #9e9e9e;">Non dettagliato</td>
+                                        <td>28-29 Gennaio</td>
+                                        <td>2 gg</td>
+                                        <td>3 installatori</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LED Lounge (angoli 45°)</td>
+                                        <td style="color: #9e9e9e;">Non dettagliato</td>
+                                        <td>30 Gen - 1 Feb</td>
+                                        <td>2.5 gg</td>
+                                        <td>Complessita' angoli</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LED Ristorante</td>
+                                        <td style="color: #9e9e9e;">Non dettagliato</td>
+                                        <td>1-2 Febbraio</td>
+                                        <td>2 gg</td>
+                                        <td>Noleggio Sedico</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Regia Video</td>
+                                        <td style="color: #9e9e9e;">Non prevista</td>
+                                        <td>1-3 Febbraio</td>
+                                        <td>3 gg</td>
+                                        <td>In parallelo ai LED</td>
+                                    </tr>
+                                    <tr style="background: #ffebee;">
+                                        <td><strong>LED Esterno</strong></td>
+                                        <td style="color: #c62828;"><strong>NON PREVISTO!</strong></td>
+                                        <td>3-4 Febbraio</td>
+                                        <td>2 gg</td>
+                                        <td><span class="status status-critical">MANCA!</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Posa moquette</td>
+                                        <td>2 Febbraio</td>
+                                        <td>2 Febbraio</td>
+                                        <td>=</td>
+                                        <td>Vincolo fisso</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Collaudo finale</td>
+                                        <td style="color: #9e9e9e;">Non previsto</td>
+                                        <td>5 Febbraio</td>
+                                        <td>1 gg</td>
+                                        <td>Buffer sicurezza</td>
+                                    </tr>
+                                    <tr style="background: #fff9c4;">
+                                        <td><strong>Inaugurazione</strong></td>
+                                        <td><strong>6 Febbraio</strong></td>
+                                        <td><strong>6 Febbraio</strong></td>
+                                        <td>=</td>
+                                        <td>Deadline fissa</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Richiesta formale -->
+                <div class="card" style="border: 3px solid var(--primary); background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
+                    <div class="card-header" style="background: var(--primary); color: white;">
+                        <div class="card-header-icon" style="background: white; color: var(--primary);">&#128276;</div>
+                        <div>
+                            <div class="card-title" style="color: white;">RICHIESTA FORMALE A HENOTO</div>
+                            <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">Anticipare ingresso Informa Sistemi</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="text-align: center; padding: 20px; margin-bottom: 24px;">
+                            <div style="font-size: 14px; color: var(--gray); margin-bottom: 8px;">Modificare ingresso IS da</div>
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+                                <div style="padding: 16px 32px; background: #ffebee; border-radius: 12px; border: 2px solid #f44336;">
+                                    <div style="font-size: 32px; font-weight: 800; color: #c62828;">29 GEN</div>
+                                    <div style="font-size: 12px; color: #c62828;">Attuale</div>
+                                </div>
+                                <div style="font-size: 32px; color: var(--primary);">&#10132;</div>
+                                <div style="padding: 16px 32px; background: #e8f5e9; border-radius: 12px; border: 2px solid #4caf50;">
+                                    <div style="font-size: 32px; font-weight: 800; color: #2e7d32;">25-26 GEN</div>
+                                    <div style="font-size: 12px; color: #2e7d32;">Richiesto</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-2" style="gap: 24px;">
+                            <div>
+                                <h4 style="color: var(--primary); margin-bottom: 12px;">&#128204; Motivazioni Tecniche</h4>
+                                <ol style="margin: 0; padding-left: 20px; line-height: 2; font-size: 14px;">
+                                    <li><strong>Cablaggio sotto moquette</strong>: I cavi LAN, XLR e BNC devono essere posati PRIMA del 2 Febbraio</li>
+                                    <li><strong>4 LED Wall da installare</strong>: Servono almeno 10 giorni lavorativi</li>
+                                    <li><strong>LED Esterno mancante</strong>: Non e' nel cronoprogramma Henoto ma e' previsto da contratto</li>
+                                    <li><strong>Regia complessa</strong>: 3 PC VMIX, 4 MiniPC, 4 Encoder, 3 PTZ richiedono tempo</li>
+                                    <li><strong>Test inter-house</strong>: Collegamento con Milano/Livigno richiede giornata dedicata</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h4 style="color: #c62828; margin-bottom: 12px;">&#9888; Conseguenze se NON Anticipato</h4>
+                                <ul style="margin: 0; padding-left: 20px; line-height: 2; font-size: 14px; color: #c62828;">
+                                    <li>Rischio concreto di NON completare entro il 6 Febbraio</li>
+                                    <li>Cavi a vista sopra moquette (impresentabile per evento)</li>
+                                    <li>LED Esterno non installato (breach contrattuale)</li>
+                                    <li>Nessun tempo per collaudo e correzioni</li>
+                                    <li>Team costretto a straordinari notturni (costi extra)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 24px; padding: 16px; background: white; border-radius: 8px; text-align: center;">
+                            <strong style="font-size: 16px;">Referente per coordinamento:</strong><br>
+                            <span style="font-size: 14px;">Greta Gobbo (Henoto) - g.gobbo@henoto.com - 348.694.7549</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Team & Contatti</h2>
+                <p>Riferimenti per il progetto Casa Italia Cortina</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon blue">&#128101;</div>
+                        <div>
+                            <div class="card-title">Team Informa Sistemi</div>
+                            <div class="card-subtitle">Cortina - 5 Persone</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="contact-card" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
+                            <div class="contact-avatar" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark));">MG</div>
+                            <div class="contact-info">
+                                <h4>Maximilian Giurastante</h4>
+                                <div class="contact-role">PM Cortina + Tecnico Regia</div>
+                                <div class="contact-details">
+                                    &#128222; 320.02.37.200<br>
+                                    &#128231; m.giurastante@informasistemi.com
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-avatar">FF</div>
+                            <div class="contact-info">
+                                <h4>Flavia Falanga</h4>
+                                <div class="contact-role">Tecnico Regia</div>
+                            </div>
+                        </div>
+                        <div class="contact-card" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">
+                            <div class="contact-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">IM</div>
+                            <div class="contact-info">
+                                <h4>Igor Matiuzzi</h4>
+                                <div class="contact-role">Installatore Principale LED/Sistemi</div>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-avatar">S1</div>
+                            <div class="contact-info">
+                                <h4>Installatore Supporto 1</h4>
+                                <div class="contact-role"><em>Da definire</em></div>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-avatar">S2</div>
+                            <div class="contact-info">
+                                <h4>Installatore Supporto 2</h4>
+                                <div class="contact-role"><em>Da definire</em></div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 12px; padding: 10px; background: #f5f5f5; border-radius: 8px; font-size: 12px; border-left: 4px solid var(--primary);">
+                            <strong>Riferimento Generale:</strong> Nicola Furnari - n.furnari@informasistemi.com
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon orange">&#127970;</div>
+                        <div>
+                            <div class="card-title">Team Henoto</div>
+                            <div class="card-subtitle">Allestitore</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="contact-card" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">
+                            <div class="contact-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">GG</div>
+                            <div class="contact-info">
+                                <h4>Greta Gobbo</h4>
+                                <div class="contact-role">PM Cortina + Interno Livigno</div>
+                                <div class="contact-details">
+                                    &#128222; 348.694.7549<br>
+                                    &#128231; g.gobbo@henoto.com
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">AG</div>
+                            <div class="contact-info">
+                                <h4>Alberto Guglielmo</h4>
+                                <div class="contact-role">PM Milano</div>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">CR</div>
+                            <div class="contact-info">
+                                <h4>Claudio Rigoletto</h4>
+                                <div class="contact-role">PM Livigno</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Committente -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon green">&#127941;</div>
+                    <div>
+                        <div class="card-title">Committente & Progettazione</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-3">
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="font-size: 48px; margin-bottom: 12px;">&#127941;</div>
+                            <h4 style="font-weight: 700;">CONI</h4>
+                            <p style="font-size: 13px; color: var(--gray);">Comitato Olimpico Nazionale<br>Piazza Lauro de Bosis 15, Roma</p>
+                        </div>
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="font-size: 48px; margin-bottom: 12px;">&#127959;</div>
+                            <h4 style="font-weight: 700;">IT'S</h4>
+                            <p style="font-size: 13px; color: var(--gray);">Progettazione Architettonica<br>Via Ignazio Pettinengo 72, Roma</p>
+                        </div>
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="font-size: 48px; margin-bottom: 12px;">&#128161;</div>
+                            <h4 style="font-weight: 700;">Pascucci</h4>
+                            <p style="font-size: 13px; color: var(--gray);">Luci Outdoor<br>Struttura condivisa LED esterno</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Items Section -->
+        <section id="actions" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Action Items</h2>
+                <p>Attivita' da completare suddivise per priorita'</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon red">&#128293;</div>
+                        <div>
+                            <div class="card-title">Alta Priorita'</div>
+                            <div class="card-subtitle">Entro 10 Gennaio</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Schedulare call con Greta Gobbo per criticita' Cortina</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Creare cronoprogramma interno IS colorato</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Verificare disponibilita' materiali LED (angolari COB)</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Confermare ingresso cantiere anticipato (25-26 gennaio)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon orange">&#128340;</div>
+                        <div>
+                            <div class="card-title">Media Priorita'</div>
+                            <div class="card-subtitle">Entro 15 Gennaio</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Definire percorsi cavi con piantine dettagliate</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Quantificare esattamente cavi necessari</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Verificare con Nicola se monitor/audio gia' cablati</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Contattare Eolo per preventivo connettivita'</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Verificare Starlink come backup</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon blue">&#128065;</div>
+                    <div>
+                        <div class="card-title">Da Monitorare</div>
+                        <div class="card-subtitle">Seguire evoluzione</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-2">
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Arrivo moduli COB tagliati a 45 gradi</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Conferma LED a noleggio Sedico (2.6 ristorante)</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Test flight case AMIL BLUE (bollino fucsia)</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Meteo Cortina per pianificazione LED esterno</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px;">
+            <div style="text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 8px;">&#9975;</div>
+                <div class="footer-logo" style="margin: 0;">Casa Italia Cortina 2026</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 20px;">
+            <img src="IS-Logo_guidelines-v.3_invertito.png" alt="Informa Sistemi" style="height: 40px; width: auto; opacity: 0.9;">
+        </div>
+        <div class="footer-meta">
+            Documento redatto da <strong style="color: var(--gold);">Maximilian Giurastante</strong><br>
+            Versione 1.0 | 9 Gennaio 2026
+        </div>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4);">
+            Olimpiadi Invernali Milano-Cortina 2026
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                // Update active state
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Update active tab on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navTabs = document.querySelectorAll('.nav-tab');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navTabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('href') === '#' + current) {
+                    tab.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

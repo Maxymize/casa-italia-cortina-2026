@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude
+.claude/
+
+# Dropbox
+.dropbox
+.dropbox.attr
+
+# File Excel e Word (contengono dati interni)
+*.xlsx
+*.xls
+*.docx
+*.doc
+
+# Trascrizioni e mail interne (dati sensibili)
+Trascrizione*.txt
+Mail*.txt
+*mail*.txt
+
+# File temporanei
+*.tmp
+*.temp
+~$*
+
+# Solo per web publishing: cartella docs contiene i file pubblici
+# Il resto rimane privato
