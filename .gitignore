@@ -10,6 +10,9 @@
 .dropbox
 .dropbox.attr
 
+# diagrammi 
+diagrams/
+
 # File Excel e Word (contengono dati interni)
 *.xlsx
 *.xls
