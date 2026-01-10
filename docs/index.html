@@ -804,7 +804,7 @@
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <span>&#128197;</span>
-                    <span>Aggiornato: <strong>9 Gennaio 2026</strong></span>
+                    <span>Aggiornato: <strong>10 Gennaio 2026</strong></span>
                 </div>
                 <div class="hero-meta-item">
                     <span>&#128100;</span>
@@ -829,6 +829,7 @@
             <a href="#timeline" class="nav-tab">Timeline</a>
             <a href="#team" class="nav-tab">Team & Contatti</a>
             <a href="#actions" class="nav-tab">Action Items</a>
+            <a href="#call-summary" class="nav-tab" style="color: var(--gold);">Call 10/01</a>
         </div>
     </nav>
 
@@ -1075,6 +1076,9 @@
                     <div style="margin-top: 8px; padding: 12px; background: #fff3e0; border-radius: 8px; font-size: 13px;">
                         <strong style="color: #f57c00;">&#127957; Tensostruttura</strong> - Struttura esterna coperta
                     </div>
+                    <div style="margin-top: 8px; padding: 12px; background: #ffebee; border-radius: 8px; font-size: 13px;">
+                        <strong style="color: var(--danger);">&#9888; Backup LAN:</strong> NESSUNO - MCTRL4K ha 16 porte. Sending card backup pronta dietro LED.
+                    </div>
                 </div>
 
                 <!-- LED Lounge -->
@@ -1114,6 +1118,9 @@
                     </div>
                     <div style="margin-top: 16px; padding: 12px; background: #fff8e1; border-radius: 8px; font-size: 13px;">
                         <strong style="color: #f57c00;">&#9888; In arrivo</strong> - Moduli angolari settimana prossima
+                    </div>
+                    <div style="margin-top: 8px; padding: 12px; background: #e3f2fd; border-radius: 8px; font-size: 13px;">
+                        <strong style="color: var(--primary);">&#128230; Vano tecnico:</strong> Sotto bancone bar (unico spazio disponibile)
                     </div>
                 </div>
 
@@ -1254,8 +1261,8 @@
 ├── <span class="vmix">VMIX 3</span> + MON3 ──────────► <span class="led">LED02/04 Galleria</span> (Config. a C)
 │   └── MCTRL4K ──► Speaker SSSNAKE
 │
-├── <span class="highlight">LED06 Esterno</span> (768x512px)
-│   └── MTCRL300 ──► EDV ──► Monacor Amp ──► 2x Fonestar
+├── <span class="highlight">LED06 Esterno</span> (768x512px) <span class="comment">/* Digital Signage */</span>
+│   └── <span class="vmix">EDV</span> ──► HDMI ──► MTCRL300 ──► Monacor Amp ──► 2x Fonestar
 │
 └── <span class="highlight">MIXER BEHRINGER</span>
     ├── LR ────► MAUI CELEB
@@ -1269,8 +1276,14 @@ MiniPC WIN3 ──► ENCODER 3
 MiniPC WIN4 ──► ENCODER 4
 
 <span class="comment">/* PTZ CAMERAS (collegamenti inter-house) */</span>
-CAM PTZ ──► BNC 1 ──┐
-CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
+<span class="comment">/* 1 SICURA da Roma + extra da Assisi - Via LAN (non BNC) */</span>
+PTZ 4K ──► LAN ──► SWITCH ──► VMIX 1/2
+
+<span class="comment">/* ARCHITETTURA STREAMING GARE (call 10/01) */</span>
+MiniPC (browser Discovery+/RAI)
+    └── HDMI ──► Encoder Kiloview ──► IP Locale ──► Switch 24p
+                                                       └── VMIX (sorgente)
+<span class="highlight">Vantaggio:</span> Internet ~5-10 Mbps/canale, Rete locale fino 1 Gbps
 </pre>
                     </div>
                 </div>
@@ -1287,8 +1300,8 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                 <div class="card">
                     <div class="card-body" style="text-align: center;">
                         <div style="font-size: 32px; margin-bottom: 12px;">&#128249;</div>
-                        <h4 style="font-weight: 700; margin-bottom: 8px;">3x PTZ 4K</h4>
-                        <p style="font-size: 13px; color: var(--gray);">Telecamere per comunicazione inter-house</p>
+                        <h4 style="font-weight: 700; margin-bottom: 8px;">PTZ 4K via LAN</h4>
+                        <p style="font-size: 13px; color: var(--gray);">1 sicura (Roma) + extra (Assisi) - Via rete LAN</p>
                     </div>
                 </div>
                 <div class="card">
@@ -1738,16 +1751,16 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="issue-card">
+                    <div class="issue-card" style="border-left-color: var(--success);">
                         <div class="issue-title">
-                            <span style="color: var(--danger);">&#10060;</span>
+                            <span style="color: var(--success);">&#9989;</span>
                             Regia → Piano -1 (Ristorante)
                         </div>
                         <div class="issue-desc">
                             Porta a vetro potrebbe essere murata. Come portare i segnali al LED del ristorante?
                         </div>
-                        <div class="issue-solution">
-                            <strong>Soluzione proposta:</strong> Verificare con impianti aria/aerazione. Valutare passaggio finestra o aperture cucina/cappa.
+                        <div class="issue-solution" style="background: #e8f5e9; border-color: var(--success);">
+                            <strong style="color: var(--success);">SOLUZIONE (Call 10/01):</strong> Sfruttare lavori cappa cucina - HENOTO sta installando cucina e dovra' bucare per cappa. Usare stesso passaggio per cavi. Igor sale con bobine rete quando inizia impianto elettrico.
                         </div>
                     </div>
 
@@ -1773,7 +1786,20 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                             Posa moquette prevista per 2 Febbraio - cavi devono passare PRIMA.
                         </div>
                         <div class="issue-solution">
-                            <strong>Soluzione proposta:</strong> Coordinare con Henoto per passaggio cavi entro 1 Febbraio.
+                            <strong>Soluzione proposta:</strong> Coordinare con Henoto per passaggio cavi entro 1 Febbraio. <strong>Verificare con Greta se moquette anche in Galleria.</strong>
+                        </div>
+                    </div>
+
+                    <div class="issue-card" style="border-left-color: var(--warning); background: #fffde7;">
+                        <div class="issue-title">
+                            <span style="color: #f57c00;">&#128274;</span>
+                            HENOTO - Conferme Solo Verbali
+                        </div>
+                        <div class="issue-desc">
+                            Nicola ha sempre parlato con HENOTO al telefono ma non ha mai ricevuto conferme scritte via mail sugli accordi presi.
+                        </div>
+                        <div class="issue-solution" style="background: #fff3e0; border-color: var(--warning);">
+                            <strong style="color: var(--danger);">AZIONE CRITICA:</strong> Mandare mail riepilogativa a HENOTO chiedendo conferma scritta di tutti gli accordi. Nicola preoccupato: "Ho sempre avuto delle rassicurazioni verbali..."
                         </div>
                     </div>
                 </div>
@@ -1821,8 +1847,8 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                     <div class="card-body">
                         <div style="padding: 16px; background: #ffebee; border-radius: 12px; margin-bottom: 16px;">
                             <div style="font-size: 13px; color: var(--gray);">Rete attuale Galleria Farsetti</div>
-                            <div style="font-size: 1.5rem; font-weight: 800; color: var(--danger);">~100 Mbps</div>
-                            <div style="font-size: 12px; color: var(--danger);">INSUFFICIENTE</div>
+                            <div style="font-size: 1.5rem; font-weight: 800; color: var(--danger);">Solo ADSL rame (~100 Mbps)</div>
+                            <div style="font-size: 12px; color: var(--danger);">INSUFFICIENTE - IT locale poco affidabile</div>
                         </div>
                         <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Opzioni Backup:</div>
                         <ul style="font-size: 13px; color: var(--gray); padding-left: 20px;">
@@ -1830,6 +1856,9 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                             <li style="margin-bottom: 8px;">Starlink residenziale: 40€/mese</li>
                             <li>Starlink aziendale: 300-400€/mese</li>
                         </ul>
+                        <div style="margin-top: 12px; padding: 10px; background: #fff3e0; border-radius: 8px; font-size: 12px; border-left: 4px solid var(--warning);">
+                            <strong>Call 10/01:</strong> Nicola ha comunicato necessita' upgrade ma non ha trovato mail conferma. Sollecitare tempi attivazione (servono settimane).
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3235,12 +3264,67 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                         <div style="text-align: center; padding: 20px;">
                             <div style="font-size: 48px; margin-bottom: 12px;">&#127959;</div>
                             <h4 style="font-weight: 700;">IT'S</h4>
-                            <p style="font-size: 13px; color: var(--gray);">Progettazione Architettonica<br>Via Ignazio Pettinengo 72, Roma</p>
+                            <p style="font-size: 13px; color: var(--gray);">Progettazione Architettonica<br>Render e Capitolato gara</p>
                         </div>
                         <div style="text-align: center; padding: 20px;">
                             <div style="font-size: 48px; margin-bottom: 12px;">&#128161;</div>
                             <h4 style="font-weight: 700;">Pascucci</h4>
                             <p style="font-size: 13px; color: var(--gray);">Luci Outdoor<br>Struttura condivisa LED esterno</p>
+                        </div>
+                    </div>
+                    <div class="grid-3" style="margin-top: 16px;">
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="font-size: 48px; margin-bottom: 12px;">&#127909;</div>
+                            <h4 style="font-weight: 700;">NEXTHING</h4>
+                            <p style="font-size: 13px; color: var(--gray);">Video Riprese</p>
+                        </div>
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="font-size: 48px; margin-bottom: 12px;">&#127916;</div>
+                            <h4 style="font-weight: 700;">STAND BY ME</h4>
+                            <p style="font-size: 13px; color: var(--gray);">Montaggi e Produzione Video</p>
+                        </div>
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="font-size: 48px; margin-bottom: 12px;">&#128268;</div>
+                            <h4 style="font-weight: 700;">Maglione Elettronica</h4>
+                            <p style="font-size: 13px; color: var(--gray);">Predisposizioni dietro LED</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logistica Team -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon purple">&#127968;</div>
+                    <div>
+                        <div class="card-title">Logistica Team (Call 10/01)</div>
+                        <div class="card-subtitle">Alloggio e spedizioni</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#127968; Alloggio Team</h4>
+                            <div style="background: #e8f5e9; padding: 16px; border-radius: 8px;">
+                                <strong>Casa Andrea Marini</strong> (architetto)<br>
+                                <ul style="list-style: none; font-size: 13px; margin-top: 8px;">
+                                    <li>&#128205; 300m dopo Galleria Farsetti</li>
+                                    <li>&#128716; 6 posti letto</li>
+                                    <li>&#128663; Garage (per furgone Igor)</li>
+                                    <li>&#128101; Presidio: Max, Flavia, Igor</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">&#128666; Spedizione Materiali</h4>
+                            <div style="background: #e3f2fd; padding: 16px; border-radius: 8px;">
+                                <ul style="list-style: none; font-size: 13px;">
+                                    <li style="padding: 4px 0;">&#128230; Raccolta: tutto a <strong>HENOTO (Padova)</strong></li>
+                                    <li style="padding: 4px 0;">&#128666; HENOTO porta a Cortina</li>
+                                    <li style="padding: 4px 0;">&#128197; LED Sedico: arriva IS <strong>15 Gen</strong></li>
+                                    <li style="padding: 4px 0;">&#128197; Moduli COB 45: via Vixel <strong>~15 Gen</strong></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3250,8 +3334,8 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
         <!-- Action Items Section -->
         <section id="actions" style="margin-top: 64px;">
             <div class="section-header">
-                <h2>Action Items</h2>
-                <p>Attivita' da completare suddivise per priorita'</p>
+                <h2>Action Items - Aggiornato Call 10/01</h2>
+                <p>Attivita' da completare suddivise per responsabile</p>
             </div>
 
             <div class="grid-2">
@@ -3259,58 +3343,98 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                     <div class="card-header">
                         <div class="card-header-icon red">&#128293;</div>
                         <div>
-                            <div class="card-title">Alta Priorita'</div>
-                            <div class="card-subtitle">Entro 10 Gennaio</div>
+                            <div class="card-title">Azioni Nicola (Eventi Streaming)</div>
+                            <div class="card-subtitle">Entro 13 Gennaio</div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Schedulare call con Greta Gobbo per criticita' Cortina</div>
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Rivedere Gantt finale con Greta entro lunedi' 13 Gen</div>
+                            <span class="checklist-priority priority-high">CRITICO</span>
                         </div>
                         <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Creare cronoprogramma interno IS colorato</div>
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Preparare rack con tutti i collegamenti interni</div>
                         </div>
                         <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Verificare disponibilita' materiali LED (angolari COB)</div>
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Verificare televisori in magazzino per sala stampa</div>
                         </div>
                         <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Confermare ingresso cantiere anticipato (25-26 gennaio)</div>
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Recuperare PTZ ZTA da Assisi (se possibile)</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Mandare Igor con bobine rete quando inizia impianto elettrico</div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text"><strong style="color: var(--danger);">CRITICO:</strong> Ottenere conferma scritta da HENOTO</div>
+                            <span class="checklist-priority priority-high">URGENTE</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-header-icon orange">&#128340;</div>
+                        <div class="card-header-icon blue">&#128100;</div>
                         <div>
-                            <div class="card-title">Media Priorita'</div>
-                            <div class="card-subtitle">Entro 15 Gennaio</div>
+                            <div class="card-title">Azioni Maximilian</div>
+                            <div class="card-subtitle">Entro 23 Gennaio</div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Definire percorsi cavi con piantine dettagliate</div>
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Salire a Cortina il 23 Gen, essere a Mestre il 24/25</div>
                         </div>
                         <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Quantificare esattamente cavi necessari</div>
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Verificare con HENOTO l'inizio lavori dal 25</div>
                         </div>
                         <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Verificare con Nicola se monitor/audio gia' cablati</div>
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Condividere cronoprogramma dettagliato con HENOTO</div>
                         </div>
                         <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Contattare Eolo per preventivo connettivita'</div>
+                            <div class="checklist-box"></div>
+                            <div class="checklist-text">Verificare tempi attivazione connettivita'/ADSL</div>
                         </div>
-                        <div class="checklist-item">
-                            <div class="checklist-box">&#10003;</div>
-                            <div class="checklist-text">Verificare Starlink come backup</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <div class="card-header-icon orange">&#129309;</div>
+                    <div>
+                        <div class="card-title">Azioni Congiunte</div>
+                        <div class="card-subtitle">Nicola + Maximilian + Greta</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-2">
+                        <div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <div class="checklist-text">Verificare passaggio cavi con Greta (moquette Galleria?)</div>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <div class="checklist-text">Verificare possibilita' passaggio cavi via cappa cucina</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="checklist-item">
+                                <div class="checklist-box"></div>
+                                <div class="checklist-text">Definire posizionamento e supporti PTZ (cavalletti? LAN?)</div>
+                            </div>
+                            <div class="checklist-item done">
+                                <div class="checklist-box">&#10003;</div>
+                                <div class="checklist-text">Verificare se rack arrivano pre-assemblati <em>(SI, confermato)</em></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3346,6 +3470,97 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                 </div>
             </div>
         </section>
+
+        <!-- Riepilogo Call 10/01 -->
+        <section id="call-summary" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Riepilogo Call 10 Gennaio 2026</h2>
+                <p>Sintesi decisioni e aggiornamenti dalla call operativa con Nicola Furnari</p>
+            </div>
+
+            <div class="card" style="border: 2px solid var(--gold);">
+                <div class="card-header" style="background: linear-gradient(135deg, var(--gold), #f4d03f);">
+                    <div class="card-header-icon" style="background: rgba(255,255,255,0.3);">&#128222;</div>
+                    <div>
+                        <div class="card-title" style="color: var(--dark);">Decisioni Principali</div>
+                        <div class="card-subtitle" style="color: rgba(0,0,0,0.6);">Call del 10 Gennaio 2026</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tema</th>
+                                    <th>Decisione/Aggiornamento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>LED Celebration backup</strong></td>
+                                    <td>Nessun backup (MCTRL4K ha 16 porte). Sending card backup pronta dietro LED.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vano tecnico Lounge</strong></td>
+                                    <td>Sotto bancone bar (unico spazio disponibile)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Passaggio cavi P.0→P.-1</strong></td>
+                                    <td style="background: #e8f5e9;">&#9989; RISOLTO: Sfruttare lavori cappa cucina (HENOTO sta bucando)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PTZ Camera</strong></td>
+                                    <td>1 sicura (Roma) + eventuali da Assisi. Via LAN, da definire cavalletti</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Architettura streaming</strong></td>
+                                    <td>MiniPC→Kiloview→IP locale→VMIX (chiarita)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Rack</strong></td>
+                                    <td>Pre-assemblati da Nicola questa settimana</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Alloggio team</strong></td>
+                                    <td>Casa Andrea Marini (6 posti, 300m dalla Galleria, garage)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Spedizione</strong></td>
+                                    <td>Tutto via HENOTO (Padova)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Deadline</strong></td>
+                                    <td><strong style="color: var(--danger);">4 Feb PM foto, 6 Feb PM inaugurazione</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="margin-top: 24px;">
+                        <h4 style="font-weight: 700; margin-bottom: 12px; color: var(--primary);">Prossimi Step Concordati</h4>
+                        <div class="grid-2" style="gap: 12px;">
+                            <div style="background: #e3f2fd; padding: 12px; border-radius: 8px;">
+                                <strong>Lun 13 Gen:</strong> Call con Greta per Gantt e moquette
+                            </div>
+                            <div style="background: #f3e5f5; padding: 12px; border-radius: 8px;">
+                                <strong>13-17 Gen:</strong> Nicola prepara rack
+                            </div>
+                            <div style="background: #fff3e0; padding: 12px; border-radius: 8px;">
+                                <strong>20-24 Gen:</strong> Igor sopralluogo con bobine rete
+                            </div>
+                            <div style="background: #e8f5e9; padding: 12px; border-radius: 8px;">
+                                <strong>23 Gen:</strong> Maximilian parte per Mestre
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 24px; padding: 16px; background: #ffebee; border-radius: 8px; border-left: 4px solid var(--danger);">
+                        <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--danger);">&#9888; Criticita' Principale</h4>
+                        <p style="font-size: 14px; margin: 0;"><strong>HENOTO conferme solo verbali:</strong> Nicola preoccupato perche' ha sempre parlato al telefono ma non ha mai ricevuto conferme scritte via mail. <strong>Azione: Ottenere conferma scritta urgentemente.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -3361,7 +3576,7 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
         </div>
         <div class="footer-meta">
             Documento redatto da <strong style="color: var(--gold);">Maximilian Giurastante</strong><br>
-            Versione 1.0 | 9 Gennaio 2026
+            Versione 1.1 | 10 Gennaio 2026 (aggiornato post-call Nicola Furnari)
         </div>
         <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4);">
             Olimpiadi Invernali Milano-Cortina 2026
