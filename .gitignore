@@ -28,3 +28,21 @@ Mail*.txt
 
 # Solo per web publishing: cartella docs contiene i file pubblici
 # Il resto rimane privato
+
+# File sorgente (non necessari per GitHub Pages)
+RECAP_PROGETTO_CASA_ITALIA_CORTINA.md
+RECAP_PROGETTO_CASA_ITALIA_CORTINA.html
+
+# PDF e immagini nella root (duplicati di docs/)
+*.pdf
+*.png
+*.jpg
+*.jpeg
+
+# Altri file di progetto non pubblici
+*.txt
+Aggiornamenti*.txt
+criticità*.txt
+
+# Mantieni solo docs/ per GitHub Pages
+!docs/
