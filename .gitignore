@@ -49,3 +49,5 @@ criticità*.txt
 
 # Mantieni solo docs/ per GitHub Pages
 !docs/
+!docs/*
+!docs/**
