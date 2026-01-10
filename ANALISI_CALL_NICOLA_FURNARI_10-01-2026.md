@@ -83,12 +83,14 @@ VMIX 1/2/3
 |---------|--------------|------|
 | Porta vetro | RISCHIO MURATA | Da verificare con Henoto |
 | Finestra | Possibile | Ma rimane aperta col freddo? |
-| Cappa cucina | **PREFERITA** | Sfruttiamo i lavori cucina in corso |
+| Cappa cucina | **PROPOSTA** | Da verificare con HENOTO - lavori NON ancora iniziati |
 
-**Piano d'azione:**
-1. Coordinare con l'installatore della cucina che deve bucare per la cappa
-2. Sfruttare lo stesso passaggio per i nostri cavi
+**Proposta d'azione (DA CONFERMARE):**
+1. Verificare con HENOTO se/quando bucheranno per la cappa
+2. Se confermato, sfruttare lo stesso passaggio per i nostri cavi
 3. Mandare Igor quando iniziano l'impianto elettrico con bobine di rete
+
+**⚠️ STATO: PROPOSTA - Da verificare nella call con HENOTO Lunedi' 13/01 ore 12:00**
 
 **Nicola:** "Io vorrei, siccome loro dovranno bucare per la cappa, usare lo spazio che dovranno fare per uscire con la cappa."
 
@@ -217,7 +219,7 @@ Nicola scrivera' una mail stasera con:
 | # | Criticita' | Owner | Priorita' | Azione |
 |---|------------|-------|-----------|--------|
 | 1 | HHENOTO non ha mai confermato per iscritto | Nicola | ALTA | Ottenere conferma scritta |
-| 2 | Passaggio cavi P.0->P.-1 | Nicola/Greta | ALTA | Sfruttare lavori cappa cucina |
+| 2 | Passaggio cavi P.0->P.-1 | Nicola/Greta | ALTA | **PROPOSTA:** cappa cucina - DA VERIFICARE call 13/01 |
 | 3 | Connettivita' ADSL insufficiente | Nicola | MEDIA | Sollecitare risposta |
 | 4 | Moquette Galleria da confermare | Greta | MEDIA | Verificare lunedi' |
 | 5 | PTZ ZTA ad Assisi | Nicola | BASSA | Recuperare o far spedire |
