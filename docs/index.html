@@ -35,11 +35,11 @@
             line-height: 1.6;
         }
 
-        /* Header Hero */
+        /* Header Hero - Compact */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--dark) 100%);
             color: var(--white);
-            padding: 60px 0 80px;
+            padding: 28px 0 40px;
             position: relative;
             overflow: hidden;
         }
@@ -66,25 +66,25 @@
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
-            padding: 8px 16px;
+            padding: 5px 12px;
             border-radius: 50px;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 500;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
             border: 1px solid rgba(255,255,255,0.2);
         }
 
         .hero-badge .rings {
-            font-size: 18px;
+            font-size: 14px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
             letter-spacing: -0.02em;
         }
 
@@ -96,26 +96,26 @@
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1rem;
             opacity: 0.9;
             max-width: 600px;
-            margin-bottom: 32px;
+            margin-bottom: 16px;
         }
 
         .hero-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 24px;
-            font-size: 14px;
+            gap: 12px;
+            font-size: 12px;
         }
 
         .hero-meta-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: rgba(255,255,255,0.1);
-            padding: 10px 16px;
-            border-radius: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
         }
 
         .hero-meta-item strong {
@@ -686,9 +686,110 @@
                 border: 1px solid #ddd;
             }
         }
+
+        /* Weather Bar - Compact single line */
+        .weather-bar {
+            background: linear-gradient(90deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+            padding: 6px 0;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .weather-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .weather-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .weather-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .weather-title-icon { font-size: 14px; }
+        .weather-location { font-size: 10px; opacity: 0.6; }
+        .weather-update { font-size: 9px; opacity: 0.5; margin-left: 6px; }
+
+        .weather-days {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            flex: 1;
+            scrollbar-width: none;
+        }
+        .weather-days::-webkit-scrollbar { display: none; }
+
+        .weather-day {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-size: 11px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .weather-day:hover { background: rgba(255,255,255,0.12); }
+        .weather-day.today {
+            background: rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .weather-day-name { font-weight: 600; min-width: 24px; }
+        .weather-day-date { display: none; }
+        .weather-icon { font-size: 13px; }
+        .weather-temp { font-weight: 600; }
+        .weather-temp-min { opacity: 0.5; margin-left: 1px; font-size: 10px; }
+        .weather-precip { font-size: 9px; color: #87ceeb; }
+        .weather-snow { color: #b3e5fc; }
+        .weather-loading, .weather-error { font-size: 10px; opacity: 0.7; padding: 2px; }
+
+        .snow-alert {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 9px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
     </style>
 </head>
 <body>
+    <!-- Weather Bar - Compact -->
+    <div class="weather-bar">
+        <div class="weather-bar-inner">
+            <div class="weather-header">
+                <div class="weather-title">
+                    <span class="weather-title-icon">&#127784;</span>
+                    <span>Cortina</span>
+                </div>
+            </div>
+            <div class="weather-days" id="weather-container">
+                <div class="weather-loading">Caricamento...</div>
+            </div>
+            <span class="weather-update" id="weather-update-time"></span>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
@@ -714,12 +815,6 @@
                     <span>Location: <strong>Galleria Farsetti, Cortina</strong></span>
                 </div>
             </div>
-        </div>
-        <!-- Decorazione montagne stilizzate -->
-        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; overflow: hidden; opacity: 0.15;">
-            <svg viewBox="0 0 1200 80" preserveAspectRatio="none" style="width: 100%; height: 100%;">
-                <path d="M0 80 L150 30 L250 50 L400 10 L500 40 L650 5 L800 35 L900 15 L1050 45 L1200 20 L1200 80 Z" fill="white"/>
-            </svg>
         </div>
     </header>
 
@@ -1281,7 +1376,7 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="background: #e3f2fd;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #1</strong></td><td style="padding: 8px;">LED03 Celebration (3840x1536px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">10</td><td style="padding: 8px; text-align: center; color: #ff9800;">10</td></tr>
+                            <tr style="background: #e3f2fd;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #1</strong></td><td style="padding: 8px;">LED03 Celebration (3840x1536px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">10</td><td style="padding: 8px; text-align: center; color: #999;">0</td></tr>
                             <tr style="background: #fff3e0;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #2</strong></td><td style="padding: 8px;">LED01 Ristorante (2304x960px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">5</td><td style="padding: 8px; text-align: center; color: #ff9800;">5</td></tr>
                             <tr style="background: #f3e5f5;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #3</strong></td><td style="padding: 8px;">LED02+04 Lounge (2688x1728px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">12</td><td style="padding: 8px; text-align: center; color: #ff9800;">12</td></tr>
                             <tr style="background: #e8f5e9;"><td style="padding: 8px;"><strong>MTCRL300</strong></td><td style="padding: 8px;">LED06 Esterno (768x512px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">1</td><td style="padding: 8px; text-align: center; color: #ff9800;">1</td></tr>
@@ -2147,9 +2242,9 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                                 <tr>
                                     <td><strong>26 Gen</strong></td>
                                     <td>Dom</td>
-                                    <td>Cablaggio LAN Regia->Celebration (~20m x 20 cavi)</td>
+                                    <td>Cablaggio LAN Regia->Celebration (~20m x 10 cavi, no backup)</td>
                                     <td>2 tecnici</td>
-                                    <td>6h</td>
+                                    <td>4h</td>
                                     <td>Via treccia Nitto</td>
                                 </tr>
                                 <tr>
@@ -2220,9 +2315,9 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                                 </tr>
                                 <tr>
                                     <td><strong>29 Gen</strong></td>
-                                    <td>Collegamento cavi LAN (10 main + 10 backup)</td>
+                                    <td>Collegamento cavi LAN (10 main, no backup)</td>
                                     <td>3 installatori</td>
-                                    <td>4h</td>
+                                    <td>3h</td>
                                     <td>Da treccia Nitto</td>
                                 </tr>
                                 <tr>
@@ -3287,6 +3382,117 @@ CAM PTZ ──► BNC 2 ──┴──► SWITCH ──► VMIX 1/2
                 }
             });
         });
+    </script>
+
+    <!-- Weather API Script -->
+    <script>
+        // Cortina d'Ampezzo coordinates
+        const CORTINA_LAT = 46.5369;
+        const CORTINA_LON = 12.1356;
+
+        // Weather code to emoji mapping (WMO codes)
+        const weatherIcons = {
+            0: '☀️',      // Clear sky
+            1: '🌤️',      // Mainly clear
+            2: '⛅',      // Partly cloudy
+            3: '☁️',      // Overcast
+            45: '🌫️',     // Fog
+            48: '🌫️',     // Depositing rime fog
+            51: '🌧️',     // Light drizzle
+            53: '🌧️',     // Moderate drizzle
+            55: '🌧️',     // Dense drizzle
+            56: '🌨️',     // Light freezing drizzle
+            57: '🌨️',     // Dense freezing drizzle
+            61: '🌧️',     // Slight rain
+            63: '🌧️',     // Moderate rain
+            65: '🌧️',     // Heavy rain
+            66: '🌨️',     // Light freezing rain
+            67: '🌨️',     // Heavy freezing rain
+            71: '🌨️',     // Slight snow
+            73: '❄️',     // Moderate snow
+            75: '❄️',     // Heavy snow
+            77: '🌨️',     // Snow grains
+            80: '🌧️',     // Slight rain showers
+            81: '🌧️',     // Moderate rain showers
+            82: '⛈️',     // Violent rain showers
+            85: '🌨️',     // Slight snow showers
+            86: '❄️',     // Heavy snow showers
+            95: '⛈️',     // Thunderstorm
+            96: '⛈️',     // Thunderstorm with slight hail
+            99: '⛈️'      // Thunderstorm with heavy hail
+        };
+
+        const dayNames = ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
+        const monthNames = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
+
+        async function loadWeather() {
+            const container = document.getElementById('weather-container');
+            const updateTime = document.getElementById('weather-update-time');
+
+            try {
+                // Open-Meteo API - free, no key required
+                const url = `https://api.open-meteo.com/v1/forecast?latitude=${CORTINA_LAT}&longitude=${CORTINA_LON}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,snowfall_sum,precipitation_probability_max&timezone=Europe/Rome&forecast_days=7`;
+
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Errore nel caricamento');
+
+                const data = await response.json();
+
+                // Build weather cards
+                let html = '';
+                const today = new Date().toISOString().split('T')[0];
+                let hasSnowAlert = false;
+
+                for (let i = 0; i < data.daily.time.length; i++) {
+                    const date = new Date(data.daily.time[i]);
+                    const isToday = data.daily.time[i] === today;
+                    const weatherCode = data.daily.weather_code[i];
+                    const tempMax = Math.round(data.daily.temperature_2m_max[i]);
+                    const tempMin = Math.round(data.daily.temperature_2m_min[i]);
+                    const precip = data.daily.precipitation_sum[i];
+                    const snow = data.daily.snowfall_sum[i];
+                    const precipProb = data.daily.precipitation_probability_max[i];
+
+                    if (snow > 0) hasSnowAlert = true;
+
+                    const snowInfo = snow > 0 ? `<span class="weather-precip weather-snow">❄${Math.round(snow)}cm</span>` : '';
+                    html += `<div class="weather-day ${isToday ? 'today' : ''}"><span class="weather-day-name">${isToday ? 'Oggi' : dayNames[date.getDay()]}</span><span class="weather-icon">${weatherIcons[weatherCode] || '?'}</span><span class="weather-temp">${tempMax}°<span class="weather-temp-min">${tempMin}°</span></span>${snowInfo}</div>`;
+                }
+
+                // Add snow alert if needed
+                if (hasSnowAlert) {
+                    const titleDiv = document.querySelector('.weather-title');
+                    if (!document.querySelector('.snow-alert')) {
+                        const alertSpan = document.createElement('span');
+                        alertSpan.className = 'snow-alert';
+                        alertSpan.innerHTML = '❄️ Neve prevista';
+                        titleDiv.appendChild(alertSpan);
+                    }
+                }
+
+                container.innerHTML = html;
+
+                // Update timestamp
+                const now = new Date();
+                updateTime.textContent = `Aggiornato: ${now.toLocaleTimeString('it-IT', {hour: '2-digit', minute: '2-digit'})}`;
+
+            } catch (error) {
+                console.error('Weather error:', error);
+                container.innerHTML = `
+                    <div class="weather-error">
+                        ⚠️ Impossibile caricare le previsioni meteo.
+                        <a href="https://www.ilmeteo.it/meteo/Cortina+d%27Ampezzo" target="_blank" style="color: #87ceeb;">Vedi su IlMeteo.it</a>
+                    </div>
+                `;
+                updateTime.textContent = 'Errore caricamento';
+            }
+        }
+
+        // Load weather on page load
+        document.addEventListener('DOMContentLoaded', loadWeather);
+
+        // Refresh weather every 30 minutes
+        setInterval(loadWeather, 30 * 60 * 1000);
     </script>
 </body>
 </html>
