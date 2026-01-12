@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renders Casa Italia Cortina 2026 - Informa Sistemi</title>
+    <style>
+        :root {
+            --primary: #2c5f9e;
+            --secondary: #4a90e2;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --dark: #1a1a2e;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --border: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: white;
+            padding: 16px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-section img {
+            height: 40px;
+            width: auto;
+            opacity: 0.9;
+        }
+
+        .logo-section h1 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        nav a.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1976d2, #1565c0);
+            color: white;
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        /* Assonometria Section */
+        .assonometria-section {
+            max-width: 1400px;
+            margin: 32px auto;
+            padding: 0 24px;
+        }
+
+        .assonometria-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .assonometria-card h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .assonometria-card img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .assonometria-card img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Gallery Sections */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        .gallery-section {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery-header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 16px;
+        }
+
+        .gallery-header h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .gallery-header .count {
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .gallery-header p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item .overlay-icon {
+            font-size: 48px;
+            color: white;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            z-index: 1001;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 48px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            user-select: none;
+        }
+
+        .lightbox-arrow:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .lightbox-arrow.prev {
+            left: 20px;
+        }
+
+        .lightbox-arrow.next {
+            right: 20px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: white;
+            text-align: center;
+            padding: 32px 24px;
+            margin-top: 48px;
+        }
+
+        footer img {
+            height: 40px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 4px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-arrow {
+                width: 50px;
+                height: 50px;
+                font-size: 32px;
+            }
+
+            .lightbox-arrow.prev {
+                left: 10px;
+            }
+
+            .lightbox-arrow.next {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="logo.png" alt="Informa Sistemi">
+                <h1>Casa Italia Cortina 2026</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#led">Documentazione</a>
+                <a href="renders.html" class="active">Renders</a>
+                <a href="index.html#tour3d">Tour 3D</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>🎨 Renders Progettazione Casa Italia</h2>
+        <p>Visualizzazioni 3D degli ambienti - Galleria Farsetti, Cortina d'Ampezzo</p>
+        <div class="badge">22 Renders Fotografici + Assonometria Completa</div>
+    </div>
+
+    <!-- Assonometria -->
+    <div class="assonometria-section">
+        <div class="assonometria-card">
+            <h3>📐 Assonometria di Progetto</h3>
+            <img src="renders/Assonometria Progetto.png" alt="Assonometria Progetto" onclick="openLightbox('renders/Assonometria Progetto.png', 0, 0)">
+        </div>
+    </div>
+
+    <!-- Galleries -->
+    <div class="container">
+        <!-- Piano Terra -->
+        <div class="gallery-section">
+            <div class="gallery-header">
+                <h3>
+                    🏢 Piano Terra
+                    <span class="count">(8 renders)</span>
+                </h3>
+                <p>Spazi comuni Piano 0 - Area Lounge, Reception, Spazi di transito</p>
+            </div>
+            <div class="gallery-grid" id="piano-terra">
+                <!-- Images will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Galleria Lounge -->
+        <div class="gallery-section">
+            <div class="gallery-header">
+                <h3>
+                    🎨 Galleria Lounge
+                    <span class="count">(9 renders)</span>
+                </h3>
+                <p>Area Lounge con LED a configurazione C - Spazio relax e socializzazione</p>
+            </div>
+            <div class="gallery-grid" id="galleria-lounge">
+                <!-- Images will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Spazio Esselunga -->
+        <div class="gallery-section">
+            <div class="gallery-header">
+                <h3>
+                    🍽️ Spazio Esselunga - Ristorante
+                    <span class="count">(5 renders)</span>
+                </h3>
+                <p>Ristorante Piano -1 - Ex Esselunga, area dining</p>
+            </div>
+            <div class="gallery-grid" id="spazio-esselunga">
+                <!-- Images will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-close" onclick="closeLightbox(event)">×</div>
+        <div class="lightbox-arrow prev" onclick="prevImage(event)">‹</div>
+        <div class="lightbox-content">
+            <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-arrow next" onclick="nextImage(event)">›</div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 22</div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <img src="logo.png" alt="Informa Sistemi">
+        <p><strong>Documento redatto da Maximilian Giurastante</strong></p>
+        <p>Versione 1.1.08 | 12 Gennaio 2026 (aggiunta galleria renders)</p>
+        <p style="margin-top: 16px; font-size: 12px;">
+            Olimpiadi Invernali Milano-Cortina 2026
+        </p>
+    </footer>
+
+    <script>
+        // Image data organized by zone
+        const zones = {
+            'piano-terra': [
+                'Screenshot 2026-01-12 alle 14.19.05.png',
+                'Screenshot 2026-01-12 alle 14.19.12.png',
+                'Screenshot 2026-01-12 alle 14.19.18.png',
+                'Screenshot 2026-01-12 alle 14.19.24.png',
+                'Screenshot 2026-01-12 alle 14.19.31.png',
+                'Screenshot 2026-01-12 alle 14.19.38.png',
+                'Screenshot 2026-01-12 alle 14.19.45.png',
+                'Screenshot 2026-01-12 alle 14.19.52.png'
+            ],
+            'galleria-lounge': [
+                'Screenshot 2026-01-12 alle 14.19.58.png',
+                'Screenshot 2026-01-12 alle 14.20.05.png',
+                'Screenshot 2026-01-12 alle 14.20.14.png',
+                'Screenshot 2026-01-12 alle 14.20.20.png',
+                'Screenshot 2026-01-12 alle 14.20.27.png',
+                'Screenshot 2026-01-12 alle 14.20.34.png',
+                'Screenshot 2026-01-12 alle 14.20.41.png',
+                'Screenshot 2026-01-12 alle 14.20.51.png',
+                'Screenshot 2026-01-12 alle 14.21.28.png'
+            ],
+            'spazio-esselunga': [
+                'Screenshot 2026-01-12 alle 14.20.58.png',
+                'Screenshot 2026-01-12 alle 14.21.05.png',
+                'Screenshot 2026-01-12 alle 14.21.12.png',
+                'Screenshot 2026-01-12 alle 14.21.17.png',
+                'Screenshot 2026-01-12 alle 14.21.28.png'
+            ]
+        };
+
+        let currentZone = null;
+        let currentIndex = 0;
+
+        // Populate galleries
+        Object.keys(zones).forEach(zoneId => {
+            const container = document.getElementById(zoneId);
+            zones[zoneId].forEach((img, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.onclick = () => openLightbox(`renders/${img}`, zoneId, index);
+                item.innerHTML = `
+                    <img src="renders/${img}" alt="Render ${index + 1}">
+                    <div class="overlay">
+                        <div class="overlay-icon">🔍</div>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        });
+
+        function openLightbox(src, zone, index) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const counter = document.getElementById('lightbox-counter');
+
+            currentZone = zone;
+            currentIndex = index;
+
+            img.src = src;
+            lightbox.classList.add('active');
+
+            if (zone === 0) { // Assonometria
+                counter.textContent = 'Assonometria';
+            } else {
+                const total = zones[zone].length;
+                counter.textContent = `${index + 1} / ${total}`;
+            }
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+            }
+        }
+
+        function prevImage(event) {
+            event.stopPropagation();
+            if (currentZone === 0) return; // Skip for assonometria
+
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : zones[currentZone].length - 1;
+            const newSrc = `renders/${zones[currentZone][currentIndex]}`;
+            openLightbox(newSrc, currentZone, currentIndex);
+        }
+
+        function nextImage(event) {
+            event.stopPropagation();
+            if (currentZone === 0) return; // Skip for assonometria
+
+            currentIndex = currentIndex < zones[currentZone].length - 1 ? currentIndex + 1 : 0;
+            const newSrc = `renders/${zones[currentZone][currentIndex]}`;
+            openLightbox(newSrc, currentZone, currentIndex);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            } else if (e.key === 'ArrowLeft') {
+                prevImage(e);
+            } else if (e.key === 'ArrowRight') {
+                nextImage(e);
+            }
+        });
+    </script>
+</body>
+</html>
