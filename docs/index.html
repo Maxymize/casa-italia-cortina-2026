@@ -194,6 +194,12 @@
             display: flex;
             gap: 4px;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .nav-tabs-inner::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-tab {
@@ -694,12 +700,33 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .top-nav-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+
             .top-nav-links {
-                display: none;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .top-nav-links a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .top-nav-logo {
+                gap: 8px;
             }
 
             .top-nav-logo span {
                 font-size: 12px;
+            }
+
+            .top-nav-logo img {
+                height: 28px;
             }
 
             .hero {
@@ -716,16 +743,20 @@
             }
 
             .nav-tabs {
-                top: 45px;
+                top: 90px;
             }
 
             .nav-tabs-inner {
-                gap: 0;
+                gap: 2px;
+                padding: 0 8px;
+                justify-content: flex-start;
             }
 
             .nav-tab {
-                padding: 14px 16px;
-                font-size: 13px;
+                padding: 12px 12px;
+                font-size: 11px;
+                white-space: nowrap;
+                flex-shrink: 0;
             }
 
             .card-body {
@@ -3810,7 +3841,7 @@ MiniPC (browser Discovery+/RAI)
         </div>
         <div class="footer-meta">
             Documento redatto da <strong style="color: var(--gold);">Maximilian Giurastante</strong><br>
-            Versione 1.2.00 | 12 Gennaio 2026 (Tour 3D spostato in pagina Renders)
+            Versione 1.2.01 | 12 Gennaio 2026 (fix menu mobile responsive)
         </div>
         <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4);">
             Olimpiadi Invernali Milano-Cortina 2026
