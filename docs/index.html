@@ -122,12 +122,68 @@
             color: var(--gold);
         }
 
+        /* Top Navigation Banner */
+        .top-nav {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: white;
+            padding: 12px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 101;
+        }
+
+        .top-nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .top-nav-logo img {
+            height: 32px;
+            opacity: 0.9;
+        }
+
+        .top-nav-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .top-nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 13px;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .top-nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .top-nav-links a.active {
+            background: rgba(255,255,255,0.2);
+        }
+
         /* Navigation Tabs */
         .nav-tabs {
             background: var(--white);
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             position: sticky;
-            top: 0;
+            top: 57px;
             z-index: 100;
         }
 
@@ -638,6 +694,14 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .top-nav-links {
+                display: none;
+            }
+
+            .top-nav-logo span {
+                font-size: 12px;
+            }
+
             .hero {
                 padding: 40px 0 60px;
             }
@@ -649,6 +713,10 @@
             .hero-meta {
                 flex-direction: column;
                 gap: 12px;
+            }
+
+            .nav-tabs {
+                top: 45px;
             }
 
             .nav-tabs-inner {
@@ -817,6 +885,22 @@
             </div>
         </div>
     </header>
+
+    <!-- Top Navigation Banner -->
+    <nav class="top-nav">
+        <div class="top-nav-content">
+            <div class="top-nav-logo">
+                <img src="logo.png" alt="Informa Sistemi">
+                <span>Casa Italia Cortina 2026</span>
+            </div>
+            <div class="top-nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="index.html#led">Documentazione</a>
+                <a href="renders.html">Renders</a>
+                <a href="index.html#overview">Tour 3D</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Navigation -->
     <nav class="nav-tabs">
@@ -3751,7 +3835,7 @@ MiniPC (browser Discovery+/RAI)
         </div>
         <div class="footer-meta">
             Documento redatto da <strong style="color: var(--gold);">Maximilian Giurastante</strong><br>
-            Versione 1.1.08 | 12 Gennaio 2026 (aggiunta galleria renders progettazione)
+            Versione 1.1.09 | 12 Gennaio 2026 (aggiunto banner navigazione principale)
         </div>
         <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4);">
             Olimpiadi Invernali Milano-Cortina 2026
