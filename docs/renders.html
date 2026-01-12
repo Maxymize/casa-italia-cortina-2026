@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renders Casa Italia Cortina 2026 - Informa Sistemi</title>
+    <title>Renders Progettazione e Tour 3D - Casa Italia Cortina 2026</title>
     <style>
         :root {
             --primary: #2c5f9e;
@@ -404,18 +404,16 @@
             </div>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="index.html#led">Documentazione</a>
-                <a href="renders.html" class="active">Renders</a>
-                <a href="index.html#tour3d">Tour 3D</a>
+                <a href="renders.html" class="active">Renders & Tour 3D</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero -->
     <div class="hero">
-        <h2>Renders Progettazione Casa Italia</h2>
-        <p>Visualizzazioni 3D degli ambienti - Galleria Farsetti, Cortina d'Ampezzo</p>
-        <div class="badge">22 Renders Fotografici + Assonometria Completa</div>
+        <h2>Renders Progettazione e Tour 3D Casa Italia</h2>
+        <p>Visualizzazioni 3D, Tour Virtuale Matterport e Assonometria - Galleria Farsetti, Cortina</p>
+        <div class="badge">22 Renders + Tour 3D Navigabile + Assonometria</div>
     </div>
 
     <!-- Assonometria -->
@@ -423,6 +421,34 @@
         <div class="assonometria-card">
             <h3>📐 Assonometria di Progetto</h3>
             <img src="renders/Assonometria Progetto.png" alt="Assonometria Progetto" onclick="openLightbox('renders/Assonometria Progetto.png', 0, 0)">
+        </div>
+    </div>
+
+    <!-- Tour Virtuale 3D Matterport -->
+    <div class="assonometria-section">
+        <div class="assonometria-card" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-left: 4px solid #1976d2;">
+            <h3 style="color: #1565c0; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                <span style="font-size: 32px;">🌍</span> Tour Virtuale 3D Navigabile
+            </h3>
+            <p style="font-size: 14px; color: #0d47a1; margin-bottom: 16px; text-align: center;">Esplora Casa Italia Cortina in 3D con Matterport</p>
+
+            <!-- Iframe Matterport -->
+            <div style="position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 16px; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 24px rgba(25, 118, 210, 0.2);">
+                <iframe
+                    src="https://my.matterport.com/show/?m=2Dunot7buzh&play=1"
+                    frameborder="0"
+                    allowfullscreen
+                    allow="autoplay; fullscreen; web-share; xr-spatial-tracking"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                </iframe>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://my.matterport.com/show/?m=2Dunot7buzh" target="_blank" style="display: inline-block; padding: 10px 24px; background: linear-gradient(135deg, #1976d2, #1565c0); color: white; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 13px; box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3); transition: transform 0.2s;">
+                    🔗 Apri in Nuova Finestra
+                </a>
+                <p style="font-size: 12px; color: #0d47a1; margin-top: 8px;">Usa i controlli del mouse per navigare • Clicca sulle frecce per spostarti • Compatibile VR</p>
+            </div>
         </div>
     </div>
 
@@ -486,7 +512,7 @@
     <footer>
         <img src="logo.png" alt="Informa Sistemi">
         <p><strong>Documento redatto da Maximilian Giurastante</strong></p>
-        <p>Versione 1.1.09 | 12 Gennaio 2026 (aggiunto banner navigazione)</p>
+        <p>Versione 1.2.00 | 12 Gennaio 2026 (aggiunto Tour 3D Matterport)</p>
         <p style="margin-top: 16px; font-size: 12px;">
             Olimpiadi Invernali Milano-Cortina 2026
         </p>
