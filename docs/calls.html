@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronologia Call - Casa Italia Cortina 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066B3;
+            --primary-dark: #004d86;
+            --secondary: #E31837;
+            --accent: #009246;
+            --gold: #D4AF37;
+            --dark: #1a1a2e;
+            --dark-light: #2d2d44;
+            --gray: #6c757d;
+            --gray-light: #f8f9fa;
+            --white: #ffffff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: white;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-section img {
+            height: 36px;
+        }
+
+        .logo-section h1 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        nav a.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--dark) 100%);
+            color: white;
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 16px;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* Call Cards */
+        .call-card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .call-header {
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .call-header.gold {
+            background: linear-gradient(135deg, var(--gold), #f4d03f);
+        }
+
+        .call-header.blue {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .call-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .call-title {
+            flex: 1;
+        }
+
+        .call-title h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .call-header.gold .call-title h3 {
+            color: var(--dark);
+        }
+
+        .call-title .subtitle {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .call-header.gold .call-title .subtitle {
+            color: rgba(0,0,0,0.6);
+        }
+
+        .call-date-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .call-header.gold .call-date-badge {
+            color: var(--dark);
+        }
+
+        .call-body {
+            padding: 28px;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--gray-light);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray);
+        }
+
+        tr:hover {
+            background: #fafbfc;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        /* Info boxes */
+        .info-box {
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .info-box.blue { background: #e3f2fd; }
+        .info-box.purple { background: #f3e5f5; }
+        .info-box.orange { background: #fff3e0; }
+        .info-box.green { background: #e8f5e9; }
+
+        /* Alert boxes */
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 24px;
+        }
+
+        .alert.danger {
+            background: #ffebee;
+            border-left: 4px solid var(--danger);
+        }
+
+        .alert.warning {
+            background: #fff8e1;
+            border-left: 4px solid var(--warning);
+        }
+
+        .alert h4 {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .alert.danger h4 { color: var(--danger); }
+        .alert.warning h4 { color: #f57c00; }
+
+        .alert p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Section headers */
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        /* Action items */
+        .action-group h5 {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .action-list {
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .action-list div {
+            margin-bottom: 8px;
+        }
+
+        .action-list div:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        footer img {
+            height: 40px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 4px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .logo-section {
+                gap: 8px;
+            }
+
+            .logo-section img {
+                height: 28px;
+            }
+
+            .logo-section h1 {
+                font-size: 12px;
+            }
+
+            nav {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .call-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .call-body {
+                padding: 20px;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="logo.png" alt="Informa Sistemi">
+                <h1>Casa Italia Cortina 2026</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="renders.html">Renders & Tour 3D</a>
+                <a href="calls.html" class="active">Cronologia Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>Cronologia Call di Progetto</h2>
+        <p>Riepilogo delle riunioni operative con decisioni, action items e criticita' emerse</p>
+        <div class="badge">2 Call registrate - Ultimo aggiornamento: 12 Gennaio 2026</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Call 12/01/2026 - Henoto + IT's (PIU' RECENTE) -->
+        <div class="call-card">
+            <div class="call-header blue">
+                <div class="call-icon">&#128222;</div>
+                <div class="call-title">
+                    <h3>Call Henoto + IT's</h3>
+                    <div class="subtitle">Partecipanti: Maximilian, Flavia, Ilaria Ruberto (Mosaico), Greta Gobbo (Henoto)</div>
+                </div>
+                <div class="call-date-badge">12 Gen 2026</div>
+            </div>
+            <div class="call-body">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tema</th>
+                                <th>Decisione/Aggiornamento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Team operativo Cortina</strong></td>
+                                <td>Maximilian + Flavia per coordinamento lavori e regia evento</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Moquette</strong></td>
+                                <td style="background: #e8f5e9;">&#10004; <strong>CONFERMATO:</strong> Disponibile SOLO al ristorante P.-1, <strong>NON in Galleria</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vano tecnico LED Lounge</strong></td>
+                                <td style="background: #e8f5e9;">&#10004; <strong>GIA' PREVISTO</strong> sotto bancone bar</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cappa cucina (uscita fumi)</strong></td>
+                                <td>Posizionata nel locale preparazione (FMT.7), finestre affacciano su rampa laterale</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Passaggio cavi P.0-P.-1</strong></td>
+                                <td style="background: #fff3e0;">&#9888; Da verificare sul posto - <strong>piante NON sovrapposte</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ingresso tecnici IS</strong></td>
+                                <td style="background: #e8f5e9;">&#10004; Possibile anche 19-20 Gen (insieme a elettricisti, prima chiusura soffitti)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Struttura Henoto</strong></td>
+                                <td>Primi 2 giorni: parte grezza, poi chiusura soffitti</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LED Esterno</strong></td>
+                                <td style="background: #fff8e1;">Non nel cronoprogramma - mancano specifiche, sara' fatto per ultimo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quadri elettrici</strong></td>
+                                <td style="background: #fff3e0;">&#9888; Da comunicare: tipo (16A o 32A) e posizioni</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <h4 class="section-title">Action Items</h4>
+                    <div class="grid-2">
+                        <div class="action-group">
+                            <h5>Azioni Maximilian</h5>
+                            <div class="action-list info-box blue">
+                                <div>&#9744; Condividere cronoprogramma IS in PDF/Excel</div>
+                                <div>&#9744; Confermare date arrivo tecnici per cavi</div>
+                                <div>&#9744; Coordinarsi per arrivo materiale LED (23-24 Gen)</div>
+                            </div>
+                        </div>
+                        <div class="action-group">
+                            <h5>Azioni Ilaria/Greta (Henoto)</h5>
+                            <div class="action-list info-box purple">
+                                <div>&#9744; Verificare sul posto (14-15 Gen) uscita cappa</div>
+                                <div>&#9744; Fornire info quadri elettrici (16A/32A)</div>
+                                <div>&#9744; Aggiungere LED esterno a cronoprogramma</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert warning">
+                    <h4>&#9888; Attenzione: Piante non sovrapposte</h4>
+                    <p>Le piante del Piano 0 e Piano -1 <strong>non sono sovrapposte</strong> nel punto critico (uscita cappa). Ilaria e Greta verificheranno direttamente sul posto il <strong>14-15 Gennaio</strong> per confermare percorsi cavi reali.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call 10/01/2026 - Nicola Furnari -->
+        <div class="call-card">
+            <div class="call-header gold">
+                <div class="call-icon">&#128222;</div>
+                <div class="call-title">
+                    <h3>Call Nicola Furnari</h3>
+                    <div class="subtitle">Call operativa interna - Coordinamento generale MICO</div>
+                </div>
+                <div class="call-date-badge">10 Gen 2026</div>
+            </div>
+            <div class="call-body">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tema</th>
+                                <th>Decisione/Aggiornamento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>LED Celebration backup</strong></td>
+                                <td>Nessun backup (MCTRL4K ha 16 porte). Sending card backup pronta dietro LED.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vano tecnico Lounge</strong></td>
+                                <td>Sotto bancone bar (unico spazio disponibile)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Passaggio cavi P.0-P.-1</strong></td>
+                                <td style="background: #fff3e0;">&#9888; PROPOSTA: Cappa cucina - <strong>DA VERIFICARE</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>PTZ Camera</strong></td>
+                                <td>1 sicura (Roma) + eventuali da Assisi. Via LAN, da definire cavalletti</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Architettura streaming</strong></td>
+                                <td>MiniPC - Kiloview - IP locale - VMIX (chiarita)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rack</strong></td>
+                                <td>Pre-assemblati da Nicola questa settimana</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alloggio team</strong></td>
+                                <td>Casa Andrea Marini (6 posti, 300m dalla Galleria, garage)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Spedizione</strong></td>
+                                <td>Tutto via HENOTO (Padova)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Deadline</strong></td>
+                                <td><strong style="color: var(--danger);">4 Feb PM foto, 6 Feb PM inaugurazione</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <h4 class="section-title">Prossimi Step Concordati</h4>
+                    <div class="grid-2" style="gap: 12px;">
+                        <div class="info-box blue">
+                            <strong>Lun 13 Gen:</strong> Call con Greta per Gantt e moquette
+                        </div>
+                        <div class="info-box purple">
+                            <strong>13-17 Gen:</strong> Nicola prepara rack
+                        </div>
+                        <div class="info-box orange">
+                            <strong>20-24 Gen:</strong> Igor sopralluogo con bobine rete
+                        </div>
+                        <div class="info-box green">
+                            <strong>23 Gen:</strong> Maximilian parte per Mestre
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert danger">
+                    <h4>&#9888; Criticita' Principale</h4>
+                    <p><strong>HENOTO conferme solo verbali:</strong> Nicola preoccupato perche' ha sempre parlato al telefono ma non ha mai ricevuto conferme scritte via mail. <strong>Azione: Ottenere conferma scritta urgentemente.</strong></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <img src="logo.png" alt="Informa Sistemi">
+        <p><strong>Documento redatto da Maximilian Giurastante</strong></p>
+        <p>Versione 1.2.04 | 12 Gennaio 2026</p>
+        <p style="margin-top: 16px; font-size: 12px;">
+            Olimpiadi Invernali Milano-Cortina 2026
+        </p>
+    </footer>
+</body>
+</html>
