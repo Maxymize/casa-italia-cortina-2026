@@ -408,13 +408,114 @@
     <div class="hero">
         <h2>Cronologia Call di Progetto</h2>
         <p>Riepilogo delle riunioni operative con decisioni, action items e criticita' emerse</p>
-        <div class="badge">3 Call registrate - Ultimo aggiornamento: 13 Gennaio 2026</div>
+        <div class="badge">4 Call registrate - Ultimo aggiornamento: 13 Gennaio 2026</div>
     </div>
 
     <!-- Main Content -->
     <div class="container">
 
-        <!-- Call 13/01/2026 - Nicola Furnari (PIU' RECENTE) -->
+        <!-- Call 13/01/2026 - Andrea Nestico (PIU' RECENTE) -->
+        <div class="call-card">
+            <div class="call-header" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+                <div class="call-icon">&#127760;</div>
+                <div class="call-title">
+                    <h3>Call Andrea Nestico' - Infrastruttura di Rete</h3>
+                    <div class="subtitle">Pianificazione rete WiFi, Switch, Router/Firewall e sistema streaming</div>
+                </div>
+                <div class="call-date-badge">13 Gen 2026</div>
+            </div>
+            <div class="call-body">
+                <h4 class="section-title">Architettura di Rete Definita</h4>
+                <div class="grid-2">
+                    <div class="info-box purple">
+                        <strong>Core Network</strong><br>
+                        1 Router/Firewall (punto ingresso)<br>
+                        Sottorete IS dedicata sotto rete Galleria<br>
+                        3-4 Switch Manager distribuiti
+                    </div>
+                    <div class="info-box blue">
+                        <strong>WiFi (4 Access Point)</strong><br>
+                        Configurazione CABLATA (no mesh)<br>
+                        1 per location/stanza<br>
+                        Max performance per streaming
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <h4 class="section-title">Configurazione per Location</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Switch</th>
+                                    <th>WiFi</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Rack Regia</strong></td>
+                                    <td style="background: #e8f5e9;">&#9989; Centrale</td>
+                                    <td>-</td>
+                                    <td>Hub principale + 4 Encoder concentrati qui</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Piano -1 Ristorante</strong></td>
+                                    <td style="background: #e8f5e9;">&#9989;</td>
+                                    <td style="background: #e8f5e9;">&#9989;</td>
+                                    <td>Da qui cablaggio verso Sala Stampa</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LED Esterno</strong></td>
+                                    <td style="background: #fff3e0;">Da confermare</td>
+                                    <td style="background: #e8f5e9;">&#9989;</td>
+                                    <td>&#9888; Cavi outdoor -15°C + backup</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sala Interviste</strong></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>Cavo diretto dalla regia (adiacente)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sala Stampa</strong></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>2 Monitor TV - verificare antenna per decoder</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <h4 class="section-title">Sistema Streaming Discovery/RAI</h4>
+                    <div class="info-box green">
+                        <strong>Flusso:</strong> Mini PC (browser) → Encoder Kiloview (HDMI→RTSP) → Rete LAN → EDV/VMIX → LED Wall<br>
+                        <strong>Vantaggi:</strong> Streaming centralizzato in rack regia, distribuzione 1 Gbps interna
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <h4 class="section-title">Materiale da Preparare (Andrea)</h4>
+                    <div class="grid-2">
+                        <div class="action-list info-box purple">
+                            <div>&#9744; 3-4 Switch Manager</div>
+                            <div>&#9744; 4 Access Point WiFi</div>
+                            <div>&#9744; 1 Router/Firewall</div>
+                        </div>
+                        <div class="action-list info-box orange">
+                            <div>&#9744; Cavi outdoor certificati -15°C</div>
+                            <div>&#9744; 2 Monitor Sala Stampa/Interviste</div>
+                            <div>&#9744; Verificare antenna Sala Stampa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call 13/01/2026 - Nicola Furnari -->
         <div class="call-card">
             <div class="call-header gold">
                 <div class="call-icon">&#128222;</div>
@@ -694,7 +795,7 @@
     <footer>
         <img src="logo.png" alt="Informa Sistemi">
         <p><strong>Documento redatto da Maximilian Giurastante</strong></p>
-        <p>Versione 1.2.06 | 13 Gennaio 2026</p>
+        <p>Versione 1.2.08 | 13 Gennaio 2026</p>
         <p style="margin-top: 16px; font-size: 12px;">
             Olimpiadi Invernali Milano-Cortina 2026
         </p>

@@ -944,6 +944,7 @@
             <a href="#overview" class="nav-tab active">Overview</a>
             <a href="#led" class="nav-tab">Installazioni LED</a>
             <a href="#regia" class="nav-tab">Schema Regia</a>
+            <a href="#rete" class="nav-tab">Infrastruttura Rete</a>
             <a href="#materiali" class="nav-tab">Lista Materiali</a>
             <a href="#criticita" class="nav-tab">Criticita'</a>
             <a href="#timeline" class="nav-tab">Timeline</a>
@@ -1442,6 +1443,229 @@ MiniPC (browser Discovery+/RAI)
                         <div style="font-size: 32px; margin-bottom: 12px;">&#127899;</div>
                         <h4 style="font-weight: 700; margin-bottom: 8px;">Mixer Behringer</h4>
                         <p style="font-size: 13px; color: var(--gray);">Controllo audio centralizzato LR + 2 AUX</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infrastruttura Rete Section -->
+        <section id="rete" style="margin-top: 64px;">
+            <div class="section-header">
+                <h2>Infrastruttura di Rete</h2>
+                <p>Architettura WiFi, Switch e distribuzione segnali - Definita call 13/01 con Andrea Nestico'</p>
+            </div>
+
+            <!-- Schema Mermaid Rete -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+                    <div class="card-header-icon" style="background: rgba(255,255,255,0.2);">&#127760;</div>
+                    <div>
+                        <div class="card-title" style="color: white;">Schema Architettura di Rete</div>
+                        <div class="card-subtitle" style="color: rgba(255,255,255,0.8);">Distribuzione WiFi, Switch e connessioni</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="mermaid" style="display: flex; justify-content: center;">
+flowchart TB
+    subgraph INTERNET["&#127760; CONNESSIONE INTERNET"]
+        FIBRA["Fibra/Internet<br/>Provider da definire"]
+    end
+
+    subgraph CORE["&#128274; CORE NETWORK"]
+        ROUTER["&#128737; Router/Firewall<br/>Gestione traffico + sicurezza"]
+        SUBNET["&#128423; Sottorete IS<br/>Separata da rete Galleria"]
+    end
+
+    subgraph DISTRIBUZIONE["&#128268; DISTRIBUZIONE"]
+        SW_REG["&#9898; Switch Regia<br/>Hub centrale"]
+        SW_RIS["&#9898; Switch P.-1<br/>Ristorante"]
+        SW_EXT["&#9898; Switch Esterno<br/>(da confermare)"]
+    end
+
+    subgraph WIFI["&#128246; ACCESS POINT WiFi (4x cablati)"]
+        AP1["AP1<br/>Galleria Lounge"]
+        AP2["AP2<br/>Celebration"]
+        AP3["AP3<br/>Piano -1"]
+        AP4["AP4<br/>Area esterna"]
+    end
+
+    subgraph ENDPOINT["&#128187; ENDPOINT"]
+        ENC["4x Encoder<br/>RTSP Streaming"]
+        LED["LED Wall<br/>via LAN diretta"]
+        SALA["Sala Stampa<br/>2 Monitor TV"]
+        INT["Sala Interviste<br/>Cavo diretto"]
+    end
+
+    FIBRA --> ROUTER
+    ROUTER --> SUBNET
+    SUBNET --> SW_REG
+    SW_REG --> SW_RIS
+    SW_REG --> SW_EXT
+    SW_REG --> AP1
+    SW_REG --> AP2
+    SW_RIS --> AP3
+    SW_EXT --> AP4
+    SW_REG --> ENC
+    SW_REG --> LED
+    SW_RIS --> SALA
+    SW_REG --> INT
+
+    classDef internet fill:#4CAF50,stroke:#2E7D32,color:#fff
+    classDef core fill:#1976D2,stroke:#0D47A1,color:#fff
+    classDef distrib fill:#FF9800,stroke:#E65100,color:#fff
+    classDef wifi fill:#9C27B0,stroke:#6A1B9A,color:#fff
+    classDef endpoint fill:#607D8B,stroke:#455A64,color:#fff
+
+    class INTERNET internet
+    class CORE core
+    class DISTRIBUZIONE distrib
+    class WIFI wifi
+    class ENDPOINT endpoint
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dettaglio Apparati -->
+            <div class="grid-2" style="margin-bottom: 24px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon" style="background: linear-gradient(135deg, #1976D2, #0D47A1);">&#128737;</div>
+                        <div>
+                            <div class="card-title">Apparati Core Network</div>
+                            <div class="card-subtitle">Preparati da Andrea Nestico'</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                            <tr style="background: #e3f2fd;">
+                                <td style="padding: 12px; font-weight: 600;">Router/Firewall</td>
+                                <td style="padding: 12px;">1</td>
+                                <td style="padding: 12px;"><span class="status status-info">Da preparare</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; font-weight: 600;">Switch Manager</td>
+                                <td style="padding: 12px;">3-4</td>
+                                <td style="padding: 12px;"><span class="status status-warning">Da confermare</span></td>
+                            </tr>
+                            <tr style="background: #e3f2fd;">
+                                <td style="padding: 12px; font-weight: 600;">Access Point WiFi</td>
+                                <td style="padding: 12px;">4</td>
+                                <td style="padding: 12px;"><span class="status status-info">Da preparare</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; font-weight: 600;">Cavi Outdoor (-15°C)</td>
+                                <td style="padding: 12px;">2+ backup</td>
+                                <td style="padding: 12px;"><span class="status" style="background: #ffebee; color: #c62828;">Critico</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon" style="background: linear-gradient(135deg, #FF9800, #E65100);">&#128268;</div>
+                        <div>
+                            <div class="card-title">Configurazione per Location</div>
+                            <div class="card-subtitle">Switch e WiFi distribuiti</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="padding: 12px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                                <strong>Rack Regia</strong><br>
+                                <span style="font-size: 12px; color: #666;">Switch centrale + 4 Encoder - Hub principale</span>
+                            </div>
+                            <div style="padding: 12px; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #1976D2;">
+                                <strong>Piano -1 Ristorante</strong><br>
+                                <span style="font-size: 12px; color: #666;">Switch + WiFi → cablaggio Sala Stampa</span>
+                            </div>
+                            <div style="padding: 12px; background: #fff3e0; border-radius: 8px; border-left: 4px solid #FF9800;">
+                                <strong>LED Esterno</strong><br>
+                                <span style="font-size: 12px; color: #666;">Switch (da confermare) + cavi outdoor -15°C</span>
+                            </div>
+                            <div style="padding: 12px; background: #f3e5f5; border-radius: 8px; border-left: 4px solid #9C27B0;">
+                                <strong>Sala Interviste</strong><br>
+                                <span style="font-size: 12px; color: #666;">Cavo diretto dalla regia (adiacente)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sistema Streaming -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-icon green">&#128250;</div>
+                    <div>
+                        <div class="card-title">Sistema Streaming Discovery/RAI</div>
+                        <div class="card-subtitle">Flusso segnali via Encoder RTSP</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 16px; background: var(--gray-light); border-radius: 12px;">
+                        <div style="text-align: center; flex: 1; min-width: 120px;">
+                            <div style="font-size: 32px;">&#128187;</div>
+                            <div style="font-weight: 600; font-size: 13px;">Mini PC</div>
+                            <div style="font-size: 11px; color: #666;">Browser Discovery+/RAI</div>
+                        </div>
+                        <div style="font-size: 24px; color: #1976D2;">→</div>
+                        <div style="text-align: center; flex: 1; min-width: 120px;">
+                            <div style="font-size: 32px;">&#128225;</div>
+                            <div style="font-weight: 600; font-size: 13px;">Encoder Kiloview</div>
+                            <div style="font-size: 11px; color: #666;">HDMI → RTSP</div>
+                        </div>
+                        <div style="font-size: 24px; color: #1976D2;">→</div>
+                        <div style="text-align: center; flex: 1; min-width: 120px;">
+                            <div style="font-size: 32px;">&#128268;</div>
+                            <div style="font-weight: 600; font-size: 13px;">Rete LAN</div>
+                            <div style="font-size: 11px; color: #666;">Distribuzione interna</div>
+                        </div>
+                        <div style="font-size: 24px; color: #1976D2;">→</div>
+                        <div style="text-align: center; flex: 1; min-width: 120px;">
+                            <div style="font-size: 32px;">&#127909;</div>
+                            <div style="font-weight: 600; font-size: 13px;">EDV / VMIX</div>
+                            <div style="font-size: 11px; color: #666;">Integrazione sorgenti</div>
+                        </div>
+                        <div style="font-size: 24px; color: #1976D2;">→</div>
+                        <div style="text-align: center; flex: 1; min-width: 120px;">
+                            <div style="font-size: 32px;">&#128250;</div>
+                            <div style="font-weight: 600; font-size: 13px;">LED Wall</div>
+                            <div style="font-size: 11px; color: #666;">Visualizzazione</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                        <strong style="color: #2e7d32;">&#9989; Vantaggi:</strong>
+                        <span style="font-size: 13px;"> Streaming centralizzato in rack regia • Distribuzione 1 Gbps interna • WiFi cablati (no mesh) per max performance</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Items Rete -->
+            <div class="card" style="margin-top: 24px; border-left: 4px solid #FF9800;">
+                <div class="card-header">
+                    <div class="card-header-icon orange">&#9888;</div>
+                    <div>
+                        <div class="card-title">Action Items Rete</div>
+                        <div class="card-subtitle">Da verificare/completare</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid-3">
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Verificare antenna esistente Sala Stampa</div>
+                            <span class="checklist-priority priority-high">ALTA</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Confermare switch rack LED esterno</div>
+                            <span class="checklist-priority priority-medium">MEDIA</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-box">&#10003;</div>
+                            <div class="checklist-text">Coordinare con Nicola preparazione rack</div>
+                            <span class="checklist-priority priority-medium">MEDIA</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3791,7 +4015,7 @@ MiniPC (browser Discovery+/RAI)
         </div>
         <div class="footer-meta">
             Documento redatto da <strong style="color: var(--gold);">Maximilian Giurastante</strong><br>
-            Versione 1.2.06 | 13 Gennaio 2026 (Aggiunti dettagli cavi call 13/01 Nicola)
+            Versione 1.2.08 | 13 Gennaio 2026 (Aggiunta sezione Infrastruttura Rete)
         </div>
         <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4);">
             Olimpiadi Invernali Milano-Cortina 2026
@@ -3945,6 +4169,28 @@ MiniPC (browser Discovery+/RAI)
 
         // Refresh weather every 30 minutes
         setInterval(loadWeather, 30 * 60 * 1000);
+    </script>
+
+    <!-- Mermaid for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#1976D2',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#0D47A1',
+                lineColor: '#666',
+                secondaryColor: '#4CAF50',
+                tertiaryColor: '#fff'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
     </script>
 </body>
 </html>
