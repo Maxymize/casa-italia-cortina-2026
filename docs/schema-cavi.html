@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Passaggi Cavi - Casa Italia Cortina 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066B3;
+            --primary-dark: #004d86;
+            --dark: #1a1a2e;
+            --gray-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: white;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-section img {
+            height: 36px;
+        }
+
+        .logo-section h1 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        nav a.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--dark) 100%);
+            color: white;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* Legend */
+        .legend {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .legend h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--gray-light);
+            border-radius: 8px;
+        }
+
+        .legend-color {
+            width: 40px;
+            height: 8px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .legend-color.lan { background: linear-gradient(90deg, #2196F3, #1976D2); }
+        .legend-color.audio-xlr { background: linear-gradient(90deg, #4CAF50, #388E3C); }
+        .legend-color.audio-rn { background: linear-gradient(90deg, #FF5722, #E64A19); }
+        .legend-color.outdoor { background: linear-gradient(90deg, #9C27B0, #7B1FA2); }
+        .legend-color.hdmi { background: linear-gradient(90deg, #FFC107, #FFA000); }
+
+        .legend-text {
+            font-size: 13px;
+        }
+
+        .legend-text strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .legend-text span {
+            color: #666;
+            font-size: 11px;
+        }
+
+        /* Schema Card */
+        .schema-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            margin-bottom: 32px;
+        }
+
+        .schema-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .schema-card h3 span {
+            font-size: 24px;
+        }
+
+        /* Mermaid styling */
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--gray-light);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+        }
+
+        tr:hover {
+            background: #fafbfc;
+        }
+
+        .cable-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .cable-badge.lan { background: #2196F3; }
+        .cable-badge.audio { background: #4CAF50; }
+        .cable-badge.outdoor { background: #9C27B0; }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        footer img {
+            height: 40px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 4px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .legend-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="logo.png" alt="Informa Sistemi">
+                <h1>Casa Italia Cortina 2026</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="renders.html">Renders & Tour 3D</a>
+                <a href="calls.html">Cronologia Call</a>
+                <a href="schema-cavi.html" class="active">Schema Cavi</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>Schema Passaggi Cavi Audio/Video</h2>
+        <p>Piano 0 - Galleria Farsetti, Cortina | Definito call 13/01/2026 con Nicola Furnari</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Legend -->
+        <div class="legend">
+            <h3>Legenda Tipologie Cavi</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <div class="legend-color lan"></div>
+                    <div class="legend-text">
+                        <strong>Cavi LAN Cat.5/6</strong>
+                        <span>Segnale video per LED (blu)</span>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color audio-xlr"></div>
+                    <div class="legend-text">
+                        <strong>Cavi Audio XLR</strong>
+                        <span>Per casse MAUI attive (verde)</span>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color audio-rn"></div>
+                    <div class="legend-text">
+                        <strong>Cavi Audio Rosso-Nero</strong>
+                        <span>Speaker passivi (arancione)</span>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color outdoor"></div>
+                    <div class="legend-text">
+                        <strong>Cavi Outdoor</strong>
+                        <span>Resistenti al gelo (viola)</span>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color hdmi"></div>
+                    <div class="legend-text">
+                        <strong>Cavi HDMI</strong>
+                        <span>VMIX → Sending Card (giallo)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schema Piano 0 -->
+        <div class="schema-card">
+            <h3><span>🏢</span> Piano 0 - Schema Generale Passaggi Cavi</h3>
+            <div class="mermaid">
+flowchart TB
+    subgraph REGIA["🎬 SPAZIO REGIA (C.PT.17)"]
+        direction TB
+        VMIX1["VMIX 1<br/>LED Celebration"]
+        VMIX2["VMIX 2<br/>LED Ristorante P.-1"]
+        VMIX3["VMIX 3<br/>LED Lounge"]
+        MIXER["🎛️ MIXER<br/>Behringer"]
+        AMP["🔊 AMPLIFICATORE<br/>per casse passive"]
+    end
+
+    subgraph CELEBRATION["🎉 PADIGLIONE CELEBRATION (C.PT.13)"]
+        LED03["📺 LED03<br/>6x2.36m - 3840x1536px"]
+        MAUI_C["🔊 MAUI 28G<br/>Casse Attive"]
+        SEND_C["📡 Sending Card<br/>MCTRL4K"]
+    end
+
+    subgraph LOUNGE["🍸 GALLERIA LOUNGE (C.PT.08)"]
+        LED02["📺 LED02<br/>Parete lunga"]
+        LED04["📺 LED04<br/>Lato corto"]
+        MAUI_L["🔊 MAUI Lounge<br/>Casse Attive"]
+        HTC["🔊 HTC<br/>Casse Passive"]
+        VANO["📦 Vano Tecnico<br/>sotto bancone bar"]
+    end
+
+    subgraph ESTERNO["🌨️ LED ESTERNO (Piazzale)"]
+        LED06["📺 LED06<br/>3x2m - AMIL BLUE"]
+        FONE["🔊 Fonestar<br/>+ Amp Monacor"]
+    end
+
+    subgraph PIANO_M1["⬇️ PIANO -1 (Via Cappa Cucina FMT.7)"]
+        LED01["📺 LED01<br/>6x2.5m - SEGNA"]
+        MAUI_R["🔊 MAUI 28G<br/>Ristorante"]
+    end
+
+    %% Connessioni CELEBRATION (distanza ~3m)
+    VMIX1 -->|"HDMI"| SEND_C
+    SEND_C -->|"🔵 2-3 LAN"| LED03
+    MIXER -->|"🟢 1 XLR"| MAUI_C
+
+    %% Connessioni LOUNGE
+    VMIX3 -->|"HDMI"| VANO
+    VANO -->|"🔵 12+12 LAN"| LED02
+    VANO -->|"🔵 12+12 LAN"| LED04
+    MIXER -->|"🟢 2 XLR (AUX2)"| MAUI_L
+    AMP -->|"🟠 Snake LAN→XLR"| HTC
+
+    %% Connessioni PIANO -1 (via cappa cucina)
+    VMIX2 -->|"🔵 2-3 LAN<br/>via cappa FMT.7"| LED01
+    MIXER -->|"🟠 2 Audio R/N<br/>via cappa FMT.7"| MAUI_R
+
+    %% Connessioni ESTERNO
+    REGIA -->|"🟣 2 LAN Outdoor<br/>ridondanza gelo"| LED06
+    REGIA -->|"Audio locale"| FONE
+
+    %% Styling
+    classDef regia fill:#1976D2,stroke:#0D47A1,color:#fff
+    classDef celebration fill:#4CAF50,stroke:#2E7D32,color:#fff
+    classDef lounge fill:#FF9800,stroke:#E65100,color:#fff
+    classDef esterno fill:#9C27B0,stroke:#6A1B9A,color:#fff
+    classDef piano_m1 fill:#F44336,stroke:#C62828,color:#fff
+
+    class REGIA regia
+    class CELEBRATION celebration
+    class LOUNGE lounge
+    class ESTERNO esterno
+    class PIANO_M1 piano_m1
+            </div>
+        </div>
+
+        <!-- Dettaglio per tratta -->
+        <div class="schema-card">
+            <h3><span>📋</span> Dettaglio Cavi per Tratta</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tratta</th>
+                            <th>Cavi LAN (Video)</th>
+                            <th>Cavi Audio</th>
+                            <th>Distanza</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Regia → LED Celebration</strong></td>
+                            <td><span class="cable-badge lan">2-3 LAN Cat.5</span></td>
+                            <td><span class="cable-badge audio">1 XLR</span></td>
+                            <td>~3m</td>
+                            <td>Sending dietro LED. Test boxino vs boom mix</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regia → LED Lounge (LED02+04)</strong></td>
+                            <td><span class="cable-badge lan">24 LAN Cat.5</span><br><small>(12 main + 12 backup)</small></td>
+                            <td><span class="cable-badge audio">2 XLR (AUX2)</span></td>
+                            <td>~15m</td>
+                            <td>Via vano tecnico sotto bancone bar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regia → Casse HTC P.0</strong></td>
+                            <td>-</td>
+                            <td><span class="cable-badge audio">Snake LAN→XLR</span></td>
+                            <td>~20-30m</td>
+                            <td>Amplificatore in regia + Snake Toman. Test 50m richiesto</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regia → Piano -1 (Ristorante)</strong></td>
+                            <td><span class="cable-badge lan">2-3 LAN Cat.5</span></td>
+                            <td><span class="cable-badge audio">2 Audio R/N</span></td>
+                            <td>~30m</td>
+                            <td>Via cappa cucina FMT.7. Mixer resta in regia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regia → LED Esterno</strong></td>
+                            <td><span class="cable-badge outdoor">2 LAN Outdoor</span></td>
+                            <td>Locale</td>
+                            <td>~25m</td>
+                            <td>⚠️ Cavi outdoor neri/grossi. Ridondanza per gelo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Schema Audio -->
+        <div class="schema-card">
+            <h3><span>🔊</span> Schema Distribuzione Audio</h3>
+            <div class="mermaid">
+flowchart LR
+    subgraph REGIA_AUDIO["🎛️ REGIA AUDIO"]
+        MIXER2["MIXER<br/>Behringer"]
+        AMP2["AMPLIFICATORE<br/>Casse Passive"]
+        SNAKE["SNAKE TOMAN<br/>LAN→XLR"]
+    end
+
+    subgraph USCITE["Uscite Mixer"]
+        LR["LR (Main Out)"]
+        AUX1["AUX 1"]
+        AUX2["AUX 2"]
+    end
+
+    subgraph DESTINAZIONI["🔊 Destinazioni Audio"]
+        MAUI_CEL["MAUI Celebration<br/>🟢 ATTIVE"]
+        MAUI_LOU["MAUI Lounge<br/>🟢 ATTIVE"]
+        MAUI_RIS["MAUI Ristorante<br/>🟢 ATTIVE"]
+        HTC2["HTC Piano 0<br/>🟠 PASSIVE"]
+        SSSNAKE["Speaker Galleria<br/>🟠 PASSIVE"]
+    end
+
+    MIXER2 --> LR
+    MIXER2 --> AUX1
+    MIXER2 --> AUX2
+
+    LR -->|"🟢 XLR diretto"| MAUI_CEL
+    AUX2 -->|"🟢 XLR diretto"| MAUI_LOU
+    LR -->|"🟠 2x R/N via cappa"| MAUI_RIS
+
+    AMP2 --> SNAKE
+    SNAKE -->|"🟠 LAN→XLR ~30m"| HTC2
+    AUX1 -->|"🟢 XLR"| SSSNAKE
+
+    classDef active fill:#4CAF50,stroke:#2E7D32,color:#fff
+    classDef passive fill:#FF9800,stroke:#E65100,color:#fff
+
+    class MAUI_CEL,MAUI_LOU,MAUI_RIS,SSSNAKE active
+    class HTC2 passive
+            </div>
+        </div>
+
+        <!-- Note tecniche -->
+        <div class="schema-card" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-left: 4px solid #FF9800;">
+            <h3><span>⚠️</span> Note Tecniche Importanti</h3>
+            <ul style="padding-left: 24px; font-size: 14px; line-height: 2;">
+                <li><strong>Snake Toman:</strong> Test con cavo 50m al magazzino per verificare impedenza/fruscii (segnale analogico)</li>
+                <li><strong>Cavi Outdoor LED Esterno:</strong> Chiedere a Igor disponibilità cavi neri/grossi resistenti al gelo</li>
+                <li><strong>Passaggio P.-1:</strong> Via cappa cucina locale FMT.7 - piante NON sovrapposte, verifica 14-15 Gen</li>
+                <li><strong>Boxino vs Boom Mix:</strong> Test risoluzione al magazzino per decidere quale usare per Celebration</li>
+                <li><strong>Vano tecnico Lounge:</strong> Già previsto da Henoto sotto bancone bar</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <img src="logo.png" alt="Informa Sistemi">
+        <p><strong>Documento redatto da Maximilian Giurastante</strong></p>
+        <p>Versione 1.2.06 | 13 Gennaio 2026</p>
+        <p style="margin-top: 16px; font-size: 12px;">
+            Olimpiadi Invernali Milano-Cortina 2026
+        </p>
+    </footer>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#1976D2',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#0D47A1',
+                lineColor: '#666',
+                secondaryColor: '#4CAF50',
+                tertiaryColor: '#fff'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
