@@ -91,7 +91,17 @@
 
 ---
 
-### 1.7 Telecamere PTZ
+### 1.7 Decoder TV
+
+| Cod. | Descrizione | Quantita' | Destinazione | Note |
+|------|-------------|-----------|--------------|------|
+| DEC-01 | Decoder TV digitale terrestre | 4 | Monitor TV 55" | Se necessario segnale antenna |
+
+**Totale decoder:** 4 unita' (se necessario)
+
+---
+
+### 1.8 Telecamere PTZ
 
 | Cod. | Modello | Quantita' | Risoluzione | Connessione | Provenienza |
 |------|---------|-----------|-------------|-------------|-------------|
@@ -143,11 +153,14 @@
 
 | Cod. | Modello | Quantita' | Potenza | Input | Destinazione | Note |
 |------|---------|-----------|---------|-------|--------------|------|
-| SPK-05 | Fonestar (parete) | 2 | - | Speaker cable | LED06 Esterno | Richiedono amplificatore |
-| SPK-06 | Casse HTC passive | - | - | Snake adapter | Piano 0 | Amplificatore in regia |
-| SPK-07 | Casse Sonos (opzionali) | 8 | ~1kW tot | - | Lounge | **DA CONFERMARE** |
+| SPK-05 | Fonestar (parete) | 2 | - | Cavo rosso-nero | LED06 Esterno | Con staffa, esterne |
+| SPK-06 | Casse a incasso tonde | 2 | - | Cavo rosso-nero | Galleria LED C | Alternative alle Fonestar |
+| SPK-07 | Casse Fonestar/Incasso | 2 | - | Cavo rosso-nero | Galleria LED C | Scelta in base allestitore |
+| SPK-08 | Casse Sonos (opzionali) | 8 | ~1kW tot | - | Lounge | **DA CONFERMARE** |
 
-**Totale casse passive:** 2 confermate + 8 opzionali
+**Totale casse passive:** 2 Fonestar esterno + 2 Galleria (Fonestar o incasso) + 8 Sonos opzionali
+
+**Nota:** Per Galleria LED C verranno portati entrambi i modelli (Fonestar rettangolari con staffa + casse tonde a incasso) e si installeranno quelle piu' adatte in base alle indicazioni dell'allestitore Henoto
 
 ---
 
@@ -195,13 +208,15 @@
 
 ---
 
-### 2.7 Adattatori Audio
+### 2.7 Adattatori Audio (Snake)
 
 | Cod. | Modello | Quantita' | Funzione | Note |
 |------|---------|-----------|----------|------|
-| ADP-01 | Snake Adapter Toman | 1 | LAN -> 8x XLR | Test 50m al magazzino |
+| ADP-01 | Snake Toman (splitter passivo) | 1 set | LAN -> Splitter XLR | Audio su cavo rete + splitter passivo per XLR |
 
-**Totale adattatori:** 1 unita'
+**Totale adattatori:** 1 set completo
+
+**Nota tecnica Snake:** Il sistema Snake Toman trasporta l'audio su cavo di rete LAN. Ai due estremi del cavo LAN vengono inseriti gli splitter passivi per la conversione verso connettori XLR. Test con cavo 50m da eseguire al magazzino prima della partenza per verificare impedenza.
 
 ---
 
@@ -361,22 +376,41 @@
 
 ---
 
-### 4.8 RIEPILOGO CAVI PER TIPOLOGIA
+### 4.8 CONNETTORI E ACCESSORI CAVI
+
+| Cod. | Descrizione | Quantita' | Funzione | Note |
+|------|-------------|-----------|----------|------|
+| CONN-01 | Connettori RJ45 Cat.6 | 200+ | Crimpatura cavi LAN | Box da 200 pz |
+| CONN-02 | Connettori XLR maschio | 30+ | Terminazione cavi audio | Da saldare |
+| CONN-03 | Connettori XLR femmina | 30+ | Terminazione cavi audio | Da saldare |
+| EXT-01 | Extender HDMI/Cat.6 TX | 15 | Trasmettitore segnale video | In magazzino |
+| EXT-02 | Extender HDMI/Cat.6 RX | 15 | Ricevitore segnale video | In magazzino |
+| CAV-FIB01 | Bobina cavo fibra HDMI | 1 | 200m | In magazzino |
+
+**Totale extender:** 15 coppie TX/RX
+**Totale connettori:** 200+ RJ45 + 60+ XLR
+
+---
+
+### 4.9 RIEPILOGO CAVI PER TIPOLOGIA
 
 | Tipologia | Quantita' Totale | Lunghezza Totale | Note |
 |-----------|------------------|------------------|------|
 | **Cavo LAN Cat.6 standard** | ~80 | ~1.200m | Bobine da 305m |
 | **Cavo LAN Cat.6 OUTDOOR** | 2 | 50m | Certificato -15°C |
+| **Cavo fibra HDMI** | 1 bobina | 200m | Backup video |
 | **Cavo XLR** | ~10 | ~110m | Audio professionale |
-| **Cavo rosso-nero (speaker)** | 4 | ~70m | Audio passivo |
+| **Cavo rosso-nero (speaker)** | 4 | ~70m | Amplificatori->Casse passive |
 | **Cavo HDMI** | ~15 | ~80m | Varie lunghezze |
 | **Cavo BNC** | 3 | ~60m | Telecamere PTZ |
 | **Cavo USB** | 3 | ~6m | Schede audio |
+| **Cavo coassiale antenna TV** | 4 | ~30m | Decoder TV (se necessario) |
 | **Cavo speaker** | 2 | ~10m | Fonestar esterno |
 | **Treccia Nitto** | 1 | 20m | Fascio passaggio cavi |
+| **Cavo elettrico 220V** | 1 bobina | 100m | Installatore Igor |
 | **Tail A** | 320+ | - | Alimentazione moduli |
 
-**TOTALE CAVI STIMATO:** ~1.600m + Tail A
+**TOTALE CAVI STIMATO:** ~1.730m + 200m fibra HDMI + 100m elettrico + Tail A
 
 ---
 
@@ -404,8 +438,9 @@
 | SUP-03 | Viti/tasselli parete legno | - | LED Celebration |
 | SUP-04 | Zoccolo 15cm | 1 | LED Celebration |
 | SUP-05 | Truss o staffe a C | - | LED Ristorante |
-| SUP-06 | Cavalletti PTZ | 2-3 | Telecamere |
-| SUP-07 | Mensole rack | 2 | Regia |
+| SUP-06 | Staffe ancoraggio parete LED | 1 set | LED Ristorante P.-1 | Da magazzino con LED |
+| SUP-07 | Cavalletti telecamere PTZ | 2 | Telecamere PTZ | Supporto video |
+| SUP-08 | Mensole rack | 2 | Regia |
 
 ---
 
@@ -424,10 +459,12 @@
 
 | Location | Tipo | Potenza | Note |
 |----------|------|---------|------|
-| LED03 Celebration | Quadro 32A pentapolare | ~7kW + audio | Oppure 5x16A |
-| LED02/04 Lounge | 3x16A | ~4.3kW + audio | Min. 2 prese |
-| LED01 Ristorante P.-1 | Quadro 32A pentapolare | ~11kW + audio | Oppure 5x16A |
-| LED06 Esterno | 2x16A | ~4kW | - |
+| LED03 Celebration | Quadro 16A o 32A | ~7kW + audio | Da confermare Henoto |
+| LED02/04 Lounge | Quadro 16A o 32A | ~4.3kW + audio | Da confermare Henoto |
+| LED01 Ristorante P.-1 | Quadro 16A o 32A | ~11kW + audio | Da confermare Henoto |
+| LED06 Esterno | Quadro 16A o 32A | ~4kW | Da confermare Henoto |
+
+**Nota:** Tipologia quadri elettrici (16A o 32A) da confermare in base alle specifiche dell'allestitore Henoto
 
 ---
 
@@ -437,12 +474,15 @@
 |------|-------------|-----------|--------------|
 | PWR-01 | Prese 220V rack | 2 | Rack Regia |
 | PWR-02 | Presa 220V rack | 1 | Rack LED Esterno |
-| PWR-03 | Ciabatte multiple | - | Tutte le postazioni |
-| PWR-04 | Prolunghe elettriche | - | Da quantificare |
+| PWR-03 | Ciabatte multiple (multipresa) | 10+ | Regia + locations apparati |
+| PWR-04 | Prolunghe elettriche | 5+ | Da quantificare |
+| PWR-05 | Bobina cavo elettrico 220V | 1 (100m) | Installatore Igor | Esigenze montaggio |
 
 ---
 
-## 7. MATERIALE DI CONSUMO
+## 7. MATERIALE DI CONSUMO E ATTREZZATURA
+
+### 7.1 Materiale di Consumo
 
 | Cod. | Descrizione | Quantita' | Note |
 |------|-------------|-----------|------|
@@ -451,6 +491,19 @@
 | CONS-03 | Nastro Nitto | - | Trecce cavi |
 | CONS-04 | Nastro isolante | - | Vario |
 | CONS-05 | Guaina termorestringente | - | Connessioni |
+| CONS-06 | Stagno per saldature | 1 | Connettori XLR |
+
+---
+
+### 7.2 Attrezzatura Tecnica
+
+| Cod. | Descrizione | Quantita' | Funzione |
+|------|-------------|-----------|----------|
+| ATTR-01 | Crimpatrice RJ45 | 2 | Crimpatura connettori LAN |
+| ATTR-02 | Tester cavi LAN | 1 | Verifica continuit√† cavi |
+| ATTR-03 | Saldatore 60W | 2 | Saldatura connettori XLR |
+| ATTR-04 | Tronchesina | 2 | Taglio cavi |
+| ATTR-05 | Spelafili | 2 | Preparazione cavi |
 
 ---
 
@@ -510,19 +563,25 @@
 | Router/Firewall | 3 | 1 Firewall + 2 Boxini gestione |
 | Access Point WiFi | 4 | Modalita' cablata |
 
-### 9.4 Cavi
+### 9.4 Cavi e Accessori
 
-| Tipologia | Lunghezza Totale |
-|-----------|------------------|
+| Tipologia | Quantita'/Lunghezza |
+|-----------|---------------------|
 | Cavo LAN Cat.6 | ~1.250m |
 | Cavo LAN Outdoor | ~50m |
+| Cavo fibra HDMI | 200m (1 bobina) |
 | Cavo XLR | ~110m |
 | Cavo rosso-nero | ~70m |
 | Cavo HDMI | ~80m |
 | Cavo BNC | ~60m |
 | Cavo USB | ~6m |
+| Cavo coassiale antenna TV | ~30m |
+| Cavo elettrico 220V | 100m |
 | Treccia Nitto | 20m |
-| **TOTALE** | **~1.650m** |
+| Connettori RJ45 Cat.6 | 200+ pezzi |
+| Connettori XLR (M+F) | 60+ pezzi |
+| Extender HDMI/Cat.6 | 15 coppie TX/RX |
+| **TOTALE Cavi** | **~1.980m** |
 
 ---
 
@@ -546,29 +605,68 @@
 |-----------|---------|------|
 | Bobine cavo LAN Cat.6 (4x305m) | ALTA | ~1.200m totali |
 | Cavi LAN outdoor -15°C (2x25m) | ALTA | LED Esterno |
+| Connettori RJ45 Cat.6 (box 200pz) | ALTA | Crimpatura cavi LAN |
+| Connettori XLR maschio (30+) | ALTA | Terminazione audio |
+| Connettori XLR femmina (30+) | ALTA | Terminazione audio |
+| Extender HDMI/Cat.6 (15 coppie) | CONFERMATO | GIA' IN MAGAZZINO |
+| Bobina cavo fibra HDMI (200m) | CONFERMATO | GIA' IN MAGAZZINO |
 | Cavi XLR varie lunghezze | MEDIA | ~110m totali |
 | Cavi HDMI corti (1-2m) | MEDIA | Regia |
+| Decoder TV digitale (4pz) | MEDIA | Se necessario antenna TV |
+| Cavi coassiali antenna TV (4x5-10m) | MEDIA | Per decoder TV |
+| Cavalletti telecamere PTZ (2pz) | MEDIA | Supporto telecamere |
+| Ciabatte multipresa (10+) | MEDIA | Regia + locations |
+| Quadri elettrici 16A o 32A (4pz) | ALTA | Da confermare Henoto |
+| Bobina cavo elettrico 220V (100m) | CONFERMATO | Installatore Igor |
+| Staffe ancoraggio parete LED | CONFERMATO | Da magazzino con LED |
+| Crimpatrice RJ45 (2pz) | MEDIA | Attrezzatura |
+| Saldatore 60W (2pz) | MEDIA | Per connettori XLR |
+| Tester cavi LAN | MEDIA | Verifica |
 | Fascette/velcro/nastro | BASSA | Consumabili |
 
 ---
 
 ## 11. NOTE TECNICHE IMPORTANTI
 
-1. **Cavi outdoor**: Devono essere certificati per -15°C, neri, grossi - chiedere disponibilita' a Igor
+### Cavi e Connessioni
 
-2. **Snake Toman**: Testare con cavo 50m al magazzino prima della partenza per verificare impedenza
+1. **Cavi LAN**: Richiedono crimpatura con connettori RJ45 Cat.6 - prevedere ~200 connettori + crimpatrice
 
-3. **MAUI (attive)**: Ricevono segnale NORMALE (non amplificato) direttamente dal mixer
+2. **Cavi XLR audio**: Richiedono saldatura connettori maschio/femmina alle estremità - prevedere saldatore 60W
 
-4. **Casse HTC (passive)**: Richiedono amplificatore in regia + Snake adapter per conversione LAN->XLR
+3. **Extender HDMI/Cat.6**: Per segnale video su cavi LAN, forniti a coppie (TX/RX) - 15 coppie GIA' IN MAGAZZINO
 
-5. **LED Celebration**: NON ha linea di backup - sending card backup pronta dietro al LED
+4. **Cavo fibra HDMI**: Bobina da 200m GIA' IN MAGAZZINO - backup video
 
-6. **Percorso P.0->P.-1**: Via cappa cucina (FMT.7) - 4 cavi totali (2-3 rete + 2 audio rosso-nero)
+5. **Cavi outdoor**: Devono essere certificati per -15°C, neri, grossi - chiedere disponibilita' a Igor
 
-7. **Sending LED03**: Posizionata dietro al LED (~3m di distanza dalla regia)
+### Apparati Audio
 
-8. **WiFi**: Configurati in modalita' CABLATA, NO mesh - per performance streaming
+6. **Snake Toman**: Testare con cavo 50m al magazzino prima della partenza per verificare impedenza
+
+7. **MAUI (attive)**: Ricevono segnale NORMALE (non amplificato) direttamente dal mixer
+
+8. **Casse passive (Fonestar/incasso)**: Richiedono amplificatore in regia + cavo rosso-nero (polarita' +/-). Per Galleria LED C verranno portati entrambi i modelli (Fonestar rettangolari con staffa + casse tonde a incasso) - scelta finale in base indicazioni allestitore Henoto
+
+9. **Cavi rosso-nero**: Cavi audio per casse passive, collegano amplificatori alle casse (nero=-, rosso=+)
+
+### Apparati Video
+
+10. **LED Celebration**: NON ha linea di backup - sending card backup pronta dietro al LED
+
+11. **Sending LED03**: Posizionata dietro al LED (~3m di distanza dalla regia)
+
+12. **Decoder TV**: 4 decoder digitale terrestre da collegare ai monitor TV 55" se necessario segnale antenna. Prevedere cavi coassiali 5-10m
+
+### Infrastruttura
+
+13. **Percorso P.0->P.-1**: Via cappa cucina (FMT.7) - 4 cavi totali (2-3 rete + 2 audio rosso-nero)
+
+14. **WiFi**: Configurati in modalita' CABLATA, NO mesh - per performance streaming
+
+15. **Quadri elettrici**: Tipologia (16A o 32A) da confermare in base alle specifiche dell'allestitore Henoto
+
+16. **Staffe LED**: Staffe ancoraggio parete per LED Ristorante P.-1 dovrebbero arrivare da magazzino insieme ai LED
 
 ---
 
