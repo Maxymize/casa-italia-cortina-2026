@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Materiali Completa - Casa Italia Cortina 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066B3;
+            --primary-dark: #004d86;
+            --dark: #1a1a2e;
+            --gray-light: #f8f9fa;
+            --white: #ffffff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: white;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-section img {
+            height: 36px;
+        }
+
+        .logo-section h1 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        nav a.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--dark) 100%);
+            color: white;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .summary-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .summary-card .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .summary-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .summary-card .label {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            margin-bottom: 32px;
+        }
+
+        .section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--gray-light);
+        }
+
+        .section h3 span {
+            font-size: 24px;
+        }
+
+        .section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 24px 0 16px;
+            color: var(--primary-dark);
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        th, td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--gray-light);
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        tr:hover {
+            background: #fafbfc;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .badge.confermato { background: var(--success); }
+        .badge.in-arrivo { background: var(--warning); color: #333; }
+        .badge.noleggio { background: var(--info); }
+        .badge.da-verificare { background: var(--danger); }
+        .badge.video { background: #2196F3; }
+        .badge.audio { background: #4CAF50; }
+        .badge.rete { background: #9C27B0; }
+        .badge.cavi { background: #FF5722; }
+
+        /* Category badge */
+        .cat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .cat-badge.video { background: rgba(33, 150, 243, 0.1); color: #1976D2; }
+        .cat-badge.audio { background: rgba(76, 175, 80, 0.1); color: #388E3C; }
+        .cat-badge.rete { background: rgba(156, 39, 176, 0.1); color: #7B1FA2; }
+
+        /* Totals */
+        .total-row td {
+            background: var(--gray-light);
+            font-weight: 700;
+        }
+
+        /* Cable type colors */
+        .cable-type {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cable-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .cable-dot.lan { background: #2196F3; }
+        .cable-dot.xlr { background: #4CAF50; }
+        .cable-dot.hdmi { background: #FFC107; }
+        .cable-dot.bnc { background: #FF5722; }
+        .cable-dot.usb { background: #9E9E9E; }
+        .cable-dot.speaker { background: #E91E63; }
+        .cable-dot.outdoor { background: #9C27B0; }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        footer img {
+            height: 40px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 4px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="logo.png" alt="Informa Sistemi">
+                <h1>Casa Italia Cortina 2026</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="renders.html">Renders & Tour 3D</a>
+                <a href="calls.html">Cronologia Call</a>
+                <a href="schema-cavi.html">Schema Cavi</a>
+                <a href="materiali.html" class="active">Lista Materiali</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>Lista Materiali Completa</h2>
+        <p>Tutti i dispositivi, cavi e accessori per l'installazione Casa Italia Cortina</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="icon">📺</div>
+                <div class="number">198</div>
+                <div class="label">Moduli LED Totali</div>
+            </div>
+            <div class="summary-card">
+                <div class="icon">🔊</div>
+                <div class="number">15</div>
+                <div class="label">Dispositivi Audio</div>
+            </div>
+            <div class="summary-card">
+                <div class="icon">🌐</div>
+                <div class="number">9</div>
+                <div class="label">Dispositivi Rete</div>
+            </div>
+            <div class="summary-card">
+                <div class="icon">🔌</div>
+                <div class="number">~1.650m</div>
+                <div class="label">Cavi Totali</div>
+            </div>
+        </div>
+
+        <!-- SEZIONE 1: DISPOSITIVI VIDEO -->
+        <div class="section">
+            <h3><span>📺</span> Dispositivi Video</h3>
+
+            <h4>1.1 Moduli LED Wall</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Descrizione</th>
+                            <th>Qta</th>
+                            <th>Pitch</th>
+                            <th>Dimensioni</th>
+                            <th>Destinazione</th>
+                            <th>Flight Case</th>
+                            <th>Stato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LED-MOD-01</td>
+                            <td>Moduli COB 1.5 dritti</td>
+                            <td><strong>70</strong></td>
+                            <td>1.5mm</td>
+                            <td>600x337.5mm</td>
+                            <td>LED03 Celebration</td>
+                            <td>Bancale COB1.5</td>
+                            <td><span class="badge confermato">Nuovo lotto 420</span></td>
+                        </tr>
+                        <tr>
+                            <td>LED-MOD-02</td>
+                            <td>Moduli COB 1.5 dritti</td>
+                            <td><strong>48</strong></td>
+                            <td>1.5mm</td>
+                            <td>600x337.5mm</td>
+                            <td>LED02/04 Lounge</td>
+                            <td>Bancale COB1.5</td>
+                            <td><span class="badge confermato">Confermato</span></td>
+                        </tr>
+                        <tr>
+                            <td>LED-MOD-03</td>
+                            <td>Moduli COB 1.5 angolo 45° SX</td>
+                            <td><strong>16</strong></td>
+                            <td>1.5mm</td>
+                            <td>600x337.5mm</td>
+                            <td>LED02/04 Lounge</td>
+                            <td>Bancale COB1.5</td>
+                            <td><span class="badge in-arrivo">In Arrivo</span></td>
+                        </tr>
+                        <tr>
+                            <td>LED-MOD-04</td>
+                            <td>Moduli COB 1.5 angolo 45° DX</td>
+                            <td><strong>16</strong></td>
+                            <td>1.5mm</td>
+                            <td>600x337.5mm</td>
+                            <td>LED02/04 Lounge</td>
+                            <td>Bancale COB1.5</td>
+                            <td><span class="badge in-arrivo">In Arrivo</span></td>
+                        </tr>
+                        <tr>
+                            <td>LED-MOD-05</td>
+                            <td>LED SEGNA 2.6 (grandi)</td>
+                            <td><strong>24</strong></td>
+                            <td>2.6mm</td>
+                            <td>500x1000mm</td>
+                            <td>LED01 Ristorante</td>
+                            <td>CORT01-05</td>
+                            <td><span class="badge noleggio">Noleggio Sedico</span></td>
+                        </tr>
+                        <tr>
+                            <td>LED-MOD-06</td>
+                            <td>LED SEGNA 2.6 (piccoli)</td>
+                            <td><strong>12</strong></td>
+                            <td>2.6mm</td>
+                            <td>500x500mm</td>
+                            <td>LED01 Ristorante</td>
+                            <td>CORT01-05</td>
+                            <td><span class="badge noleggio">Noleggio Sedico</span></td>
+                        </tr>
+                        <tr>
+                            <td>LED-MOD-07</td>
+                            <td>AMIL BLUE 3.9 outdoor</td>
+                            <td><strong>12</strong></td>
+                            <td>3.9mm</td>
+                            <td>500x1000mm</td>
+                            <td>LED06 Esterno</td>
+                            <td>CORT14-16</td>
+                            <td><span class="badge da-verificare">Test bollino fucsia</span></td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2"><strong>TOTALE MODULI LED</strong></td>
+                            <td><strong>198</strong></td>
+                            <td colspan="5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.2 Sending Card (Controller LED)</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Modello</th>
+                            <th>Porte</th>
+                            <th>LED Gestito</th>
+                            <th>Risoluzione</th>
+                            <th>Posizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CTRL-01</td>
+                            <td>MCTRL4K #1</td>
+                            <td>16 LAN</td>
+                            <td>LED03 Celebration</td>
+                            <td>3840x1536px</td>
+                            <td>Regia P.0</td>
+                        </tr>
+                        <tr>
+                            <td>CTRL-02</td>
+                            <td>MCTRL4K #2</td>
+                            <td>16 LAN</td>
+                            <td>LED01 Ristorante</td>
+                            <td>2304x960px</td>
+                            <td>Regia P.0</td>
+                        </tr>
+                        <tr>
+                            <td>CTRL-03</td>
+                            <td>MCTRL4K #3</td>
+                            <td>16 LAN</td>
+                            <td>LED02+04 Lounge</td>
+                            <td>2688x1728px</td>
+                            <td>Vano bancone bar</td>
+                        </tr>
+                        <tr>
+                            <td>CTRL-04</td>
+                            <td>MTCRL300</td>
+                            <td>4 LAN</td>
+                            <td>LED06 Esterno</td>
+                            <td>768x512px</td>
+                            <td>Case outdoor</td>
+                        </tr>
+                        <tr>
+                            <td>CTRL-05</td>
+                            <td>VX1000 (backup)</td>
+                            <td>-</td>
+                            <td>Backup Ristorante</td>
+                            <td>-</td>
+                            <td>Regia P.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.3 PC VMIX, MiniPC ed Encoder</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Descrizione</th>
+                            <th>Qta</th>
+                            <th>Tipo</th>
+                            <th>Funzione</th>
+                            <th>Flight Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VMIX-01</td>
+                            <td>PC VMIX 1</td>
+                            <td>1</td>
+                            <td>Tower</td>
+                            <td>Regia LED03 Celebration</td>
+                            <td>CORT12</td>
+                        </tr>
+                        <tr>
+                            <td>VMIX-02</td>
+                            <td>PC VMIX 2</td>
+                            <td>1</td>
+                            <td>Tower</td>
+                            <td>Regia LED01 Ristorante</td>
+                            <td>CORT12</td>
+                        </tr>
+                        <tr>
+                            <td>VMIX-03</td>
+                            <td>PC VMIX 3</td>
+                            <td>1</td>
+                            <td>Tower</td>
+                            <td>Regia LED02+04 Lounge</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>WIN-01/04</td>
+                            <td>MiniPC Windows</td>
+                            <td>4</td>
+                            <td>MiniPC</td>
+                            <td>Browser Discovery+/RAI streaming</td>
+                            <td>CORT12</td>
+                        </tr>
+                        <tr>
+                            <td>ENC-01/04</td>
+                            <td>Encoder Kiloview</td>
+                            <td>4</td>
+                            <td>HDMI/SDI->IP</td>
+                            <td>Codifica NDI/SRT/RTMP</td>
+                            <td>CORT12</td>
+                        </tr>
+                        <tr>
+                            <td>EDV-01</td>
+                            <td>PC EDV Digital Signage</td>
+                            <td>1</td>
+                            <td>PC</td>
+                            <td>Contenuti programmati LED Esterno</td>
+                            <td>Case outdoor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.4 Monitor e Telecamere</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Descrizione</th>
+                            <th>Qta</th>
+                            <th>Dimensione</th>
+                            <th>Destinazione</th>
+                            <th>Supporto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MON-01/03</td>
+                            <td>Monitor Preview VMIX</td>
+                            <td>3</td>
+                            <td>27"</td>
+                            <td>Regia - VMIX 1,2,3</td>
+                            <td>Da tavolo</td>
+                        </tr>
+                        <tr>
+                            <td>MON-04</td>
+                            <td>Monitor TV</td>
+                            <td>2</td>
+                            <td>55"</td>
+                            <td>Sala Stampa P.-1</td>
+                            <td>Stand tavolo</td>
+                        </tr>
+                        <tr>
+                            <td>MON-05</td>
+                            <td>Monitor TV</td>
+                            <td>2</td>
+                            <td>55"</td>
+                            <td>Sala Interviste P.0</td>
+                            <td>Stand terra</td>
+                        </tr>
+                        <tr>
+                            <td>PTZ-01</td>
+                            <td>Telecamera PTZ SICURA</td>
+                            <td>1</td>
+                            <td>4K</td>
+                            <td>Celebration/Lounge</td>
+                            <td>Cavalletto</td>
+                        </tr>
+                        <tr>
+                            <td>PTZ-02</td>
+                            <td>Telecamera PTZ (extra)</td>
+                            <td>1-2</td>
+                            <td>4K</td>
+                            <td>Da definire</td>
+                            <td>Da Assisi</td>
+                        </tr>
+                        <tr>
+                            <td>ACQ-01/03</td>
+                            <td>Schede Acquisizione BNC/HDMI</td>
+                            <td>3</td>
+                            <td>PCIe</td>
+                            <td>PC VMIX 1,2,3</td>
+                            <td>Interno PC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SEZIONE 2: DISPOSITIVI AUDIO -->
+        <div class="section">
+            <h3><span>🔊</span> Dispositivi Audio</h3>
+
+            <h4>2.1 Casse e Speaker</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Modello</th>
+                            <th>Qta</th>
+                            <th>Tipo</th>
+                            <th>Input</th>
+                            <th>Destinazione</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SPK-01</td>
+                            <td>MAUI 28G (LD Systems)</td>
+                            <td>2</td>
+                            <td>Attive</td>
+                            <td>XLR</td>
+                            <td>LED03 Celebration</td>
+                            <td>Cavo da Mixer LR</td>
+                        </tr>
+                        <tr>
+                            <td>SPK-02</td>
+                            <td>MAUI 28G (LD Systems)</td>
+                            <td>2</td>
+                            <td>Attive</td>
+                            <td>XLR</td>
+                            <td>LED01 Ristorante P.-1</td>
+                            <td>Segnale non amplificato</td>
+                        </tr>
+                        <tr>
+                            <td>SPK-03</td>
+                            <td>MAUI 28G (LD Systems)</td>
+                            <td>2</td>
+                            <td>Attive</td>
+                            <td>XLR</td>
+                            <td>LED02/04 Lounge</td>
+                            <td>Cavo da Mixer AUX2</td>
+                        </tr>
+                        <tr>
+                            <td>SPK-04</td>
+                            <td>Speaker SSSNAKE</td>
+                            <td>1</td>
+                            <td>Attivo</td>
+                            <td>XLR</td>
+                            <td>Galleria P.0</td>
+                            <td>Cavo da Mixer AUX1</td>
+                        </tr>
+                        <tr>
+                            <td>SPK-05</td>
+                            <td>Fonestar (parete)</td>
+                            <td>2</td>
+                            <td>Passive</td>
+                            <td>Speaker cable</td>
+                            <td>LED06 Esterno</td>
+                            <td>Richiedono amplificatore</td>
+                        </tr>
+                        <tr>
+                            <td>SPK-06</td>
+                            <td>Casse HTC</td>
+                            <td>-</td>
+                            <td>Passive</td>
+                            <td>Snake adapter</td>
+                            <td>Piano 0</td>
+                            <td>Amp in regia + Snake Toman</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.2 Mixer, Amplificatori e Processori</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Modello</th>
+                            <th>Qta</th>
+                            <th>Uscite</th>
+                            <th>Posizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MIX-01</td>
+                            <td>Mixer Behringer</td>
+                            <td>1</td>
+                            <td>LR + AUX1 + AUX2</td>
+                            <td>Regia centrale</td>
+                        </tr>
+                        <tr>
+                            <td>AMP-01</td>
+                            <td>Amplificatore Monacor</td>
+                            <td>1</td>
+                            <td>Speaker out</td>
+                            <td>LED06 Esterno (case)</td>
+                        </tr>
+                        <tr>
+                            <td>AMP-02</td>
+                            <td>Amplificatore (per HTC)</td>
+                            <td>1</td>
+                            <td>Speaker out</td>
+                            <td>Regia P.0</td>
+                        </tr>
+                        <tr>
+                            <td>AUD-01/04</td>
+                            <td>Schede Audio USB</td>
+                            <td>4</td>
+                            <td>XLR/Jack</td>
+                            <td>VMIX 1,2,3 + Case esterno</td>
+                        </tr>
+                        <tr>
+                            <td>MIC-01</td>
+                            <td>Ricevitore Microfoni JTS</td>
+                            <td>1</td>
+                            <td>Wireless</td>
+                            <td>Regia (CORT12)</td>
+                        </tr>
+                        <tr>
+                            <td>ADP-01</td>
+                            <td>Snake Adapter Toman</td>
+                            <td>1</td>
+                            <td>LAN -> 8x XLR</td>
+                            <td>Test 50m al magazzino</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SEZIONE 3: DISPOSITIVI DI RETE -->
+        <div class="section">
+            <h3><span>🌐</span> Infrastruttura di Rete</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Dispositivo</th>
+                            <th>Qta</th>
+                            <th>Porte</th>
+                            <th>Posizione</th>
+                            <th>Funzione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RTR-01</td>
+                            <td>Router con Firewall</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>Regia P.0</td>
+                            <td>Ingresso fibra/internet + sicurezza</td>
+                        </tr>
+                        <tr>
+                            <td>SW-01</td>
+                            <td>Switch Manager 24 porte</td>
+                            <td>1</td>
+                            <td>24</td>
+                            <td>Rack Regia P.0</td>
+                            <td>Hub centrale</td>
+                        </tr>
+                        <tr>
+                            <td>SW-02</td>
+                            <td>Switch Manager</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>Rack LED Esterno</td>
+                            <td>Distribuzione esterna</td>
+                        </tr>
+                        <tr>
+                            <td>SW-03</td>
+                            <td>Switch Manager</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>Piano -1 Ristorante</td>
+                            <td>Distribuzione + WiFi P.-1</td>
+                        </tr>
+                        <tr>
+                            <td>SW-04</td>
+                            <td>Switch Manager (riserva)</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>Da definire</td>
+                            <td>Backup/ridondanza</td>
+                        </tr>
+                        <tr>
+                            <td>WIFI-01</td>
+                            <td>Access Point WiFi</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>LED03 Celebration</td>
+                            <td>Cablato (no mesh)</td>
+                        </tr>
+                        <tr>
+                            <td>WIFI-02</td>
+                            <td>Access Point WiFi</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>LED02/04 Lounge</td>
+                            <td>Cablato (no mesh)</td>
+                        </tr>
+                        <tr>
+                            <td>WIFI-03</td>
+                            <td>Access Point WiFi</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>LED01 Ristorante P.-1</td>
+                            <td>Cablato (no mesh)</td>
+                        </tr>
+                        <tr>
+                            <td>WIFI-04</td>
+                            <td>Access Point WiFi</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>LED06 Esterno</td>
+                            <td>Cablato (no mesh)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SEZIONE 4: CAVI -->
+        <div class="section">
+            <h3><span>🔌</span> Cavi - Dettaglio per Tratta</h3>
+
+            <h4>4.1 Regia -> LED03 Celebration (~20m)</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo Cavo</th>
+                            <th>Qta</th>
+                            <th>Lunghezza Unit.</th>
+                            <th>Totale</th>
+                            <th>Funzione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6</span></td>
+                            <td>10</td>
+                            <td>20m</td>
+                            <td><strong>200m</strong></td>
+                            <td>Segnale video (NO backup)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6</span></td>
+                            <td>2-3</td>
+                            <td>20m</td>
+                            <td><strong>40-60m</strong></td>
+                            <td>Rete dati + WiFi</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot xlr"></span> Cavo XLR</span></td>
+                            <td>2</td>
+                            <td>20m</td>
+                            <td><strong>40m</strong></td>
+                            <td>Audio MAUI L+R</td>
+                        </tr>
+                        <tr>
+                            <td>Treccia Nitto 12/14 cavi</td>
+                            <td>1</td>
+                            <td>20m</td>
+                            <td><strong>20m</strong></td>
+                            <td>Fascio passaggio battiscopa</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="3"><strong>Subtotale Celebration</strong></td>
+                            <td><strong>~320m</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.2 Regia -> LED02/04 Lounge (~15m)</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo Cavo</th>
+                            <th>Qta</th>
+                            <th>Lunghezza Unit.</th>
+                            <th>Totale</th>
+                            <th>Funzione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6 (Main)</span></td>
+                            <td>12</td>
+                            <td>15m</td>
+                            <td><strong>180m</strong></td>
+                            <td>Segnale video main</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6 (Backup)</span></td>
+                            <td>12</td>
+                            <td>15m</td>
+                            <td><strong>180m</strong></td>
+                            <td>Segnale video backup</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6</span></td>
+                            <td>2-3</td>
+                            <td>15m</td>
+                            <td><strong>30-45m</strong></td>
+                            <td>Rete dati</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot xlr"></span> Cavo XLR</span></td>
+                            <td>3</td>
+                            <td>15m</td>
+                            <td><strong>45m</strong></td>
+                            <td>Audio MAUI + SSSNAKE</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot hdmi"></span> Cavo HDMI</span></td>
+                            <td>1</td>
+                            <td>1m</td>
+                            <td><strong>1m</strong></td>
+                            <td>PC Sending -> MCTRL4K</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="3"><strong>Subtotale Lounge</strong></td>
+                            <td><strong>~450m</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.3 Regia P.0 -> LED01 Ristorante P.-1 (~30m via cappa FMT.7)</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo Cavo</th>
+                            <th>Qta</th>
+                            <th>Lunghezza Unit.</th>
+                            <th>Totale</th>
+                            <th>Funzione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6 (Main)</span></td>
+                            <td>5</td>
+                            <td>30m</td>
+                            <td><strong>150m</strong></td>
+                            <td>Segnale video main</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6 (Backup)</span></td>
+                            <td>5</td>
+                            <td>30m</td>
+                            <td><strong>150m</strong></td>
+                            <td>Segnale video backup</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6</span></td>
+                            <td>2-3</td>
+                            <td>30m</td>
+                            <td><strong>60-90m</strong></td>
+                            <td>Rete dati + Switch P.-1</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot speaker"></span> Cavo rosso-nero</span></td>
+                            <td>2</td>
+                            <td>30m</td>
+                            <td><strong>60m</strong></td>
+                            <td>Audio MAUI (attive)</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="3"><strong>Subtotale Ristorante</strong></td>
+                            <td><strong>~450m</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.4 Regia -> LED06 Esterno (~25m)</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo Cavo</th>
+                            <th>Qta</th>
+                            <th>Lunghezza Unit.</th>
+                            <th>Totale</th>
+                            <th>Funzione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot outdoor"></span> Cavo LAN OUTDOOR (Main)</span></td>
+                            <td>1</td>
+                            <td>25m</td>
+                            <td><strong>25m</strong></td>
+                            <td>Segnale regia (cert. -15°C)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot outdoor"></span> Cavo LAN OUTDOOR (Backup)</span></td>
+                            <td>1</td>
+                            <td>25m</td>
+                            <td><strong>25m</strong></td>
+                            <td>Backup ridondanza (cert. -15°C)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6 locale</span></td>
+                            <td>2</td>
+                            <td>5m</td>
+                            <td><strong>10m</strong></td>
+                            <td>MTCRL300 -> LED</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot speaker"></span> Cavo speaker</span></td>
+                            <td>2</td>
+                            <td>5m</td>
+                            <td><strong>10m</strong></td>
+                            <td>Monacor -> Fonestar</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot hdmi"></span> Cavo HDMI/Extender</span></td>
+                            <td>1</td>
+                            <td>25m</td>
+                            <td><strong>25m</strong></td>
+                            <td>EDV -> MTCRL300</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="3"><strong>Subtotale Esterno</strong></td>
+                            <td><strong>~95m</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.5 Cavi Interni Regia</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo Cavo</th>
+                            <th>Qta</th>
+                            <th>Lunghezza Unit.</th>
+                            <th>Totale</th>
+                            <th>Funzione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot hdmi"></span> Cavo HDMI</span></td>
+                            <td>3</td>
+                            <td>1.5m</td>
+                            <td><strong>4.5m</strong></td>
+                            <td>VMIX -> MCTRL4K</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot hdmi"></span> Cavo HDMI</span></td>
+                            <td>3</td>
+                            <td>1.5m</td>
+                            <td><strong>4.5m</strong></td>
+                            <td>VMIX -> Monitor 27"</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot hdmi"></span> Cavo HDMI</span></td>
+                            <td>4</td>
+                            <td>0.5m</td>
+                            <td><strong>2m</strong></td>
+                            <td>MiniPC -> Kiloview</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6</span></td>
+                            <td>10</td>
+                            <td>2m</td>
+                            <td><strong>20m</strong></td>
+                            <td>MiniPC/Encoder -> Switch</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot usb"></span> Cavo USB</span></td>
+                            <td>3</td>
+                            <td>2m</td>
+                            <td><strong>6m</strong></td>
+                            <td>Schede Audio -> PC VMIX</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot xlr"></span> Cavo XLR</span></td>
+                            <td>3</td>
+                            <td>2m</td>
+                            <td><strong>6m</strong></td>
+                            <td>Schede Audio -> Mixer</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot bnc"></span> Cavo BNC</span></td>
+                            <td>3</td>
+                            <td>20m</td>
+                            <td><strong>60m</strong></td>
+                            <td>PTZ -> Schede acquisizione</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6 (PTZ)</span></td>
+                            <td>3</td>
+                            <td>20m</td>
+                            <td><strong>60m</strong></td>
+                            <td>PTZ -> Switch (controllo)</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="3"><strong>Subtotale Regia</strong></td>
+                            <td><strong>~163m</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.6 Riepilogo Cavi per Tipologia</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipologia</th>
+                            <th>Lunghezza Totale</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot lan"></span> Cavo LAN Cat.6 standard</span></td>
+                            <td><strong>~1.200m</strong></td>
+                            <td>4 bobine da 305m</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot outdoor"></span> Cavo LAN Cat.6 OUTDOOR</span></td>
+                            <td><strong>50m</strong></td>
+                            <td>Certificato -15°C (chiedere a Igor)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot xlr"></span> Cavo XLR</span></td>
+                            <td><strong>~110m</strong></td>
+                            <td>Audio professionale</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot speaker"></span> Cavo rosso-nero / speaker</span></td>
+                            <td><strong>~70m</strong></td>
+                            <td>Audio passivo</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot hdmi"></span> Cavo HDMI</span></td>
+                            <td><strong>~80m</strong></td>
+                            <td>Varie lunghezze</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot bnc"></span> Cavo BNC</span></td>
+                            <td><strong>~60m</strong></td>
+                            <td>Telecamere PTZ</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cable-type"><span class="cable-dot usb"></span> Cavo USB</span></td>
+                            <td><strong>~6m</strong></td>
+                            <td>Schede audio</td>
+                        </tr>
+                        <tr>
+                            <td>Treccia Nitto</td>
+                            <td><strong>20m</strong></td>
+                            <td>Fascio passaggio cavi</td>
+                        </tr>
+                        <tr>
+                            <td>Tail A (alimentazione LED)</td>
+                            <td><strong>320+ pz</strong></td>
+                            <td>+ spare</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>TOTALE CAVI</strong></td>
+                            <td><strong>~1.650m</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SEZIONE 5: FLIGHT CASE -->
+        <div class="section">
+            <h3><span>📦</span> Flight Case</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Contenuto</th>
+                            <th>Destinazione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CORT01-05</strong></td>
+                            <td>LED noleggio Sedico (SEGNA 2.6)</td>
+                            <td>Ristorante P.-1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CORT11</strong></td>
+                            <td>Coppia casse MAUI 28G</td>
+                            <td>Celebration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CORT12</strong></td>
+                            <td>VMIX1, VMIX2, MiniPC, Encoder, JTS</td>
+                            <td>Regia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CORT14</strong></td>
+                            <td>AMIL BLUE (bollino fucsia)</td>
+                            <td>LED Esterno</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CORT15</strong></td>
+                            <td>AMIL BLUE (bollino fucsia)</td>
+                            <td>LED Esterno</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CORT16</strong></td>
+                            <td>AMIL BLUE spare (bollino fucsia)</td>
+                            <td>LED Esterno</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CORT17</strong></td>
+                            <td>Canaline carrabili (10 pz)</td>
+                            <td>LED Esterno</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bancale COB1.5</strong></td>
+                            <td>150 moduli (dritti + angolari 45°)</td>
+                            <td>Celebration + Lounge</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SEZIONE 6: DA VERIFICARE -->
+        <div class="section">
+            <h3><span>⚠️</span> Materiale da Verificare / Acquistare</h3>
+
+            <h4>6.1 Da Verificare Disponibilita'</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Materiale</th>
+                            <th>Responsabile</th>
+                            <th>Scadenza</th>
+                            <th>Stato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cavi LAN outdoor certificati -15°C</td>
+                            <td>Igor</td>
+                            <td>20 Gen</td>
+                            <td><span class="badge da-verificare">Da Verificare</span></td>
+                        </tr>
+                        <tr>
+                            <td>PTZ extra da Assisi</td>
+                            <td>Nicola</td>
+                            <td>20 Gen</td>
+                            <td><span class="badge da-verificare">Da Confermare</span></td>
+                        </tr>
+                        <tr>
+                            <td>Televisori 55" in magazzino</td>
+                            <td>Nicola</td>
+                            <td>20 Gen</td>
+                            <td><span class="badge da-verificare">Da Verificare</span></td>
+                        </tr>
+                        <tr>
+                            <td>Moduli COB 45° (SX + DX)</td>
+                            <td>Acquisti</td>
+                            <td>22 Gen</td>
+                            <td><span class="badge in-arrivo">In Arrivo</span></td>
+                        </tr>
+                        <tr>
+                            <td>LED noleggio Sedico (SEGNA 2.6)</td>
+                            <td>Acquisti</td>
+                            <td>15 Gen</td>
+                            <td><span class="badge noleggio">Noleggio</span></td>
+                        </tr>
+                        <tr>
+                            <td>Snake Toman (test 50m)</td>
+                            <td>Magazzino</td>
+                            <td>20 Gen</td>
+                            <td><span class="badge da-verificare">Test</span></td>
+                        </tr>
+                        <tr>
+                            <td>3 case AMIL BLUE (bollino fucsia)</td>
+                            <td>Magazzino</td>
+                            <td>20-21 Gen</td>
+                            <td><span class="badge da-verificare">Test</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>6.2 Da Acquistare / Preparare</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Materiale</th>
+                            <th>Quantita'</th>
+                            <th>Urgenza</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bobine cavo LAN Cat.6</td>
+                            <td>4x305m (~1.200m)</td>
+                            <td><span class="badge da-verificare">ALTA</span></td>
+                            <td>Tutte le tratte</td>
+                        </tr>
+                        <tr>
+                            <td>Cavi LAN outdoor -15°C</td>
+                            <td>2x25m (50m)</td>
+                            <td><span class="badge da-verificare">ALTA</span></td>
+                            <td>LED Esterno</td>
+                        </tr>
+                        <tr>
+                            <td>Cavi XLR varie lunghezze</td>
+                            <td>~110m totali</td>
+                            <td><span class="badge in-arrivo">MEDIA</span></td>
+                            <td>Audio professionale</td>
+                        </tr>
+                        <tr>
+                            <td>Cavi HDMI corti (1-2m)</td>
+                            <td>~15 pezzi</td>
+                            <td><span class="badge in-arrivo">MEDIA</span></td>
+                            <td>Regia</td>
+                        </tr>
+                        <tr>
+                            <td>Fascette / velcro / nastro</td>
+                            <td>-</td>
+                            <td><span class="badge confermato">BASSA</span></td>
+                            <td>Consumabili</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <img src="logo.png" alt="Informa Sistemi">
+        <p><strong>Documento redatto da Maximilian Giurastante</strong></p>
+        <p>Versione 1.2.09 | 14 Gennaio 2026</p>
+        <p style="margin-top: 16px; font-size: 12px;">
+            Olimpiadi Invernali Milano-Cortina 2026
+        </p>
+    </footer>
+
+</body>
+</html>
