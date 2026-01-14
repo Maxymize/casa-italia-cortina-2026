@@ -209,37 +209,56 @@
 
 ### 3.1 Switch
 
-| Cod. | Modello | Quantita' | Porte | Posizione | Funzione |
-|------|---------|-----------|-------|-----------|----------|
-| SW-01 | Switch Manager 24 porte | 1 | 24 | Rack Regia P.0 | Hub centrale |
-| SW-02 | Switch Manager | 1 | - | Rack LED Esterno | Distribuzione esterna |
-| SW-03 | Switch Manager | 1 | - | Piano -1 Ristorante | Distribuzione + WiFi |
-| SW-04 | Switch Manager (riserva) | 1 | - | Da definire | Backup/ridondanza |
+| Cod. | Modello | IP Statico | Porte | Posizione | Funzione |
+|------|---------|------------|-------|-----------|----------|
+| SW-01 | Netgear GS110 | 10.122.0.30 | 24 | LED03 Celebration | Distribuzione locale |
+| SW-02 | Netgear GS110 | 10.122.0.31 | 24 | LED02/04 Lounge | Distribuzione locale |
+| SW-03 | Netgear GS110 | 10.122.0.32 | 24 | LED01 Ristorante P.-1 | Distribuzione + WiFi |
+| SW-04 | Netgear GS110 | 10.122.0.33 | 24 | LED06 Esterno | Distribuzione esterna |
 
-**Totale switch:** 3-4 unita'
+**Totale switch:** 4 unita' (Netgear GS110 managed)
 
 ---
 
 ### 3.2 Router e Firewall
 
-| Cod. | Modello | Quantita' | Funzione | Posizione |
-|------|---------|-----------|----------|-----------|
-| RTR-01 | Router con Firewall integrato | 1 | Ingresso fibra/internet + sicurezza | Regia P.0 |
+| Cod. | Modello | IP Statico | Funzione | Posizione |
+|------|---------|------------|----------|-----------|
+| RTR-01 | Firewall/Router | 10.122.0.254 | Gateway + Sicurezza rete | Regia P.0 |
+| RTR-02 | Boxino Gestione Monitoraggio | 10.122.0.1 | Monitoraggio rete locale | Regia P.0 |
+| RTR-03 | Boxino Gestione Antenne | 10.122.0.2 | Gestione antenne WiFi | Regia P.0 |
 
-**Totale router/firewall:** 1 unita'
+**Totale router/firewall:** 3 unita' (1 firewall + 2 boxini gestione)
 
 ---
 
 ### 3.3 Access Point WiFi
 
-| Cod. | Descrizione | Quantita' | Modalita' | Posizione |
-|------|-------------|-----------|-----------|-----------|
-| WIFI-01 | Access Point WiFi #1 | 1 | Cablato (no mesh) | LED03 Celebration |
-| WIFI-02 | Access Point WiFi #2 | 1 | Cablato (no mesh) | LED02/04 Lounge |
-| WIFI-03 | Access Point WiFi #3 | 1 | Cablato (no mesh) | LED01 Ristorante P.-1 |
-| WIFI-04 | Access Point WiFi #4 | 1 | Cablato (no mesh) | LED06 Esterno |
+| Cod. | Descrizione | IP Statico | Modalita' | Posizione |
+|------|-------------|------------|-----------|-----------|
+| WIFI-01 | Access Point WiFi #1 | 10.122.0.10 | Cablato (no mesh) | LED03 Celebration |
+| WIFI-02 | Access Point WiFi #2 | 10.122.0.11 | Cablato (no mesh) | LED02/04 Lounge |
+| WIFI-03 | Access Point WiFi #3 | 10.122.0.12 | Cablato (no mesh) | LED01 Ristorante P.-1 |
+| WIFI-04 | Access Point WiFi #4 | 10.122.0.13 | Cablato (no mesh) | LED06 Esterno |
 
-**Totale Access Point:** 4 unita'
+**Totale Access Point:** 4 unita' (modalita' cablata, NO mesh)
+
+---
+
+### 3.4 Configurazione di Rete
+
+**Subnet:** 10.122.0.0/24
+**Gateway:** 10.122.0.254 (Firewall)
+**DNS:** Da configurare
+
+**Range IP Statici Assegnati:**
+- Router/Firewall: 10.122.0.1, 10.122.0.2, 10.122.0.254
+- Access Point WiFi: 10.122.0.10-13
+- Switch: 10.122.0.30-33
+- Encoder Kiloview: 10.122.0.50-53
+- MiniPC Streaming: 10.122.0.60-63
+
+**Range DHCP:** 10.122.0.100-200 (per dispositivi temporanei)
 
 ---
 
@@ -485,11 +504,11 @@
 
 ### 9.3 Dispositivi Rete
 
-| Categoria | Quantita' |
-|-----------|-----------|
-| Switch Manager | 3-4 |
-| Router/Firewall | 1 |
-| Access Point WiFi | 4 |
+| Categoria | Quantita' | Modello |
+|-----------|-----------|---------|
+| Switch Netgear GS110 | 4 | Managed 24 porte |
+| Router/Firewall | 3 | 1 Firewall + 2 Boxini gestione |
+| Access Point WiFi | 4 | Modalita' cablata |
 
 ### 9.4 Cavi
 

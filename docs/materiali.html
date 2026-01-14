@@ -807,13 +807,57 @@
         <div class="section">
             <h3><span>🌐</span> Infrastruttura di Rete</h3>
 
+            <!-- Router e Firewall -->
+            <h4 style="margin-top: 24px; margin-bottom: 16px; color: var(--primary);">Router e Firewall</h4>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
                             <th>Codice</th>
                             <th>Dispositivo</th>
-                            <th>Qta</th>
+                            <th>IP Statico</th>
+                            <th>Funzione</th>
+                            <th>Posizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>RTR-01</strong></td>
+                            <td>Firewall/Router</td>
+                            <td><code>10.122.0.254</code></td>
+                            <td>Gateway + Sicurezza rete</td>
+                            <td>Regia P.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RTR-02</strong></td>
+                            <td>Boxino Gestione Monitoraggio</td>
+                            <td><code>10.122.0.1</code></td>
+                            <td>Monitoraggio rete locale</td>
+                            <td>Regia P.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RTR-03</strong></td>
+                            <td>Boxino Gestione Antenne</td>
+                            <td><code>10.122.0.2</code></td>
+                            <td>Gestione antenne WiFi</td>
+                            <td>Regia P.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 12px; font-size: 14px; color: #666;">
+                    <strong>Totale:</strong> 3 unità (1 firewall + 2 boxini gestione)
+                </p>
+            </div>
+
+            <!-- Switch -->
+            <h4 style="margin-top: 32px; margin-bottom: 16px; color: var(--primary);">Switch di Rete</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Modello</th>
+                            <th>IP Statico</th>
                             <th>Porte</th>
                             <th>Posizione</th>
                             <th>Funzione</th>
@@ -821,79 +865,110 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>RTR-01</td>
-                            <td>Router con Firewall</td>
-                            <td>1</td>
-                            <td>-</td>
-                            <td>Regia P.0</td>
-                            <td>Ingresso fibra/internet + sicurezza</td>
-                        </tr>
-                        <tr>
-                            <td>SW-01</td>
-                            <td>Switch Manager 24 porte</td>
-                            <td>1</td>
+                            <td><strong>SW-01</strong></td>
+                            <td>Netgear GS110</td>
+                            <td><code>10.122.0.30</code></td>
                             <td>24</td>
-                            <td>Rack Regia P.0</td>
-                            <td>Hub centrale</td>
-                        </tr>
-                        <tr>
-                            <td>SW-02</td>
-                            <td>Switch Manager</td>
-                            <td>1</td>
-                            <td>-</td>
-                            <td>Rack LED Esterno</td>
-                            <td>Distribuzione esterna</td>
-                        </tr>
-                        <tr>
-                            <td>SW-03</td>
-                            <td>Switch Manager</td>
-                            <td>1</td>
-                            <td>-</td>
-                            <td>Piano -1 Ristorante</td>
-                            <td>Distribuzione + WiFi P.-1</td>
-                        </tr>
-                        <tr>
-                            <td>SW-04</td>
-                            <td>Switch Manager (riserva)</td>
-                            <td>1</td>
-                            <td>-</td>
-                            <td>Da definire</td>
-                            <td>Backup/ridondanza</td>
-                        </tr>
-                        <tr>
-                            <td>WIFI-01</td>
-                            <td>Access Point WiFi</td>
-                            <td>1</td>
-                            <td>-</td>
                             <td>LED03 Celebration</td>
-                            <td>Cablato (no mesh)</td>
+                            <td>Distribuzione locale</td>
                         </tr>
                         <tr>
-                            <td>WIFI-02</td>
-                            <td>Access Point WiFi</td>
-                            <td>1</td>
-                            <td>-</td>
+                            <td><strong>SW-02</strong></td>
+                            <td>Netgear GS110</td>
+                            <td><code>10.122.0.31</code></td>
+                            <td>24</td>
                             <td>LED02/04 Lounge</td>
-                            <td>Cablato (no mesh)</td>
+                            <td>Distribuzione locale</td>
                         </tr>
                         <tr>
-                            <td>WIFI-03</td>
-                            <td>Access Point WiFi</td>
-                            <td>1</td>
-                            <td>-</td>
+                            <td><strong>SW-03</strong></td>
+                            <td>Netgear GS110</td>
+                            <td><code>10.122.0.32</code></td>
+                            <td>24</td>
                             <td>LED01 Ristorante P.-1</td>
-                            <td>Cablato (no mesh)</td>
+                            <td>Distribuzione + WiFi</td>
                         </tr>
                         <tr>
-                            <td>WIFI-04</td>
-                            <td>Access Point WiFi</td>
-                            <td>1</td>
-                            <td>-</td>
+                            <td><strong>SW-04</strong></td>
+                            <td>Netgear GS110</td>
+                            <td><code>10.122.0.33</code></td>
+                            <td>24</td>
                             <td>LED06 Esterno</td>
-                            <td>Cablato (no mesh)</td>
+                            <td>Distribuzione esterna</td>
                         </tr>
                     </tbody>
                 </table>
+                <p style="margin-top: 12px; font-size: 14px; color: #666;">
+                    <strong>Totale:</strong> 4 unità Netgear GS110 (managed 24 porte)
+                </p>
+            </div>
+
+            <!-- Access Point WiFi -->
+            <h4 style="margin-top: 32px; margin-bottom: 16px; color: var(--primary);">Access Point WiFi</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Descrizione</th>
+                            <th>IP Statico</th>
+                            <th>Modalità</th>
+                            <th>Posizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>WIFI-01</strong></td>
+                            <td>Access Point WiFi #1</td>
+                            <td><code>10.122.0.10</code></td>
+                            <td>Cablato (no mesh)</td>
+                            <td>LED03 Celebration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WIFI-02</strong></td>
+                            <td>Access Point WiFi #2</td>
+                            <td><code>10.122.0.11</code></td>
+                            <td>Cablato (no mesh)</td>
+                            <td>LED02/04 Lounge</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WIFI-03</strong></td>
+                            <td>Access Point WiFi #3</td>
+                            <td><code>10.122.0.12</code></td>
+                            <td>Cablato (no mesh)</td>
+                            <td>LED01 Ristorante P.-1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WIFI-04</strong></td>
+                            <td>Access Point WiFi #4</td>
+                            <td><code>10.122.0.13</code></td>
+                            <td>Cablato (no mesh)</td>
+                            <td>LED06 Esterno</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 12px; font-size: 14px; color: #666;">
+                    <strong>Totale:</strong> 4 unità (modalità cablata, NO mesh)
+                </p>
+            </div>
+
+            <!-- Configurazione di Rete -->
+            <h4 style="margin-top: 32px; margin-bottom: 16px; color: var(--primary);">Configurazione di Rete</h4>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <p style="margin-bottom: 12px;"><strong>Subnet:</strong> <code>10.122.0.0/24</code></p>
+                <p style="margin-bottom: 12px;"><strong>Gateway:</strong> <code>10.122.0.254</code> (Firewall)</p>
+                <p style="margin-bottom: 16px;"><strong>DNS:</strong> Da configurare</p>
+
+                <p style="margin-bottom: 8px;"><strong>Range IP Statici Assegnati:</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 16px;">
+                    <li>Router/Firewall: <code>10.122.0.1</code>, <code>10.122.0.2</code>, <code>10.122.0.254</code></li>
+                    <li>Access Point WiFi: <code>10.122.0.10-13</code></li>
+                    <li>Switch: <code>10.122.0.30-33</code></li>
+                    <li>Encoder Kiloview: <code>10.122.0.50-53</code></li>
+                    <li>MiniPC Streaming: <code>10.122.0.60-63</code></li>
+                </ul>
+
+                <p style="margin-bottom: 0;"><strong>Range DHCP:</strong> <code>10.122.0.100-200</code> (per dispositivi temporanei)</p>
             </div>
         </div>
 
