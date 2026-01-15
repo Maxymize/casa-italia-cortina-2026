@@ -103,12 +103,17 @@
 
 ### 1.8 Telecamere PTZ
 
-| Cod. | Modello | Quantita' | Risoluzione | Connessione | Provenienza |
-|------|---------|-----------|-------------|-------------|-------------|
-| PTZ-01 | PTZ SICURA | 1 | 4K | LAN (PoE) | Magazzino Roma |
-| PTZ-02 | PTZ (da definire) | 1-2 | 4K | LAN | Da Assisi (Nicola) |
+| Cod. | Modello | Quantita' | Risoluzione | Connessione | Segnale Video | Provenienza |
+|------|---------|-----------|-------------|-------------|---------------|-------------|
+| PTZ-01 | PTZ SICURA | 1 | 4K | **POE** (Power over Ethernet) | **NDI via rete** | Magazzino Roma |
+| PTZ-02 | PTZ (da definire) | 1-2 | 4K | LAN | Da definire | Da Assisi (Nicola) |
 
 **Totale PTZ:** 1 confermata + 1-2 da confermare
+
+**NOTA TECNICA PTZ-01:**
+- **POE (Power over Ethernet)**: Alimentazione e dati su stesso cavo LAN Cat.6
+- **Segnale video NDI**: Trasmissione video via rete (NO cavi BNC o HDMI necessari)
+- **Cablaggio**: 1 solo cavo LAN Cat.6 per alimentazione + controllo + video NDI
 
 ---
 
@@ -153,14 +158,16 @@
 
 | Cod. | Modello | Quantita' | Potenza | Input | Destinazione | Note |
 |------|---------|-----------|---------|-------|--------------|------|
-| SPK-05 | Fonestar (parete) | 2 | - | Cavo rosso-nero | LED06 Esterno | Con staffa, esterne |
+| SPK-05 | Fonestar (parete) | 2 | - | Audio da PC EDV | LED06 Esterno | Con staffa, audio locale PC EDV->Amplificatore Monacor |
 | SPK-06 | Casse a incasso tonde | 2 | - | Cavo rosso-nero | Galleria LED C | Alternative alle Fonestar |
 | SPK-07 | Casse Fonestar/Incasso | 2 | - | Cavo rosso-nero | Galleria LED C | Scelta in base allestitore |
 | SPK-08 | Casse Sonos (opzionali) | 8 | ~1kW tot | - | Lounge | **DA CONFERMARE** |
 
 **Totale casse passive:** 2 Fonestar esterno + 2 Galleria (Fonestar o incasso) + 8 Sonos opzionali
 
-**Nota:** Per Galleria LED C verranno portati entrambi i modelli (Fonestar rettangolari con staffa + casse tonde a incasso) e si installeranno quelle piu' adatte in base alle indicazioni dell'allestitore Henoto
+**Note:**
+- **LED Esterno (SPK-05)**: Audio esce direttamente da PC EDV -> Amplificatore Monacor -> 2 Fonestar (NO cavi audio rosso-nero dalla Regia)
+- **Galleria LED C**: Verranno portati entrambi i modelli (Fonestar rettangolari con staffa + casse tonde a incasso) e si installeranno quelle piu' adatte in base alle indicazioni dell'allestitore Henoto
 
 ---
 
@@ -198,13 +205,30 @@
 
 ---
 
-### 2.6 Microfoni
+### 2.6 Radiomicrofoni e Antenne
 
-| Cod. | Modello | Quantita' | Tipo | Destinazione |
-|------|---------|-----------|------|--------------|
-| MIC-01 | Ricevitore Microfoni JTS | 1 | Wireless | Regia (CORT12) |
+| Cod. | Modello | Quantita' | Tipo | Destinazione | Note |
+|------|---------|-----------|------|--------------|------|
+| MIC-01 | Ricevitore Radiomicrofoni #1 | 1 | Wireless | Regia P.0 (CORT12) | 2 canali mic Celebration |
+| MIC-02 | Ricevitore Radiomicrofoni #2 | 1 | Wireless | Regia P.0 (CORT12) | 2 canali mic Ristorante P.-1 |
+| MIC-03 | Radiomicrofoni wireless | 4 | Wireless | 2 Celebration + 2 Ristorante | Totale 4 microfoni |
+| ANT-01 | Antenna radiomicrofoni #1 | 1 | BNC | Celebration -> Regia | Linkata su 2 canali |
+| ANT-02 | Antenna radiomicrofoni #2 | 1 | BNC | Ristorante P.-1 -> Regia | Linkata su 2 canali |
+| ANT-03 | Antenna radiomicrofoni #3 | 1 | BNC | Celebration -> Regia | Opzionale (1 per canale) |
+| ANT-04 | Antenna radiomicrofoni #4 | 1 | BNC | Ristorante P.-1 -> Regia | Opzionale (1 per canale) |
 
-**Totale microfoni:** 1 sistema wireless
+**Totale sistema radiomicrofoni:**
+- 2 ricevitori in regia P.0
+- 4 radiomicrofoni wireless (2 Celebration + 2 Ristorante P.-1)
+- 2 antenne BNC minime (1 per ricevitore, linkata su 2 canali)
+- 2 antenne BNC opzionali (totale 4, 1 per canale microfono)
+
+**NOTA TECNICA:**
+- **Ricevitore #1**: 2 canali mic Celebration + 1 antenna linkata
+- **Ricevitore #2**: 2 canali mic Ristorante P.-1 + 1 antenna linkata
+- **Antenne BNC**: Collegamento sale remote -> Regia P.0 con cavo BNC
+- **Configurazione minima**: 2 antenne BNC (1 per ricevitore)
+- **Configurazione ottimale**: 4 antenne BNC (1 per canale microfono)
 
 ---
 
@@ -287,9 +311,11 @@
 | CAV-C02 | Cavo LAN Cat.6 (rete/WiFi) | 2-3 | 20m | 40-60m | Rete dati | Via cappa/percorso |
 | CAV-C03 | Cavo XLR (audio L) | 1 | 20m | 20m | Mixer LR -> MAUI L | - |
 | CAV-C04 | Cavo XLR (audio R) | 1 | 20m | 20m | Mixer LR -> MAUI R | - |
-| CAV-C05 | Treccia Nitto 12/14 cavi | 1 | 20m | 20m | Fascio cavi passaggio | Battiscopa |
+| CAV-C05 | Cavo BNC (antenna #1) | 1 | 20m | 20m | Antenna radiomicrofoni -> Regia | Ricevitore #1 |
+| CAV-C06 | Cavo BNC (antenna #3 opzionale) | 1 | 20m | 20m | Antenna radiomicrofoni -> Regia | Opzionale 1 per canale |
+| CAV-C07 | Treccia Nitto 12/14 cavi | 1 | 20m | 20m | Fascio cavi passaggio | Battiscopa |
 
-**Subtotale cavi Celebration:** ~300-320m
+**Subtotale cavi Celebration:** ~340-380m (include 2 antenne BNC)
 
 ---
 
@@ -317,8 +343,10 @@
 | CAV-R02 | Cavo LAN Cat.6 (segnale video backup) | 5 | 30m | 150m | Backup MCTRL4K->LED | Via cappa cucina |
 | CAV-R03 | Cavo LAN Cat.6 (rete/WiFi) | 2-3 | 30m | 60-90m | Rete dati + Switch P.-1 | - |
 | CAV-R04 | Cavo rosso-nero (audio) | 2 | 30m | 60m | Audio MAUI (attive) | Segnale non amplificato |
+| CAV-R05 | Cavo BNC (antenna #2) | 1 | 30m | 30m | Antenna radiomicrofoni -> Regia P.0 | Ricevitore #2 |
+| CAV-R06 | Cavo BNC (antenna #4 opzionale) | 1 | 30m | 30m | Antenna radiomicrofoni -> Regia P.0 | Opzionale 1 per canale |
 
-**Subtotale cavi Ristorante:** ~420-450m
+**Subtotale cavi Ristorante:** ~480-540m (include 2 antenne BNC)
 
 ---
 
@@ -326,14 +354,19 @@
 
 | Cod. | Tipo Cavo | Quantita' | Lunghezza Unit. | Lunghezza Tot. | Funzione | Note |
 |------|-----------|-----------|-----------------|----------------|----------|------|
-| CAV-E01 | Cavo LAN Cat.6 OUTDOOR (segnale) | 1 | 25m | 25m | Regia -> Case esterno | **Certificato -15°C** |
-| CAV-E02 | Cavo LAN Cat.6 OUTDOOR (backup) | 1 | 25m | 25m | Backup ridondanza | **Certificato -15°C** |
+| CAV-E01 | Cavo LAN Cat.6 OUTDOOR (principale) | 1 | 30-50m | 30-50m | Regia -> PC EDV esterno | **NERO, GROSSO, certificato -15°C** |
+| CAV-E02 | Cavo LAN Cat.6 OUTDOOR (backup) | 1 | 30-50m | 30-50m | Backup ridondanza PC EDV | **NERO, GROSSO, certificato -15°C** |
 | CAV-E03 | Cavo LAN Cat.6 locale | 2 | 5m | 10m | MTCRL300 -> LED | Main + Backup |
-| CAV-E04 | Cavo speaker | 2 | 5m | 10m | Monacor -> Fonestar | - |
-| CAV-E05 | Cavo audio Jack/XLR | 1 | 1m | 1m | Scheda audio -> Monacor | Locale in case |
-| CAV-E06 | Cavo HDMI/Extender | 1 | 25m | 25m | EDV -> MTCRL300 | O fibra ottica HDMI |
+| CAV-E04 | Cavo LAN Cat.6 POE | 1 | 20-30m | 20-30m | Telecamera PTZ-01 (alimentazione + NDI) | **POE** |
+| CAV-E05 | Cavo audio Jack | 1 | 3m | 3m | PC EDV -> Amplificatore Monacor | Locale in case |
 
-**Subtotale cavi Esterno:** ~96m (di cui 50m outdoor)
+**Subtotale cavi Esterno:** ~83-133m (di cui 60-100m outdoor)
+
+**NOTE IMPORTANTI:**
+- **NO cavi audio rosso-nero**: Audio per 2 casse Fonestar esterne esce da PC EDV -> Amplificatore Monacor (cavo locale 3m)
+- **NO cavi BNC/HDMI per PTZ**: PTZ-01 è POE con video NDI via rete (1 cavo LAN sufficiente)
+- Cavi outdoor protetti con **canaline carrabili** (fornite da InformaSistemi)
+- Lunghezza cavi outdoor da verificare in loco (30-50m stimati)
 
 ---
 
@@ -361,10 +394,14 @@
 | CAV-REG04 | Cavo LAN Cat.6 | 10 | 2m | 20m | MiniPC/Encoder -> Switch |
 | CAV-REG05 | Cavo USB | 3 | 2m | 6m | Schede Audio -> PC VMIX |
 | CAV-REG06 | Cavo XLR | 3 | 2m | 6m | Schede Audio -> Mixer |
-| CAV-REG07 | Cavo BNC | 3 | 20m | 60m | PTZ -> Schede acquisizione |
-| CAV-REG08 | Cavo LAN Cat.6 (PTZ) | 3 | 20m | 60m | PTZ -> Switch (controllo) |
+| CAV-REG07 | Cavo LAN Cat.6 POE (PTZ-01) | 1 | 20-30m | 20-30m | PTZ-01 POE (alimentazione + NDI video) |
 
-**Subtotale cavi Regia:** ~163m
+**Subtotale cavi Regia:** ~63-73m
+
+**NOTA PTZ:**
+- **PTZ-01 è POE**: 1 solo cavo LAN Cat.6 per alimentazione + controllo + video NDI
+- **NO cavi BNC** necessari (video tramite NDI via rete)
+- Le altre PTZ-02 (se confermate) hanno modalità connessione da definire
 
 ---
 
@@ -397,20 +434,26 @@
 | Tipologia | Quantita' Totale | Lunghezza Totale | Note |
 |-----------|------------------|------------------|------|
 | **Cavo LAN Cat.6 standard** | ~80 | ~1.200m | Bobine da 305m |
-| **Cavo LAN Cat.6 OUTDOOR** | 2 | 50m | Certificato -15°C |
+| **Cavo LAN Cat.6 OUTDOOR** | 2 | 60-100m | **NERI, GROSSI, certificati -15°C** (principale + backup PC EDV) |
 | **Cavo fibra HDMI** | 1 bobina | 200m | Backup video |
-| **Cavo XLR** | ~10 | ~110m | Audio professionale |
-| **Cavo rosso-nero (speaker)** | 4 | ~70m | Amplificatori->Casse passive |
+| **Cavo XLR** | ~10 | ~110m | Audio professionale MAUI (Celebration, Lounge, Ristorante) |
+| **Cavo rosso-nero (speaker)** | 2 | ~50m | Amplificatori->Casse passive Ristorante |
+| **Cavo BNC (antenne radiomicrofoni)** | 2-4 | 40-100m | 2 antenne minime (20m Celebration + 30m Ristorante) + 2 opzionali |
+| **Cavo BNC (telecamere Stand By Me)** | Da definire | - | Eventuali telecamere azienda riprese (disponibilità confermata) |
 | **Cavo HDMI** | ~15 | ~80m | Varie lunghezze |
-| **Cavo BNC** | 3 | ~60m | Telecamere PTZ |
 | **Cavo USB** | 3 | ~6m | Schede audio |
 | **Cavo coassiale antenna TV** | 4 | ~30m | Decoder TV (se necessario) |
-| **Cavo speaker** | 2 | ~10m | Fonestar esterno |
-| **Treccia Nitto** | 1 | 20m | Fascio passaggio cavi |
+| **Snake Thoman (Treccia Nitto)** | 1 sistema | - | Sistema audio LAN->XLR con splitter passivi (fornito da InformaSistemi) |
 | **Cavo elettrico 220V** | 1 bobina | 100m | Installatore Igor |
+| **Canaline carrabili** | - | - | Protezione cavi outdoor LED Esterno (fornite da InformaSistemi) |
 | **Tail A** | 320+ | - | Alimentazione moduli |
 
-**TOTALE CAVI STIMATO:** ~1.730m + 200m fibra HDMI + 100m elettrico + Tail A
+**TOTALE CAVI STIMATO:** ~1.770-1.830m + 200m fibra HDMI + 100m elettrico + Tail A
+
+**NOTA CAVI BNC:**
+- **Configurazione minima**: 2 cavi BNC (~50m tot) per antenne radiomicrofoni (1 Celebration 20m + 1 Ristorante 30m)
+- **Configurazione ottimale**: 4 cavi BNC (~100m tot) per antenne radiomicrofoni (1 per canale microfono)
+- **Uso secondario**: Cavi BNC disponibili anche per eventuali telecamere azienda "Stand By Me"
 
 ---
 
@@ -552,7 +595,9 @@
 | Mixer Behringer | 1 |
 | Amplificatori | 2 |
 | Schede Audio USB | 4 |
-| Microfoni wireless | 1 sistema |
+| Ricevitori radiomicrofoni | 2 |
+| Radiomicrofoni wireless | 4 |
+| Antenne BNC radiomicrofoni | 2-4 |
 | Snake Toman | 1 |
 
 ### 9.3 Dispositivi Rete
@@ -568,20 +613,22 @@
 | Tipologia | Quantita'/Lunghezza |
 |-----------|---------------------|
 | Cavo LAN Cat.6 | ~1.250m |
-| Cavo LAN Outdoor | ~50m |
+| Cavo LAN Outdoor | ~60-100m |
 | Cavo fibra HDMI | 200m (1 bobina) |
 | Cavo XLR | ~110m |
-| Cavo rosso-nero | ~70m |
+| Cavo rosso-nero | ~50m |
 | Cavo HDMI | ~80m |
-| Cavo BNC | ~60m |
+| Cavo BNC (antenne radiomicrofoni) | ~40-100m (2-4 antenne) |
+| Cavo BNC (telecamere Stand By Me) | Da definire |
 | Cavo USB | ~6m |
 | Cavo coassiale antenna TV | ~30m |
 | Cavo elettrico 220V | 100m |
 | Treccia Nitto | 20m |
 | Connettori RJ45 Cat.6 | 200+ pezzi |
 | Connettori XLR (M+F) | 60+ pezzi |
+| Connettori BNC | 8-16 pezzi |
 | Extender HDMI/Cat.6 | 15 coppie TX/RX |
-| **TOTALE Cavi** | **~1.980m** |
+| **TOTALE Cavi** | **~1.970-2.070m** |
 
 ---
 
@@ -605,6 +652,8 @@
 |-----------|---------|------|
 | Bobine cavo LAN Cat.6 (4x305m) | ALTA | ~1.200m totali |
 | Cavi LAN outdoor -15°C (2x25m) | ALTA | LED Esterno |
+| **Cavi BNC (2-4x 20-30m)** | **ALTA** | **Antenne radiomicrofoni (minimo 2, ottimale 4)** |
+| **Connettori BNC (8-16pz)** | **ALTA** | **Terminazione cavi antenne (2 per cavo)** |
 | Connettori RJ45 Cat.6 (box 200pz) | ALTA | Crimpatura cavi LAN |
 | Connettori XLR maschio (30+) | ALTA | Terminazione audio |
 | Connettori XLR femmina (30+) | ALTA | Terminazione audio |
@@ -620,6 +669,7 @@
 | Bobina cavo elettrico 220V (100m) | CONFERMATO | Installatore Igor |
 | Staffe ancoraggio parete LED | CONFERMATO | Da magazzino con LED |
 | Crimpatrice RJ45 (2pz) | MEDIA | Attrezzatura |
+| **Crimpatrice BNC** | **MEDIA** | **Per connettori BNC antenne** |
 | Saldatore 60W (2pz) | MEDIA | Per connettori XLR |
 | Tester cavi LAN | MEDIA | Verifica |
 | Fascette/velcro/nastro | BASSA | Consumabili |
@@ -650,23 +700,32 @@
 
 9. **Cavi rosso-nero**: Cavi audio per casse passive, collegano amplificatori alle casse (nero=-, rosso=+)
 
+10. **Sistema Radiomicrofoni**:
+   - **2 ricevitori in regia P.0** con 4 radiomicrofoni wireless totali
+   - **Ricevitore #1**: 2 microfoni Celebration + 1 antenna linkata su 2 canali (cavo BNC 20m)
+   - **Ricevitore #2**: 2 microfoni Ristorante P.-1 + 1 antenna linkata su 2 canali (cavo BNC 30m)
+   - **Configurazione minima**: 2 antenne BNC (~50m tot)
+   - **Configurazione ottimale**: 4 antenne BNC (~100m tot, 1 per canale microfono)
+
+11. **Cavi BNC**: Utilizzati per antenne radiomicrofoni (priorità) e disponibili anche per eventuali telecamere dell'azienda "Stand By Me". Richiedono crimpatura con connettori BNC (2 per cavo)
+
 ### Apparati Video
 
-10. **LED Celebration**: NON ha linea di backup - sending card backup pronta dietro al LED
+12. **LED Celebration**: NON ha linea di backup - sending card backup pronta dietro al LED
 
-11. **Sending LED03**: Posizionata dietro al LED (~3m di distanza dalla regia)
+13. **Sending LED03**: Posizionata dietro al LED (~3m di distanza dalla regia)
 
-12. **Decoder TV**: 4 decoder digitale terrestre da collegare ai monitor TV 55" se necessario segnale antenna. Prevedere cavi coassiali 5-10m
+14. **Decoder TV**: 4 decoder digitale terrestre da collegare ai monitor TV 55" se necessario segnale antenna. Prevedere cavi coassiali 5-10m
 
 ### Infrastruttura
 
-13. **Percorso P.0->P.-1**: Via cappa cucina (FMT.7) - 4 cavi totali (2-3 rete + 2 audio rosso-nero)
+15. **Percorso P.0->P.-1**: Via cappa cucina (FMT.7) - 6 cavi totali (2-3 rete + 2 audio rosso-nero + 1-2 BNC antenne)
 
-14. **WiFi**: Configurati in modalita' CABLATA, NO mesh - per performance streaming
+16. **WiFi**: Configurati in modalita' CABLATA, NO mesh - per performance streaming
 
-15. **Quadri elettrici**: Tipologia (16A o 32A) da confermare in base alle specifiche dell'allestitore Henoto
+17. **Quadri elettrici**: Tipologia (16A o 32A) da confermare in base alle specifiche dell'allestitore Henoto
 
-16. **Staffe LED**: Staffe ancoraggio parete per LED Ristorante P.-1 dovrebbero arrivare da magazzino insieme ai LED
+18. **Staffe LED**: Staffe ancoraggio parete per LED Ristorante P.-1 dovrebbero arrivare da magazzino insieme ai LED
 
 ---
 
