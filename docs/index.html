@@ -3487,21 +3487,174 @@ flowchart TB
                         <div class="card-header-icon" style="background: linear-gradient(135deg, #1976d2, #0d47a1);">&#128197;</div>
                         <div>
                             <div class="card-title">Gantt Dettagliato Installazioni</div>
-                            <div class="card-subtitle">Cronoprogramma completo Informa Sistemi - 20 Gennaio / 6 Febbraio 2026</div>
+                            <div class="card-subtitle">Cronoprogramma completo Informa Sistemi - 20 Gennaio / 6 Febbraio 2026 - v1.2.10</div>
                         </div>
                     </div>
                     <div class="card-body" style="overflow-x: auto; padding: 16px;">
-                        <img src="gantt-installazioni.png" alt="Gantt Dettagliato Installazioni Casa Italia Cortina 2026" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        <div style="margin-top: 16px; padding: 12px; background: #e3f2fd; border-radius: 8px; font-size: 13px;">
-                            <strong style="color: #1565c0;">Legenda stati:</strong>
-                            <span style="margin-left: 16px;"><span style="display: inline-block; width: 12px; height: 12px; background: #28a745; border-radius: 2px; vertical-align: middle;"></span> Completato</span>
-                            <span style="margin-left: 12px;"><span style="display: inline-block; width: 12px; height: 12px; background: #4a90d9; border-radius: 2px; vertical-align: middle;"></span> In corso</span>
-                            <span style="margin-left: 12px;"><span style="display: inline-block; width: 12px; height: 12px; background: #dc3545; border-radius: 2px; vertical-align: middle;"></span> Critico</span>
-                            <span style="margin-left: 12px;"><span style="display: inline-block; width: 12px; height: 12px; background: #6c757d; border-radius: 2px; vertical-align: middle;"></span> Pianificato</span>
-                            <span style="margin-left: 12px;"><span style="display: inline-block; width: 8px; height: 8px; background: #000; border-radius: 50%; vertical-align: middle;"></span> Milestone</span>
+                        <div class="mermaid" style="background: white; padding: 20px; border-radius: 8px;">
+gantt
+    title Cronoprogramma InformaSistemi - Casa Italia Cortina 2026
+    dateFormat YYYY-MM-DD
+    axisFormat %d %b
+
+    section Pre-Cantiere
+    Preparazione flight case CORT01-17           :done, pre1, 2026-01-01, 2026-01-15
+    Carico mezzi (furgone + bilico)              :done, pre2, 2026-01-08, 2026-01-12
+    Spedizione FlightCase a Henoto               :done, pre3, 2026-01-15, 1d
+    Arrivo Cortina e scarico FlightCase          :pre4, 2026-01-24, 1d
+
+    section Passaggio Cavi 20 Gen
+    Sopralluogo con elettricisti                 :crit, cavi1, 2026-01-20, 1h
+    Posa cavi Regia->Celebration                 :crit, cavi2, 2026-01-20, 3h
+    Posa cavi audio Celebration                  :active, cavi3, 2026-01-20, 1h
+    Posa cavi BNC antenne Celebration            :active, cavi4, 2026-01-20, 1h
+    Posa cavi Regia->Ristorante P-1              :crit, cavi5, 2026-01-20, 3h
+    Posa cavi audio Ristorante                   :active, cavi6, 2026-01-20, 1h
+    Posa cavi BNC antenne Ristorante             :active, cavi7, 2026-01-20, 1h
+    CHECKPOINT 20 Gen sera                       :milestone, check1, 2026-01-20, 0d
+
+    section Cablaggi
+    Apertura FlightCase + Sopralluogo            :cab1, 2026-01-25, 8h
+    Cablaggio LAN Lounge Main                    :cab2, 2026-01-26, 4h
+    Cablaggio LAN Lounge Backup                  :cab3, 2026-01-26, 4h
+    Cablaggio audio XLR Lounge                   :cab4, 2026-01-26, 3h
+    Cablaggio rete dati generale                 :cab5, 2026-01-26, 6h
+    Finiture cablaggio                           :cab6, 2026-01-26, 4h
+    CHECKPOINT 27 Gen sera                       :milestone, check2, 2026-01-26, 0d
+
+    section Regia Video
+    Posizionamento rack/tavoli                   :regia1, 2026-01-27, 3h
+    Installazione Switch 24 porte                :regia2, 2026-01-27, 2h
+    Installazione Router/Firewall                :regia3, 2026-01-27, 2h
+    Setup PC VMIX 1-2-3                          :regia4, 2026-01-27, 4h
+    Setup MiniPC WIN1-4 + Encoder                :regia5, 2026-01-27, 4h
+    Collegamento Sending Cards                   :regia6, 2026-02-01, 3h
+    Setup Mixer + Schede Audio                   :regia7, 2026-02-01, 3h
+    Config Access Point WiFi (4x)                :regia8, 2026-02-01, 3h
+    Installazione ricevitori radiomicrofoni      :regia9, 2026-02-01, 2h
+    Installazione PTZ-01                         :regia10, 2026-02-01, 3h
+    Installazione PTZ extra                      :regia11, 2026-02-01, 2h
+    Config rete intranet finale                  :regia12, 2026-02-01, 4h
+    Test collegamenti inter-house                :regia13, 2026-02-01, 4h
+
+    section LED Celebration
+    Montaggio struttura parete legno             :celeb1, 2026-01-28, 4h
+    Installazione colonne LED (70 mod)           :celeb2, 2026-01-28, 8h
+    Collegamento cavi LAN (10 main)              :celeb3, 2026-01-28, 3h
+    Collegamento alimentazione + Tail A          :celeb4, 2026-01-28, 3h
+    Test e calibrazione MCTRL4K                  :celeb5, 2026-01-28, 3h
+    Installazione audio MAUI 28G (2x)            :celeb6, 2026-01-28, 2h
+    Installazione antenne radiomicrofoni         :celeb7, 2026-01-28, 2h
+
+    section LED Lounge
+    Preparazione vano tecnico bancone            :lounge1, 2026-01-29, 3h
+    Montaggio supporti parete config C           :lounge2, 2026-01-29, 5h
+    Installazione colonne dritte (48 mod)        :lounge3, 2026-01-29, 6h
+    Installazione colonne angolari SX (16)       :lounge4, 2026-01-29, 4h
+    Installazione colonne angolari DX (16)       :lounge5, 2026-01-29, 4h
+    Collegamento cavi LAN (24 tot)               :lounge6, 2026-01-29, 3h
+    Collegamento alimentazione                   :lounge7, 2026-01-29, 2h
+    Posizionamento PC Sending + MCTRL4K          :lounge8, 2026-01-29, 2h
+    Test e calibrazione                          :lounge9, 2026-01-29, 3h
+    Installazione audio MAUI + Speaker           :lounge10, 2026-01-29, 3h
+    Installazione casse Galleria LED C           :lounge11, 2026-01-29, 2h
+
+    section LED Ristorante P-1
+    Montaggio truss/staffe a C                   :rist1, 2026-01-30, 5h
+    Ritiro LED noleggio Sedico                   :rist2, 2026-01-30, 4h
+    Installazione moduli LED SEGNA (36)          :rist3, 2026-01-30, 8h
+    Collegamento cavi LAN (10 tot)               :rist4, 2026-01-30, 3h
+    Collegamento alimentazione                   :rist5, 2026-01-30, 2h
+    Test e calibrazione MCTRL4K                  :rist6, 2026-01-30, 3h
+    Installazione audio MAUI (2x)                :rist7, 2026-01-30, 2h
+    Installazione antenne radiomicrofoni         :rist8, 2026-01-30, 2h
+    Posa moquette                                :milestone, moq, 2026-02-02, 0d
+
+    section LED Esterno
+    Montaggio struttura pali + aliscaf           :est1, 2026-02-02, 6h
+    Posizionamento case MTCRL300 + EDV           :est2, 2026-02-02, 2h
+    Installazione moduli AMIL BLUE (12)          :est3, 2026-02-02, 6h
+    Cablaggio LAN esterno (main+backup)          :crit, est4, 2026-02-02, 2h
+    Cablaggio LAN POE Telecamera PTZ-01          :est5, 2026-02-02, 2h
+    Collegamento audio PC EDV->Amplif            :est6, 2026-02-02, 2h
+    Test e calibrazione MTCRL300                 :est7, 2026-02-02, 2h
+    Buffer meteo (se necessario)                 :est8, 2026-02-03, 8h
+
+    section Monitor e Finiture
+    Installazione Monitor 55" Sala Stampa        :mon1, 2026-02-03, 2h
+    Collegamento segnale RAI Sport/RAI 2         :mon2, 2026-02-03, 2h
+    Installazione Monitor 55" Interviste         :mon3, 2026-02-03, 2h
+    Finiture cablaggio (fascette)                :mon4, 2026-02-03, 4h
+    Installazione 4 Switch Netgear               :mon5, 2026-02-03, 3h
+
+    section Collaudo
+    Test tutti LED (4 wall)                      :crit, test1, 2026-02-04, 4h
+    Test audio tutte zone                        :crit, test2, 2026-02-04, 3h
+    Test streaming gare                          :test3, 2026-02-04, 2h
+    Test radiomicrofoni wireless                 :test4, 2026-02-04, 2h
+    Test PTZ inter-house                         :test5, 2026-02-04, 3h
+    Test rete WiFi                               :test6, 2026-02-04, 2h
+    Test generale con cliente                    :test7, 2026-02-04, 2h
+    Correzioni/regolazioni finali                :test8, 2026-02-04, 2h
+    CHECKPOINT FINALE 5 Feb                      :milestone, check3, 2026-02-05, 0d
+
+    section Inaugurazione
+    Cerimonia apertura Casa Italia               :crit, inaug, 2026-02-06, 8h
+                        </div>
+
+                        <div style="margin-top: 20px; padding: 16px; background: #f5f5f5; border-radius: 8px;">
+                            <h4 style="margin: 0 0 12px 0; color: var(--primary);">📊 Legenda Gantt</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 13px;">
+                                <div><span style="color: #1e88e5;">●</span> <strong>Blu</strong> = Attività pianificata</div>
+                                <div><span style="color: #43a047;">●</span> <strong>Verde</strong> = Attività completata</div>
+                                <div><span style="color: #e53935;">●</span> <strong>Rosso</strong> = Attività critica</div>
+                                <div><span style="color: #fb8c00;">●</span> <strong>Arancione</strong> = In corso</div>
+                                <div><span style="color: #000;">♦</span> <strong>Rombo</strong> = Milestone/Checkpoint</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 16px; padding: 12px; background: #ffebee; border-radius: 8px; border-left: 4px solid #f44336;">
+                            <strong style="color: #c62828;">⚠️ Checkpoint Critici:</strong>
+                            <ul style="margin: 8px 0 0 20px; font-size: 13px;">
+                                <li><strong>20 Gen sera:</strong> Verifica cavi posati prima chiusura soffitti</li>
+                                <li><strong>27 Gen sera:</strong> Tutti cavi posati e nascosti prima moquette (2 Feb)</li>
+                                <li><strong>2 Feb:</strong> Posa moquette - coordinamento Henoto</li>
+                                <li><strong>5 Feb:</strong> Sistema completo e collaudato - PRONTO per inaugurazione</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-top: 16px; padding: 12px; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #2196f3;">
+                            <strong style="color: #1565c0;">👥 Team Allocation:</strong>
+                            <div style="margin-top: 8px; font-size: 13px;">
+                                <strong>20 Gen:</strong> Igor + 2 tecnici (Passaggio cavi con elettricisti)<br>
+                                <strong>25-26 Gen:</strong> 2 tecnici + 3 installatori (Cablaggi)<br>
+                                <strong>27 Gen - 1 Feb:</strong> Setup Regia (Stefano, Max, Flavia)<br>
+                                <strong>28 Gen - 4 Feb:</strong> 3 installatori LED + 2 tecnici regia in parallelo<br>
+                                <strong>4-5 Feb:</strong> Team completo (collaudo finale)
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Script Mermaid -->
+                <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+                <script>
+                    mermaid.initialize({
+                        startOnLoad: true,
+                        theme: 'default',
+                        gantt: {
+                            titleTopMargin: 25,
+                            barHeight: 20,
+                            barGap: 4,
+                            topPadding: 50,
+                            leftPadding: 75,
+                            gridLineStartPadding: 35,
+                            fontSize: 11,
+                            numberSectionStyles: 7,
+                            axisFormat: '%d/%m'
+                        }
+                    });
+                </script>
 
                 <!-- Tabella confronto dettagliato -->
                 <div class="card" style="margin-bottom: 24px;">
