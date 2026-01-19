@@ -1311,11 +1311,11 @@
                     <div class="led-specs">
                         <div class="led-spec">
                             <div class="led-spec-label">Dimensioni</div>
-                            <div class="led-spec-value">3 x 2m</div>
+                            <div class="led-spec-value">2.5 x 2m</div>
                         </div>
                         <div class="led-spec">
                             <div class="led-spec-label">Risoluzione</div>
-                            <div class="led-spec-value">768 x 512 px</div>
+                            <div class="led-spec-value">640 x 512 px</div>
                         </div>
                         <div class="led-spec">
                             <div class="led-spec-label">Tipologia</div>
@@ -1396,7 +1396,7 @@
 ├── <span class="vmix">VMIX 3</span> + MON3 ──────────► <span class="led">LED02/04 Galleria</span> (Config. a C)
 │   └── MCTRL4K ──► Speaker SSSNAKE
 │
-├── <span class="highlight">LED06 Esterno</span> (768x512px) <span class="comment">/* Digital Signage */</span>
+├── <span class="highlight">LED06 Esterno</span> (640x512px - 2.5x2m) <span class="comment">/* Digital Signage - CONFERMATO 19/01 */</span>
 │   └── <span class="vmix">EDV</span> ──► HDMI ──► MTCRL300 ──► Monacor Amp ──► 2x Fonestar
 │
 └── <span class="highlight">MIXER BEHRINGER</span>
@@ -1750,7 +1750,7 @@ flowchart TB
                             <tr style="background: #e3f2fd;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #1</strong></td><td style="padding: 8px;">LED03 Celebration (3840x1536px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">10</td><td style="padding: 8px; text-align: center; color: #999;">0</td></tr>
                             <tr style="background: #fff3e0;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #2</strong></td><td style="padding: 8px;">LED01 Ristorante (2304x960px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">5</td><td style="padding: 8px; text-align: center; color: #ff9800;">5</td></tr>
                             <tr style="background: #f3e5f5;"><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>MCTRL4K #3</strong></td><td style="padding: 8px;">LED02+04 Lounge (2688x1728px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">12</td><td style="padding: 8px; text-align: center; color: #ff9800;">12</td></tr>
-                            <tr style="background: #e8f5e9;"><td style="padding: 8px;"><strong>MTCRL300</strong></td><td style="padding: 8px;">LED06 Esterno (768x512px)</td><td style="padding: 8px; text-align: center; color: var(--accent);">1</td><td style="padding: 8px; text-align: center; color: #ff9800;">1</td></tr>
+                            <tr style="background: #e8f5e9;"><td style="padding: 8px;"><strong>MTCRL300</strong></td><td style="padding: 8px;">LED06 Esterno (640x512px - 2.5x2m)</td><td style="padding: 8px; text-align: center; color: var(--accent);">1</td><td style="padding: 8px; text-align: center; color: #ff9800;">1</td></tr>
                         </tbody>
                     </table>
 
@@ -2260,16 +2260,16 @@ flowchart TB
                         </div>
                     </div>
 
-                    <div class="issue-card warning">
+                    <div class="issue-card" style="border-left-color: var(--success); background: #e8f5e9;">
                         <div class="issue-title">
-                            <span style="color: #f57c00;">&#9888;</span>
-                            LED Esterno - Misure in Valutazione con Arch. Giannini
+                            <span style="color: #4caf50;">&#9989;</span>
+                            LED Esterno - MISURE CONFERMATE con Arch. Giannini
                         </div>
                         <div class="issue-desc">
-                            Struttura LED esterno in piazzale: misura originale 300x200 potrebbe coprire l'ascensore.
+                            Struttura LED esterno in piazzale: misure definitive confermate dall'Architetto.
                         </div>
-                        <div class="issue-solution" style="background: #fff3e0; border-color: var(--warning);">
-                            <strong style="color: #f57c00;">IN VALUTAZIONE (19/01):</strong> Alternative proposte: <strong>250x200</strong> o <strong>250x100</strong>. In attesa conferma definitiva dall'Architetto Francesco Giannini (IT'S).
+                        <div class="issue-solution" style="background: #c8e6c9; border-color: var(--success);">
+                            <strong style="color: #2e7d32;">CONFERMATO (19/01):</strong> Dimensioni definitive <strong>250 x 200 cm (L x H)</strong> - 2.5 x 2 metri. Confermato con Arch. Francesco Giannini (IT'S).
                         </div>
                     </div>
 
@@ -2410,10 +2410,10 @@ flowchart TB
                         <div class="checklist-text"><strong>Passaggio cavi Regia → Colonna LED Galleria</strong> - Problema risolto? Altrimenti Piano B</div>
                         <span class="checklist-priority priority-high">URGENTE</span>
                     </div>
-                    <div class="checklist-item" style="background: #fff3e0;">
-                        <div class="checklist-box" style="border-color: #f57c00;"></div>
-                        <div class="checklist-text"><strong>LED Esterno misure definitive</strong> - 250x200 o 250x100 (con Arch. Giannini)</div>
-                        <span class="checklist-priority priority-high">ALTA</span>
+                    <div class="checklist-item" style="background: #e8f5e9;">
+                        <div class="checklist-box" style="background: #4caf50; color: white;">&#10003;</div>
+                        <div class="checklist-text"><s>LED Esterno misure definitive</s> - <strong>250x200 cm CONFERMATO</strong> (Arch. Giannini 19/01)</div>
+                        <span class="checklist-priority" style="background: #4caf50;">FATTO</span>
                     </div>
                     <div class="checklist-item">
                         <div class="checklist-box"></div>
@@ -4369,8 +4369,8 @@ gantt
                 <div class="card-header">
                     <div class="card-header-icon" style="background: linear-gradient(135deg, #4caf50, #2e7d32);">&#9989;</div>
                     <div>
-                        <div class="card-title">Attività Completate (11 su 15)</div>
-                        <div class="card-subtitle">Mail 19/01 inviata - Tutti i punti precedenti confermati</div>
+                        <div class="card-title">Attività Completate (12 su 15)</div>
+                        <div class="card-subtitle">Mail 19/01 inviata - LED Esterno 250x200 CONFERMATO con Arch. Giannini</div>
                     </div>
                 </div>
                 <div class="card-body" style="padding: 16px;">
@@ -4386,6 +4386,7 @@ gantt
                         <span style="background: #4caf50; color: white; padding: 4px 12px; border-radius: 16px; font-size: 12px;">&#10003; Vano tecnica Lounge</span>
                         <span style="background: #4caf50; color: white; padding: 4px 12px; border-radius: 16px; font-size: 12px;">&#10003; Moquette solo P.-1</span>
                         <span style="background: #4caf50; color: white; padding: 4px 12px; border-radius: 16px; font-size: 12px;">&#10003; FlightCase in sede</span>
+                        <span style="background: #4caf50; color: white; padding: 4px 12px; border-radius: 16px; font-size: 12px;">&#10003; LED Esterno 250x200</span>
                     </div>
                 </div>
             </div>
@@ -4411,9 +4412,9 @@ gantt
                                 <div class="checklist-box" style="border-color: #c62828;"></div>
                                 <div class="checklist-text"><strong>Cavi Regia → LED Galleria</strong> risolto?</div>
                             </div>
-                            <div class="checklist-item" style="background: #fff3e0;">
-                                <div class="checklist-box" style="border-color: #f57c00;"></div>
-                                <div class="checklist-text"><strong>LED Esterno misure</strong> con Arch. Giannini</div>
+                            <div class="checklist-item" style="background: #e8f5e9;">
+                                <div class="checklist-box" style="background: #4caf50; color: white;">&#10003;</div>
+                                <div class="checklist-text"><s>LED Esterno 250x200</s> CONFERMATO</div>
                             </div>
                         </div>
                         <div>
@@ -4545,7 +4546,7 @@ gantt
         </div>
         <div class="footer-meta">
             Documento redatto da <strong style="color: var(--gold);">Maximilian Giurastante</strong><br>
-            Versione 1.2.19 | 19 Gennaio 2026 (Action Items compattati - 11 completati, 7 in attesa feedback)
+            Versione 1.2.20 | 19 Gennaio 2026 (LED Esterno 250x200 confermato con Arch. Giannini)
         </div>
         <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.4);">
             Olimpiadi Invernali Milano-Cortina 2026
