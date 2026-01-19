@@ -1,0 +1,60 @@
+### Sviluppo Web e Galleria 3D
+
+- Realizzato documento HTML tramite VSCode e cloud code
+- Implementata galleria virtuale con RenderTool3D per navigazione 3D
+- Completato schema render e navigazione 3D sviluppato da Nicola
+
+### Infrastruttura di Rete
+
+- **Configurazione WiFi**: 4 access point WiFi, uno per ciascuna location/stanza
+- **Switch Manager**: necessari 4 switch manager per garantire copertura e ridondanza
+- **Router e Firewall**: punto di ingresso fibra/internet richiede router con firewall integrato
+- Cablaggio principale parte dal router/firewall verso tutti i punti
+- Previsto utilizzo di infrastruttura esistente della galleria con vulgane ai punti più vicini al CAO
+- Creazione sottorete dedicata sotto la rete principale della galleria
+- WiFi configurati in modalità cablata (preferita rispetto a mesh) per garantire performance ottimali, specialmente per streaming
+
+### Sistema LED e Streaming
+
+- Cavi LAN diretti dalla regia ai vari LED per garantire stabilità
+- **Mini PC con Encoder**: installati nei rack per acquisire segnali e creare link streaming
+- Streaming in protocollo RTSP da integrare in ADV e VMIX
+- Configurazione per Discovery/Rai con possibilità di integrazione multi-piattaforma
+
+### Sala Stampa (Piano -1)
+
+- Ubicata al piano meno uno, sotto la struttura principale
+- Richiesti due monitor per visione TV normale (Rai e canali tradizionali)
+- **Da verificare**: presenza antenna esistente per collegamento decoder diretto
+- Opzione alternativa: installazione nuova antenna o implementazione streaming
+- Proposto switch aggiuntivo al LED di piano -1 (area ristorante) per cablaggio verso sala stampa
+
+### Sala Interviste
+
+- Posizionata adiacente alla regia per facilità di cablaggio
+- Collegamento diretto dalla regia senza switch intermedi
+- Necessario uno o due schermi
+
+### Configurazione Rack
+
+- Nicola sta preparando i rack con schema dettagliato
+- **Rack LED esterno**: uno switch per pannello LED esterno
+- **Rack regia**: encoder (tutti e quattro) concentrati in questo rack
+- Include ADV, amplificatore e sending card
+- **LED esterno**: richiesti cavi da esterno certificati per temperatura -15°C
+- Configurazione con cavo principale e backup per ridondanza
+
+### Riepilogo Materiale Necessario
+
+- 3-4 Switch Manager (da confermare necessità nel rack LED esterno)
+- 4 Antenne WiFi
+- 1 Router/Firewall
+- 2 Schermi per sala stampa e interviste
+- Cavi da esterno per ambiente -15°C
+
+### Action Items
+
+- [ ]  @Maximilian Giurastante aggiungere informazioni alla pagina di riferimento
+- [ ]  Verificare presenza antenna nella sala stampa per collegamento TV
+- [ ]  Confermare necessità switch nel rack LED esterno
+- [ ]  Coordinare con Nicola per completamento preparazione rack
